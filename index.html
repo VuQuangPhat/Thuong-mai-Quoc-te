@@ -109,6 +109,11 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
   nav.side.open .links{display:block}
   .mobtoggle{display:inline-block;font:inherit;font-size:13px;padding:6px 12px;border-radius:8px;border:1px solid var(--line);background:var(--paper);color:var(--ink);margin-bottom:8px}
 }
+.part{margin:34px 0 20px;padding:14px 20px;border:1px solid var(--line);border-left:6px solid var(--pc,var(--brand));border-radius:12px;background:var(--paper)}
+.part h2{font-size:21px;line-height:1.3;margin:0 0 4px;color:var(--pc,var(--brand))}
+.part p{margin:0;color:var(--muted);font-size:14.5px;max-width:78ch}
+.part.p1{--pc:#1f6fa8}.part.p2{--pc:#2f8f5b}.part.p3{--pc:#b4690e}
+@media (prefers-color-scheme:dark){.part.p1{--pc:#6cb4e4}.part.p2{--pc:#5fcf94}.part.p3{--pc:#f0a24a}}
 @media print{
   nav.side,.tools{display:none} .layout{display:block} section{break-inside:avoid-page;border:0;padding:0}
   details{open:true} body{background:#fff;color:#000}
@@ -122,32 +127,35 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
 
 <nav class="side" id="side" aria-label="Mục lục">
   <h2>Luật Thương mại quốc tế</h2>
-  <p class="sub">Tài liệu học & ôn thi · hệ thống WTO, phòng vệ thương mại, giải quyết tranh chấp, CISG</p>
+  <p class="sub">Tài liệu học & ôn thi · chia theo luật TMQT công, luật TMQT tư và phần dùng chung</p>
   <button class="mobtoggle" id="mobtoggle" type="button">Mở mục lục</button>
   <div class="links">
     <div class="tools">
       <button type="button" id="openAll">Mở hết ví dụ/câu hỏi</button>
       <button type="button" id="closeAll">Thu gọn</button>
     </div>
-    <a href="#s0">Sơ đồ tư duy tổng quan</a>
-    <div class="grp">PHẦN NỀN</div>
-    <a href="#s1">1. Khái quát & xu hướng</a>
-    <a href="#s2">2. Nguồn của luật</a>
-    <a href="#s3">3. Chủ thể</a>
-    <div class="grp">HỆ THỐNG WTO</div>
-    <a href="#s4">4. WTO: lịch sử, cơ cấu, quyết định, gia nhập</a>
-    <a href="#s5">5. Nguyên tắc: MFN, NT, tự do hóa</a>
-    <a href="#s6">6. Các ngoại lệ</a>
-    <a href="#s7">7. Phòng vệ thương mại</a>
-    <a href="#s8">8. Giải quyết tranh chấp (DSU)</a>
-    <div class="grp">NGOÀI WTO & THỰC TIỄN</div>
-    <a href="#s9">9. Hợp đồng quốc tế & CISG</a>
-    <a href="#s10">10. Việt Nam & thời sự</a>
-    <div class="grp">ÔN THI</div>
-    <a href="#s11">11. Bẫy nhận định đúng/sai</a>
-    <a href="#s12">12. Kỹ thuật làm bài & tự kiểm tra</a>
-    <a href="#s13">13. Chỗ cần đối chiếu trong sách HDHT</a>
-    <a href="#s14">14. Thuật ngữ Anh – Việt</a>
+    <a href="#s0">Sơ đồ tư duy và cách phân loại công – tư</a>
+    <div class="grp">PHẦN I – LUẬT TMQT CÔNG</div>
+    <a href="#i1">I.1 Tổng quan (công)</a>
+    <a href="#i2">I.2 Hệ thống WTO</a>
+    <a href="#i3">I.3 Nguyên tắc: MFN, NT, tự do hóa</a>
+    <a href="#i4">I.4 Các ngoại lệ</a>
+    <a href="#i5">I.5 Phòng vệ thương mại</a>
+    <a href="#i6">I.6 Giải quyết tranh chấp (DSU)</a>
+    <a href="#i7">I.7 Việt Nam &amp; thời sự</a>
+    <div class="grp">PHẦN II – LUẬT TMQT TƯ</div>
+    <a href="#ii1">II.1 Tổng quan (tư)</a>
+    <a href="#ii2">II.2 Chủ thể &amp; hợp đồng</a>
+    <a href="#ii3">II.3 Nguồn luật hợp đồng</a>
+    <a href="#ii4">II.4 Hợp đồng quốc tế &amp; CISG</a>
+    <a href="#ii5">II.5 Giải quyết tranh chấp tư</a>
+    <a href="#ii6">II.6 Tình huống IKEU – Nhà Đẹp</a>
+    <div class="grp">PHẦN III – NỀN TẢNG VÀ ÔN THI</div>
+    <a href="#iii1">III.1 Khái niệm &amp; xu hướng</a>
+    <a href="#iii2">III.2 Bẫy nhận định đúng/sai</a>
+    <a href="#iii3">III.3 Kỹ thuật làm bài &amp; tự kiểm tra</a>
+    <a href="#iii4">III.4 Chỗ cần đối chiếu trong sách HDHT</a>
+    <a href="#iii5">III.5 Thuật ngữ Anh – Việt</a>
   </div>
 </nav>
 
@@ -156,17 +164,33 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
 
 <header class="hero">
   <h1>Luật Thương mại quốc tế</h1>
-  <p>Mỗi phần mở đầu bằng <b>nhận định ngắn</b>, sau đó đến lập luận, căn cứ pháp lý, ví dụ và các chỗ dễ nhầm. Ví dụ nền lấy từ vụ việc WTO có thật; ví dụ số liệu và tình huống đặt tên là <i>giả định</i>. Văn bản trong nước và diễn biến thời sự cần đối chiếu hiệu lực tại thời điểm sử dụng (đối chiếu lần cuối: 11/10/2026).</p>
+  <p>Tài liệu chia theo tính chất quan hệ pháp luật: <b>công</b>, <b>tư</b> và <b>nền tảng, ôn thi</b>. Mỗi phần mở đầu bằng <b>nhận định ngắn</b>, sau đó đến lập luận, căn cứ pháp lý, ví dụ và các chỗ dễ nhầm. Ví dụ nền lấy từ vụ việc WTO có thật; ví dụ số liệu và tình huống đặt tên là <i>giả định</i>. Văn bản trong nước và diễn biến thời sự cần đối chiếu hiệu lực tại thời điểm sử dụng (đối chiếu lần cuối: 11/10/2026).</p>
 </header>
 
-<!-- ========== MIND MAP ========== -->
+<!-- ========== MỞ ĐẦU ========== -->
+
 <section id="s0">
   <h2>Sơ đồ tư duy tổng quan</h2>
-  <p class="gist">Môn học chạy theo một mạch: <b>luật này là gì → ai tham gia, dựa vào đâu → WTO vận hành thế nào → nguyên tắc → ngoại lệ → công cụ phòng vệ → khi tranh chấp thì làm gì</b>; cộng thêm nhánh hợp đồng (CISG) và thực tiễn Việt Nam.</p>
+  <p class="gist">Tài liệu chia theo <b>tính chất quan hệ pháp luật</b>: <b>Phần I – luật TMQT công</b> (quan hệ giữa các quốc gia, thành viên WTO và tổ chức quốc tế), <b>Phần II – luật TMQT tư</b> (quan hệ giữa các thương nhân) và <b>Phần III – kiến thức nền và ôn thi</b> dùng chung cho cả hai. Gặp một vấn đề, hãy hỏi trước: <b>ai là chủ thể, ai bị ràng buộc?</b> Câu trả lời cho biết vấn đề thuộc mảng nào.</p>
   <div class="mm" id="mm" role="img" aria-label="Sơ đồ tư duy môn Luật Thương mại quốc tế"></div>
-  <p class="legend">Bấm vào một nhánh hoặc ý nhỏ để nhảy tới phần tương ứng.</p>
+  <p class="legend">Bấm vào một nhánh hoặc ý nhỏ để nhảy tới phần tương ứng. Màu xanh dương, lam: Phần I (công). Màu xanh lá: Phần II (tư). Màu nâu cam: Phần III (nền và ôn thi).</p>
 
-  <h3>Bản đồ “một nguyên tắc – ngoại lệ – công cụ” (cách nhớ nhanh)</h3>
+  <h3>Phân biệt luật TMQT công và luật TMQT tư</h3>
+  <div class="tbl"><table>
+    <tr><th></th><th>Luật TMQT công</th><th>Luật TMQT tư</th></tr>
+    <tr><td>Chủ thể</td><td>Quốc gia; tổ chức quốc tế</td><td>Thương nhân (cá nhân, pháp nhân); quốc gia khi tham gia như một bên hợp đồng</td></tr>
+    <tr><td>Điều chỉnh</td><td>Quyền, nghĩa vụ của <b>quốc gia</b>; chính sách, pháp luật thương mại quốc gia để thực hiện cam kết quốc tế</td><td>Giao dịch thương mại xuyên biên giới nhằm lợi nhuận (mua bán, vận chuyển, bảo hiểm, thanh toán…)</td></tr>
+    <tr><td>Nguồn</td><td>Điều ước (WTO, FTA), tập quán, nguyên tắc chung, án lệ</td><td>Pháp luật quốc gia, CISG, tập quán (Incoterms), án lệ/phán quyết trọng tài</td></tr>
+    <tr><td>Ví dụ</td><td>Mỹ tranh chấp với EU về trợ cấp máy bay tại WTO</td><td>Công ty Việt Nam mua máy móc của công ty Đức theo hợp đồng</td></tr>
+  </table></div>
+
+  <h3>Ba lưu ý khi phân loại công – tư</h3>
+  <div class="tip"><b>Không đồng nhất “công” với mọi quan hệ có Nhà nước tham gia</b>Khi quốc gia tham gia một hợp đồng thương mại với tư cách một bên giao dịch, quan hệ đó có thể thuộc mảng tư. Cần xem bản chất quan hệ và tư cách tham gia.</div>
+  <div class="tip"><b>Không đồng nhất “tư” với mọi tranh chấp có doanh nghiệp tham gia</b>Doanh nghiệp có thể bị ảnh hưởng bởi biện pháp chống bán phá giá, nhưng tranh chấp giữa các thành viên WTO về tính phù hợp của biện pháp đó vẫn thuộc mảng công.</div>
+  <div class="tip"><b>CISG là điều ước quốc tế nhưng điều chỉnh chủ yếu quan hệ tư</b>Một quy phạm nằm trong điều ước quốc tế không tự động làm cho quan hệ được điều chỉnh trở thành quan hệ của luật thương mại quốc tế công.</div>
+  <p>Đây là cách tổ chức tài liệu để học thuận tiện; ranh giới giữa hai mảng không hoàn toàn tuyệt đối. Nguồn luật, chủ thể, đầu tư và giải quyết tranh chấp có thể liên quan đến cả hai, nên các mục giao thoa được dẫn chiếu qua lại thay vì lặp lại.</p>
+
+  <h3>Bản đồ “một nguyên tắc – ngoại lệ – công cụ” (mảng công; cách nhớ nhanh)</h3>
   <div class="tbl"><table>
     <tr><th>Nguyên tắc / cam kết</th><th>Nội dung cốt lõi</th><th>Ngoại lệ chính</th><th>Công cụ khi bị ảnh hưởng</th></tr>
     <tr><td>MFN (Điều I GATT)</td><td>Ưu đãi cho một nước = ưu đãi cho mọi thành viên, ngay lập tức, vô điều kiện</td><td>FTA/liên minh thuế quan (Điều XXIV); GSP / Điều khoản Cho phép; waiver; Điều XX, XXI</td><td>Khiếu kiện DSU</td></tr>
@@ -176,67 +200,45 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
   </table></div>
 </section>
 
-<!-- ========== 1. KHÁI QUÁT ========== -->
-<section id="s1">
-  <h2>1. Khái quát và xu hướng</h2>
-  <p class="gist">Luật thương mại quốc tế là tổng thể quy phạm điều chỉnh <b>toàn bộ quan hệ</b> (chủ thể, khách thể, quyền – nghĩa vụ) phát sinh trong hoạt động thương mại xuyên biên giới; gồm hai nửa: <b>công</b> (nhà nước với nhau) và <b>tư</b> (thương nhân với nhau).</p>
+<!-- ========== PHẦN I: LUẬT TMQT CÔNG ========== -->
 
-  <h3>1.1 Khái niệm cần nắm</h3>
+<div class="part p1" id="part1">
+  <h2>Phần I. Luật thương mại quốc tế công</h2>
+  <p>Public International Trade Law. Quan hệ giữa các quốc gia, thành viên WTO và tổ chức quốc tế; cam kết thương mại quốc tế; chính sách thương mại quốc gia; giải quyết tranh chấp giữa các thành viên.</p>
+</div>
+
+<!-- I.1 -->
+
+<section id="i1">
+  <h2>I.1 Tổng quan về luật thương mại quốc tế công</h2>
+  <p class="gist">Luật TMQT công điều chỉnh quan hệ giữa <b>các quốc gia, thành viên WTO và tổ chức quốc tế</b>: quyền, nghĩa vụ của quốc gia, cam kết thương mại, và chính sách, pháp luật thương mại quốc gia để thực hiện cam kết. Nguồn chủ yếu là <b>điều ước</b>. Thương nhân không phải chủ thể trực tiếp mà hưởng lợi hoặc chịu tác động thông qua luật quốc gia.</p>
+
+  <h3>I.1.1 Phạm vi điều chỉnh</h3>
   <ul>
-    <li><b>Hoạt động thương mại:</b> hoạt động nhằm mục đích sinh lợi, gồm mua bán hàng hóa, cung ứng dịch vụ, đầu tư, xúc tiến thương mại và hoạt động sinh lợi khác (Điều 3.1 Luật Thương mại 2005).</li>
     <li><b>WTO không định nghĩa “thương mại”</b> mà chỉ xây dựng hiệp định cho ba trụ cột: hàng hóa (GATT), dịch vụ (GATS), sở hữu trí tuệ liên quan đến thương mại (TRIPS). Lý do: 160+ thành viên lợi ích khác nhau, khó thống nhất định nghĩa; đầu tư vẫn là mảng WTO chỉ điều chỉnh từng phần (TRIMs về hàng hóa; GATS cho đầu tư thương mại hiện diện).</li>
   </ul>
-  <div class="tbl"><table>
-    <tr><th></th><th>Luật TMQT công</th><th>Luật TMQT tư</th></tr>
-    <tr><td>Chủ thể</td><td>Quốc gia; tổ chức quốc tế</td><td>Thương nhân (cá nhân, pháp nhân); quốc gia khi tham gia như một bên hợp đồng</td></tr>
-    <tr><td>Điều chỉnh</td><td>Quyền, nghĩa vụ của <b>quốc gia</b>; chính sách, pháp luật thương mại quốc gia để thực hiện cam kết quốc tế</td><td>Giao dịch thương mại xuyên biên giới nhằm lợi nhuận (mua bán, vận chuyển, bảo hiểm, thanh toán…)</td></tr>
-    <tr><td>Nguồn</td><td>Điều ước (WTO, FTA), tập quán, nguyên tắc chung, án lệ</td><td>Pháp luật quốc gia, CISG, tập quán (Incoterms), án lệ/phán quyết trọng tài</td></tr>
-    <tr><td>Ví dụ</td><td>Mỹ tranh chấp với EU về trợ cấp máy bay tại WTO</td><td>Công ty Việt Nam mua máy móc của công ty Đức theo hợp đồng</td></tr>
-  </table></div>
-  <div class="trap"><b>Bẫy nhận định</b>“Luật TMQT là hệ thống quy định điều chỉnh quyền và nghĩa vụ của các bên trong giao dịch thương mại quốc tế” → <span class="tag s">SAI</span> vì chỉ nói đến <i>nội dung</i> quan hệ. Luật TMQT còn điều chỉnh chủ thể, khách thể và cả quan hệ giữa các chính phủ (không phải “giao dịch” của thương nhân).</div>
+  <p>Khái niệm “hoạt động thương mại” và các xu hướng chung: xem <a href="#iii1">mục III.1</a>. Bảng phân biệt luật công – tư: xem <a href="#s0">sơ đồ tổng quan</a>.</p>
 
-  <h3>1.2 Hai xu hướng đối nghịch</h3>
+  <h3>I.1.2 Chủ thể: quốc gia, tổ chức quốc tế, vùng hải quan riêng</h3>
   <div class="cols">
-    <div class="card"><h4>Tự do hóa thương mại (WTO ủng hộ)</h4><ul>
-      <li>Giảm thuế nhập khẩu</li><li>Giảm đến loại bỏ hàng rào phi thuế quan</li><li>Giảm can thiệp của nhà nước</li><li>Lập tổ chức thương mại quốc tế, ký hiệp định thương mại</li></ul>
-      <p><b>Lợi:</b> mở thị trường, người tiêu dùng có nhiều lựa chọn. <b>Hại:</b> doanh nghiệp nội địa dễ lép vế nếu nhà nước quản lý kém.</p></div>
-    <div class="card"><h4>Bảo hộ thương mại</h4><ul>
-      <li>Thuế quan: thuế nhập khẩu cao hơn bình thường</li><li>Phi thuế quan: tiêu chuẩn kỹ thuật, kiểm dịch, hạn ngạch, giấy phép, quy tắc xuất xứ…</li></ul>
-      <p><b>Lợi:</b> bảo vệ an ninh kinh tế, ngành thiết yếu. <b>Hại:</b> người dân ít lựa chọn, kìm hãm phát triển; chỉ nên mang tính tạm thời.</p></div>
+    <div class="card"><h4>Quốc gia</h4><p>Tham gia chủ yếu bằng (1) ký hợp đồng thương mại quốc tế và (2) đàm phán, ký, gia nhập hiệp định thương mại để điều phối thương mại.</p></div>
+    <div class="card"><h4>Tổ chức thương mại quốc tế</h4><p>Liên kết các quốc gia để lập khung pháp lý, cân bằng lợi ích thành viên (WTO; khu vực: ASEAN, EU).</p></div>
   </div>
-  <div class="tbl"><table>
-    <tr><th>So sánh</th><th>Biện pháp thuế quan</th><th>Biện pháp phi thuế quan</th></tr>
-    <tr><td>Ưu điểm</td><td>Minh bạch, dễ tính toán; điều tiết xuất nhập khẩu; tạo nguồn thu ngân sách</td><td>Linh hoạt; bảo vệ sức khỏe, môi trường, ngành sản xuất; có thể thiết kế sát tiêu chuẩn hàng của nước muốn nhập</td></tr>
-    <tr><td>Nhược điểm</td><td>Phải áp mức thuế như nhau cho mọi nước xuất khẩu (do MFN) nên kém linh hoạt; làm tăng giá hàng nhập</td><td>Thiếu minh bạch, dễ bị lạm dụng thành rào cản trá hình; tăng chi phí kiểm tra cho cả hai nước</td></tr>
-    <tr><td>Xu hướng</td><td>Bị ràng buộc và cắt giảm</td><td>Ngày càng nhiều → WTO có TBT, SPS, Cấp phép nhập khẩu để kiểm soát</td></tr>
-  </table></div>
-  <div class="ex"><b>Ví dụ (Việt Nam – ô tô nhập khẩu)</b>Thuế nhập khẩu ô tô từ ASEAN về 0% theo ATIGA (thuế quan giảm), nhưng Nghị định 116/2017/NĐ-CP (đã được sửa đổi) đặt điều kiện kiểm định chất lượng cho từng lô xe nhập khẩu: hàng rào phi thuế quan. Doanh nghiệp được lợi về thuế nhưng vẫn phải vượt hàng rào kỹ thuật. Bài học: tự do hóa về thuế không có nghĩa thị trường tự động mở.</div>
-  <div class="tip"><b>Mẹo lập luận “có nên tự do hóa triệt để?”</b>Trả lời <b>không nên triệt để</b> vì: (1) hàng nội địa có thể biến mất khỏi thị trường; (2) phụ thuộc nhập khẩu với mặt hàng thiết yếu (điện, xăng dầu, lương thực) gây rủi ro khủng hoảng; (3) quốc gia cần mức độ tự do hóa phù hợp trình độ kinh tế. Kết luận: bảo hộ và tự do hóa tồn tại song song, bảo hộ chỉ nên tạm thời.</div>
+  <div class="ex"><b>Ví dụ: EU và WTO</b>EU vừa là tổ chức liên chính phủ, vừa là một <b>vùng lãnh thổ hải quan riêng biệt</b> (liên minh thuế quan, thuế nhập khẩu thống nhất). Vì vậy EU và từng nước thành viên EU đều là thành viên WTO (Điều XII.1 Marrakesh); nhưng tranh chấp với một nước EU về thuế nhập khẩu thực chất là tranh chấp với EU, nên bị đơn ghi là “EU”.</div>
+  <div class="trap"><b>Bẫy nhận định</b>“Quốc gia có chủ quyền, vùng lãnh thổ độc lập và mọi tổ chức liên chính phủ đều có thể là thành viên WTO” → <span class="tag s">SAI</span>. Chỉ là <b>quốc gia hoặc vùng lãnh thổ hải quan riêng biệt hoàn toàn tự chủ trong quan hệ ngoại thương</b> (Điều XII.1). Tổ chức liên chính phủ chỉ vào được nếu đồng thời là vùng hải quan riêng biệt (như EU).</div>
 
-  <h3>1.3 Các xu hướng khác (đủ nhớ ý)</h3>
-  <ul>
-    <li><b>Không phân biệt đối xử:</b> thể hiện qua MFN và NT; nhiều hiệp định song phương (BTA) mở rộng MFN.</li>
-    <li><b>“Death of distance”:</b> chi phí vận tải, truyền thông giảm.</li>
-    <li>Sản xuất hàng hóa chiếm khoảng 2/3 giá trị xuất khẩu toàn cầu (số liệu trong sách HDHT).</li>
-    <li>Thương mại tăng kéo theo rủi ro môi trường (Hội nghị Copenhagen 12/2009); nước đang phát triển trỗi dậy.</li>
-    <li><b>“Battle in Seattle” (1999):</b> biểu tình phản đối WTO. Ví dụ điển hình về xung đột giữa thương mại và các giá trị phi thương mại (môi trường, lao động), ở góc độ pháp lý nối với Điều XX GATT.</li>
-  </ul>
-</section>
-
-<!-- ========== 2. NGUỒN ========== -->
-<section id="s2">
-  <h2>2. Nguồn của Luật Thương mại quốc tế</h2>
-  <p class="gist">Có <b>nguồn cơ bản</b> (điều ước, luật quốc gia, tập quán, nguyên tắc chung) và <b>nguồn bổ sung</b> (án lệ, công trình học giả). Luật TMQT công dựa chủ yếu vào điều ước; luật TMQT tư dựa chủ yếu vào luật quốc gia và hợp đồng.</p>
+  <h3>I.1.3 Nguồn luật</h3>
+  <p>Luật TMQT công dựa chủ yếu vào điều ước. Có <b>nguồn cơ bản</b> (điều ước, tập quán quốc tế, nguyên tắc chung) và <b>nguồn bổ sung</b> (án lệ, công trình học giả).</p>
   <div class="tbl"><table>
     <tr><th>Nguồn</th><th>Nội dung & cách áp dụng</th><th>Ví dụ</th></tr>
     <tr><td>Điều ước quốc tế về thương mại</td><td>Văn bản thỏa thuận giữa các chủ thể luật quốc tế, điều chỉnh quan hệ thương mại (Công ước Viên 1969 về Luật Điều ước, Điều 2.1(a); Luật Điều ước quốc tế 2016, Điều 2). Phân loại song phương/đa phương. Áp dụng trực tiếp (đương nhiên) hoặc như nguồn thứ cấp.</td><td>Hiệp định Marrakesh, GATT, CPTPP, EVFTA, CISG</td></tr>
-    <tr><td>Pháp luật thương mại quốc gia</td><td>Quy định bắt buộc chung (năng lực chủ thể, hàng hóa được lưu thông, thuế) và quy phạm thực chất (áp dụng khi có quy phạm xung đột dẫn chiếu hoặc các bên chọn luật).</td><td>Luật Thương mại 2005; Luật Quản lý ngoại thương 2017</td></tr>
-    <tr><td>Tập quán thương mại quốc tế</td><td>Thông lệ lặp lại lâu dài, các bên coi như có tính ràng buộc. Áp dụng khi: các bên thỏa thuận; điều ước quy định; luật quốc gia dẫn chiếu; cơ quan giải quyết tranh chấp áp dụng.</td><td>Incoterms 2020 (chỉ có hiệu lực khi hợp đồng dẫn chiếu); UCP 600</td></tr>
     <tr><td>Nguyên tắc pháp lý chung</td><td>Nguyên tắc cơ bản của luật quốc tế và luật các quốc gia.</td><td><i>Pacta sunt servanda</i> (Điều 26 Công ước Viên 1969), thiện chí, giải quyết tranh chấp hòa bình</td></tr>
     <tr><td>Án lệ (nguồn bổ sung)</td><td>Lập luận, phán quyết đã có hiệu lực được cơ quan tài phán dẫn lại. Báo cáo Ban Hội thẩm/Cơ quan Phúc thẩm WTO không có tiền lệ ràng buộc chính thức nhưng được dẫn thường xuyên.</td><td>Japan – Alcoholic Beverages II</td></tr>
     <tr><td>Công trình khoa học (bổ sung)</td><td>Quan điểm học giả, chuyên gia dùng để giải thích.</td><td>Bình luận của luật gia quốc tế</td></tr>
   </table></div>
-  <h3>Các câu hỏi “nằm giữa” hay gặp</h3>
+  <p>Pháp luật thương mại quốc gia và tập quán thương mại (Incoterms, UCP 600): xem <a href="#ii3">mục II.3</a>.</p>
+
+  <h3>I.1.4 Các câu hỏi “nằm giữa” hay gặp</h3>
   <details><summary>FTA có điều chỉnh trực tiếp quyền và nghĩa vụ của thương nhân không?</summary><div>
     <p><b>Không trực tiếp.</b> FTA do quốc gia ký, ràng buộc quốc gia. Thương nhân hưởng lợi thông qua luật quốc gia (nội luật hóa) và hợp đồng của họ. Ví dụ: ưu đãi thuế EVFTA đến tay doanh nghiệp qua quy định thuế nhập khẩu trong nước và giấy chứng nhận xuất xứ (EUR.1) kèm hồ sơ hải quan; doanh nghiệp không khởi kiện được dựa trên EVFTA tại WTO.</p>
     <p class="law" style="padding:8px 12px"><b>Lưu ý trong nước</b>Điều 6 khoản 1 Luật Điều ước quốc tế 2016: khi luật trong nước quy định khác điều ước mà Việt Nam là thành viên thì áp dụng điều ước.</p>
@@ -244,37 +246,18 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
   <details><summary>Nguồn luật nào áp dụng khi tranh chấp giữa các quốc gia (TMQT công)?</summary><div>
     <p>Điều ước quốc tế (WTO, FTA), tập quán quốc tế, nguyên tắc pháp lý chung của luật quốc tế; ngoài ra có thể tham khảo án lệ và công trình học giả. Pháp luật thương mại quốc gia <b>không</b> phải căn cứ để quốc gia né nghĩa vụ (Điều 27 Công ước Viên 1969).</p>
   </div></details>
-  <details><summary>Luật TMQT có điều chỉnh đầu tư quốc tế không?</summary><div>
-    <p><b>Có ở một mức độ nhất định.</b> Đầu tư cũng là hoạt động sinh lợi giữa các chủ thể của luật TMQT; luật TMQT công điều chỉnh chính sách và cam kết, từ đó tác động lên luật tư (nguồn trực tiếp điều chỉnh đầu tư). Nhưng WTO chưa có hiệp định đầu tư toàn diện: chỉ có TRIMs (đầu tư liên quan hàng hóa) và GATS (hiện diện thương mại).</p>
-  </div></details>
+
+  <h3>I.1.5 Điều ước và pháp luật quốc gia</h3>
+  <p>Quan hệ giữa luật WTO và luật quốc gia (nội luật hóa, Điều XVI.4 Marrakesh, Điều 27 Công ước Viên 1969): xem <a href="#i2">mục I.2.6</a>.</p>
 </section>
 
-<!-- ========== 3. CHỦ THỂ ========== -->
-<section id="s3">
-  <h2>3. Chủ thể của quan hệ pháp luật thương mại quốc tế</h2>
-  <p class="gist">Ba nhóm chủ thể: <b>quốc gia, thương nhân, tổ chức thương mại quốc tế</b>. Mỗi nhóm “chơi” ở một tầng khác nhau: quốc gia ký điều ước và hoạch định chính sách; thương nhân ký hợp đồng; tổ chức quốc tế tạo khung pháp lý.</p>
-  <div class="cols">
-    <div class="card"><h4>Quốc gia</h4><p>Tham gia chủ yếu bằng (1) ký hợp đồng thương mại quốc tế và (2) đàm phán, ký, gia nhập hiệp định thương mại để điều phối thương mại.</p></div>
-    <div class="card"><h4>Thương nhân</h4><p>Điều 6.1 LTM 2005: tổ chức kinh tế thành lập hợp pháp, cá nhân hoạt động thương mại độc lập, thường xuyên, có đăng ký kinh doanh. Cá nhân cần năng lực hành vi và tài sản chịu trách nhiệm; pháp nhân gắn với quốc gia nơi thành lập.</p></div>
-    <div class="card"><h4>Tổ chức thương mại quốc tế</h4><p>Liên kết các quốc gia để lập khung pháp lý, cân bằng lợi ích thành viên (WTO; khu vực: ASEAN, EU).</p></div>
-  </div>
-  <h3>Phân biệt hai loại quan hệ (hay ra đề)</h3>
-  <div class="tbl"><table>
-    <tr><th></th><th>Quan hệ thương mại quốc tế</th><th>Quan hệ hợp đồng thương mại quốc tế</th></tr>
-    <tr><td>Chủ thể</td><td>Quốc gia (ký, gia nhập, phê chuẩn điều ước)</td><td>Thương nhân với nhau hoặc quốc gia với thương nhân</td></tr>
-    <tr><td>Tầm mức</td><td>Vĩ mô: tác động chung đến kinh tế, chính trị, xã hội</td><td>Vi mô: vì lợi nhuận của các bên</td></tr>
-    <tr><td>Hiệu lực</td><td>Ràng buộc quốc gia thành viên</td><td>Chỉ ràng buộc các bên hợp đồng</td></tr>
-  </table></div>
-  <div class="ex"><b>Ví dụ: EU và WTO</b>EU vừa là tổ chức liên chính phủ, vừa là một <b>vùng lãnh thổ hải quan riêng biệt</b> (liên minh thuế quan, thuế nhập khẩu thống nhất). Vì vậy EU và từng nước thành viên EU đều là thành viên WTO (Điều XII.1 Marrakesh); nhưng tranh chấp với một nước EU về thuế nhập khẩu thực chất là tranh chấp với EU, nên bị đơn ghi là “EU”.</div>
-  <div class="trap"><b>Bẫy nhận định</b>“Quốc gia có chủ quyền, vùng lãnh thổ độc lập và mọi tổ chức liên chính phủ đều có thể là thành viên WTO” → <span class="tag s">SAI</span>. Chỉ là <b>quốc gia hoặc vùng lãnh thổ hải quan riêng biệt hoàn toàn tự chủ trong quan hệ ngoại thương</b> (Điều XII.1). Tổ chức liên chính phủ chỉ vào được nếu đồng thời là vùng hải quan riêng biệt (như EU).</div>
-</section>
+<!-- I.2 WTO -->
 
-<!-- ========== 4. WTO ========== -->
-<section id="s4">
-  <h2>4. WTO: lịch sử, cơ cấu, ra quyết định, gia nhập</h2>
+<section id="i2">
+  <h2>I.2 Hệ thống WTO: lịch sử, cơ cấu, ra quyết định, gia nhập</h2>
   <p class="gist">WTO (có hiệu lực 01/01/1995, sau vòng Uruguay) là tổ chức quốc tế thường trực kế thừa GATT 1947. Mọi thứ xoay quanh <b>Hiệp định Marrakesh</b>: cơ cấu tổ chức, cách ra quyết định, danh mục hiệp định, điều kiện vào/ra.</p>
 
-  <h3>4.1 Từ GATT đến WTO</h3>
+  <h3>I.2.1 Từ GATT đến WTO</h3>
   <ul>
     <li>Sau Thế chiến II, Bretton Woods (1944) lập IMF và Ngân hàng Thế giới; tổ chức thứ ba dự kiến là Tổ chức Thương mại Quốc tế (ITO) không ra đời. GATT 1947 được áp dụng “tạm thời” như một hiệp định, trở thành định chế <i>ad hoc</i> không có cơ cấu chặt chẽ.</li>
     <li>GATT qua 8 vòng đàm phán, vòng cuối là Uruguay (1986–1994) → Hiệp định Marrakesh (ký 15/04/1994) lập WTO.</li>
@@ -289,14 +272,14 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
     <tr><td>Quan hệ với luật quốc gia</td><td>Chỉ cần “không trái” luật hiện hành (kiểu điều khoản ông bà)</td><td>Luật quốc gia phải phù hợp luật WTO (XVI.4)</td></tr>
   </table></div>
 
-  <h3>4.2 Mục tiêu và chức năng</h3>
+  <h3>I.2.2 Mục tiêu và chức năng</h3>
   <ul>
     <li><b>Mục tiêu</b> (Lời nói đầu Marrakesh): tăng trưởng thương mại hàng hóa và dịch vụ; nâng cao mức sống, việc làm; phát triển bền vững; bảo đảm nước đang phát triển hưởng lợi thực chất; giải quyết bất đồng. Có “đánh đổi” giữa các mục tiêu.</li>
     <li><b>Chức năng</b> (Điều III): tạo thuận lợi thực thi và quản lý các hiệp định; diễn đàn đàm phán; giải quyết tranh chấp (DSU); rà soát chính sách thương mại (TPRM); phối hợp với IMF và Ngân hàng Thế giới.</li>
   </ul>
   <div class="trap"><b>Bẫy nhận định</b>“WTO điều chỉnh tất cả vấn đề thương mại và phi thương mại” → <span class="tag s">SAI</span>. Trọng tâm là thương mại; vấn đề phi thương mại (lao động, môi trường, nhân quyền) chỉ được lưu tâm gián tiếp (ví dụ qua Điều XX GATT).</div>
 
-  <h3>4.3 Cơ cấu tổ chức (Điều IV Marrakesh)</h3>
+  <h3>I.2.3 Cơ cấu tổ chức (Điều IV Marrakesh)</h3>
   <div class="tree"><ul>
     <li><span class="n top">Hội nghị Bộ trưởng</span> – cơ quan cao nhất; họp <b>ít nhất 2 năm/lần</b> (IV.1)
       <ul>
@@ -312,7 +295,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
   <p>Quyền hạn của Hội nghị Bộ trưởng: thông qua giải thích chính thức hiệp định, cho phép miễn trừ, thông qua sửa đổi, quyết định kết nạp thành viên, bổ nhiệm Tổng Giám đốc.</p>
   <div class="trap"><b>Bẫy nhận định</b>(1) “Hội nghị Bộ trưởng họp 3 năm/lần” → SAI (ít nhất 2 năm/lần). (2) “Đại Hội đồng là cơ quan cao nhất” → SAI (Hội nghị Bộ trưởng mới là cao nhất; Đại Hội đồng cao nhất <i>giữa các kỳ họp</i>). (3) “Ban Hội thẩm và Cơ quan Phúc thẩm đều thường trực” → SAI: chỉ Cơ quan Phúc thẩm thường trực; Ban Hội thẩm lập theo vụ việc rồi giải tán. (4) “Chỉ Hội nghị Bộ trưởng ra quyết định” → SAI (DSB quyết định tranh chấp; Đại Hội đồng thông qua ngân sách).</div>
 
-  <h3>4.4 Quy trình ra quyết định</h3>
+  <h3>I.2.4 Quy trình ra quyết định</h3>
   <p><b>Mặc định:</b> đồng thuận (Điều IX.1) – quyết định thông qua nếu <i>không thành viên nào có mặt chính thức phản đối</i>. Phiếu thuận và phiếu trắng đều tính; “đồng thuận” khác “100% đồng ý”. Nếu không đạt được thì chuyển sang biểu quyết, mỗi thành viên một phiếu.</p>
   <div class="tbl"><table>
     <tr><th>Loại quyết định</th><th>Cơ quan</th><th>Tỷ lệ thông qua</th><th>Căn cứ</th></tr>
@@ -327,7 +310,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
   </table></div>
   <div class="tip"><b>Cách nhớ</b>Thủ tục đặc biệt = <b>con số</b> (2/3, 3/4, 100%). 3/4 cho việc “làm sáng tỏ hoặc miễn trừ”; 2/3 cho việc “vào và sửa nhẹ”; 100% cho những điều khoản nền móng (MFN, thuế ràng buộc).</div>
 
-  <h3>4.5 Hệ thống hiệp định (Điều II Marrakesh)</h3>
+  <h3>I.2.5 Hệ thống hiệp định (Điều II Marrakesh)</h3>
   <div class="tree"><ul>
     <li><span class="n top">Hiệp định Marrakesh</span>
       <ul>
@@ -341,9 +324,9 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
           <ul><li>Máy bay dân dụng; Mua sắm chính phủ (2 hiệp định còn hiệu lực; Sữa và Thịt bò đã chấm dứt năm 1997)</li></ul></li>
       </ul></li>
   </ul></div>
-  <div class="trap"><b>Bẫy nhận định</b>“Khi gia nhập WTO, Việt Nam chỉ phải tuân thủ các hiệp định ghi tại Điều II Marrakesh” → <span class="tag s">SAI</span>. Ngoài các hiệp định đa biên bắt buộc, Việt Nam còn chịu cam kết riêng trong <b>Nghị định thư gia nhập, Báo cáo Ban Công tác và Biểu cam kết</b> (gồm cả cam kết “WTO-plus”). Hiệp định Phụ lục 4 chỉ ràng buộc nước tự nguyện tham gia. (Lý giải trong sách HDHT ở câu 5 khác hướng này; xem mục 13.)</div>
+  <div class="trap"><b>Bẫy nhận định</b>“Khi gia nhập WTO, Việt Nam chỉ phải tuân thủ các hiệp định ghi tại Điều II Marrakesh” → <span class="tag s">SAI</span>. Ngoài các hiệp định đa biên bắt buộc, Việt Nam còn chịu cam kết riêng trong <b>Nghị định thư gia nhập, Báo cáo Ban Công tác và Biểu cam kết</b> (gồm cả cam kết “WTO-plus”). Hiệp định Phụ lục 4 chỉ ràng buộc nước tự nguyện tham gia. (Lý giải trong sách HDHT ở câu 5 khác hướng này; xem <a href="#iii4">mục III.4</a>.)</div>
 
-  <h3>4.6 Quan hệ giữa luật WTO và luật quốc gia</h3>
+  <h3>I.2.6 Quan hệ giữa luật WTO và luật quốc gia</h3>
   <ul>
     <li>Quốc gia phải làm cho pháp luật phù hợp luật WTO cả hình thức và nội dung (Điều XVI.4 Marrakesh).</li>
     <li>Không được dùng luật trong nước biện minh cho việc không thực hiện điều ước (Điều 27 Công ước Viên 1969).</li>
@@ -351,7 +334,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
   </ul>
   <div class="ex"><b>Vì sao còn có luật trong nước về cùng vấn đề?</b>Luật WTO là quy tắc chung, cần được cụ thể hóa. Việt Nam ban hành Luật Quản lý ngoại thương 2017 và Nghị định hướng dẫn về phòng vệ thương mại để thực thi ADA, SCM, SA. Mỗi nước nội luật hóa khác nhau nên chi tiết khác nhau nhưng không được thấp hơn cam kết.</div>
 
-  <h3>4.7 Gia nhập và rút khỏi WTO</h3>
+  <h3>I.2.7 Gia nhập và rút khỏi WTO</h3>
   <p>Gia nhập phụ thuộc vào <b>sự đồng ý của các thành viên</b> (tự nguyện xin gia nhập, tự nguyện cho gia nhập); không có điều kiện cứng như “phải là nền kinh tế thị trường”. Tổ công tác (working party) thụ lý hồ sơ.</p>
   <ol class="steps">
     <li><b>Trình bày chính sách thương mại</b><span class="t">Nộp “Bị vong lục”; các thành viên đặt câu hỏi, ứng viên trả lời đủ và cam kết sửa luật.</span></li>
@@ -367,12 +350,13 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
   <div class="trap"><b>Bẫy nhận định</b>“Ứng viên phải đàm phán song phương với tất cả thành viên WTO” → <span class="tag s">SAI</span>; chỉ cần với thành viên có yêu cầu. “Chỉ nền kinh tế thị trường mới được gia nhập” → <span class="tag s">SAI</span>. “Thành viên sáng lập được duy trì luật trái WTO” → <span class="tag s">SAI</span> (XVI.4 áp dụng như nhau).</div>
 </section>
 
-<!-- ========== 5. NGUYÊN TẮC ========== -->
-<section id="s5">
-  <h2>5. Nguyên tắc cốt lõi: MFN, NT và tự do hóa</h2>
+<!-- I.3 NGUYÊN TẮC -->
+
+<section id="i3">
+  <h2>I.3 Nguyên tắc cốt lõi: MFN, NT và tự do hóa</h2>
   <p class="gist">Hai nửa của “không phân biệt đối xử”: <b>MFN</b> (đối xử bình đẳng giữa hàng của các nước khác nhau, Điều I GATT) và <b>NT</b> (đối xử bình đẳng giữa hàng nhập khẩu và hàng nội địa, Điều III GATT). Bên cạnh là nguyên tắc <b>tự do hóa</b>: ràng buộc và giảm thuế, hạn chế phi thuế quan.</p>
 
-  <h3>5.1 Đối xử tối huệ quốc (MFN) – Điều I GATT 1994</h3>
+  <h3>I.3.1 Đối xử tối huệ quốc (MFN) – Điều I GATT 1994</h3>
   <p>Cùng nguyên tắc ở dịch vụ (Điều II GATS) và sở hữu trí tuệ (Điều 4 TRIPS). Công thức:</p>
   <div class="tbl"><table>
     <tr><th>Yếu tố</th><th>Hiểu thế nào</th></tr>
@@ -385,7 +369,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
   <div class="ex"><b>Vụ Japan – Alcoholic Beverages II</b>Nhật đánh thuế rượu shochu thấp hơn vodka. Ban Hội thẩm kết luận shochu và vodka là sản phẩm tương tự và việc đánh thuế khác nhau vi phạm Điều III.2; với whisky, rum, gin… shochu là sản phẩm “cạnh tranh trực tiếp hoặc có thể thay thế” và thuế không tương đương cũng vi phạm. (Đây là vụ kinh điển cả để học “like products” lẫn NT.)</div>
   <div class="trap"><b>Bẫy nhận định</b>“Theo WTO, thành viên không được áp thuế nhập khẩu khác nhau lên hàng tương tự từ các thành viên khác” → <span class="tag s">SAI</span> (có ngoại lệ FTA/liên minh thuế quan – Điều XXIV; GSP). Đề 02 trong tài liệu ôn tập lại ra dạng ngược “có thể áp thuế khác nhau” → <span class="tag d">ĐÚNG</span> nhờ ngoại lệ này.</div>
 
-  <h3>5.2 Đối xử quốc gia (NT) – Điều III GATT 1994</h3>
+  <h3>I.3.2 Đối xử quốc gia (NT) – Điều III GATT 1994</h3>
   <p>Hàng nhập khẩu sau khi đã qua biên giới không được đối xử kém thuận lợi hơn hàng nội địa tương tự (thuế nội địa, quy định bán, vận chuyển, phân phối, sử dụng). Cũng có ở GATS (Điều XVII), TRIPS (Điều 3).</p>
   <div class="tbl"><table>
     <tr><th>Khoản Điều III</th><th>Nội dung</th></tr>
@@ -410,7 +394,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
     <tr><td>Mức độ khó</td><td>Dễ tuân thủ hơn</td><td>Khó hơn, vì đụng đến bảo hộ nội địa</td></tr>
   </table></div>
 
-  <h3>5.3 Tự do hóa thương mại</h3>
+  <h3>I.3.3 Tự do hóa thương mại</h3>
   <h4>(a) Thuế quan: ràng buộc và cắt giảm (Điều II GATT)</h4>
   <ul>
     <li><b>Thuế ràng buộc</b> = mức <b>trần</b> thuế ghi trong Biểu nhân nhượng; mức thuế <b>áp dụng</b> có thể thấp hơn nhưng không vượt trần. Biểu nhân nhượng là phần không tách rời của GATT 1994 (II:7).</li>
@@ -424,15 +408,16 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
     <li>Nếu phải hạn chế định lượng (theo ngoại lệ), Điều XIII yêu cầu quản lý <b>không phân biệt</b>.</li>
     <li>Các hiệp định liên quan: TBT (tiêu chuẩn kỹ thuật), SPS (kiểm dịch), Cấp phép nhập khẩu, Quy tắc xuất xứ, Trị giá hải quan, TFA.</li>
   </ul>
-  <div class="ex"><b>Vụ EC – Bananas III (DS27)</b>EC dành hạn ngạch và giấy phép ưu đãi cho chuối từ các nước ACP; thủ tục cấp phép khó hơn cho nhóm “không truyền thống”. Hạn chế định lượng, phân biệt cấp phép → vi phạm MFN và XI/XIII. Điều thú vị: Ecuador được phép trả đũa chéo sang TRIPS (xem phần 8).</div>
+  <div class="ex"><b>Vụ EC – Bananas III (DS27)</b>EC dành hạn ngạch và giấy phép ưu đãi cho chuối từ các nước ACP; thủ tục cấp phép khó hơn cho nhóm “không truyền thống”. Hạn chế định lượng, phân biệt cấp phép → vi phạm MFN và XI/XIII. Điều thú vị: Ecuador được phép trả đũa chéo sang TRIPS (xem <a href="#i6">mục I.6</a>).</div>
 </section>
 
-<!-- ========== 6. NGOẠI LỆ ========== -->
-<section id="s6">
-  <h2>6. Các ngoại lệ của nguyên tắc WTO</h2>
+<!-- I.4 NGOẠI LỆ -->
+
+<section id="i4">
+  <h2>I.4 Các ngoại lệ của nguyên tắc WTO</h2>
   <p class="gist">Ngoại lệ là “van xả” cho phép quốc gia đi lệch nguyên tắc có điều kiện. Quy tắc tư duy: <b>(1) biện pháp vi phạm nguyên tắc nào → (2) có ngoại lệ nào đỡ không → (3) ngoại lệ đó đòi những điều kiện gì → (4) bên viện dẫn ngoại lệ phải chứng minh.</b></p>
 
-  <h3>6.1 Bảng ngoại lệ theo nguyên tắc</h3>
+  <h3>I.4.1 Bảng ngoại lệ theo nguyên tắc</h3>
   <div class="tbl"><table>
     <tr><th>Nguyên tắc bị lệch</th><th>Ngoại lệ có thể dùng</th></tr>
     <tr><td>MFN</td><td>Điều XXIV (CU/FTA), Điều V GATS; Điều khoản Cho phép (GSP và S&amp;DT); waiver (IX:3); Điều XX; Điều XXI; phòng vệ thương mại có chọn nguồn (AD, CVD)</td></tr>
@@ -440,7 +425,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
     <tr><td>Tự do hóa (thuế quan, hạn chế định lượng)</td><td>XI:2 (nông sản, hạn chế tạm thời); XII, XVIII (cán cân thanh toán, phát triển); XIX (tự vệ); XX; XXI; tái đàm phán XXVIII</td></tr>
   </table></div>
 
-  <h3>6.2 Ngoại lệ chung – Điều XX GATT 1994</h3>
+  <h3>I.4.2 Ngoại lệ chung – Điều XX GATT 1994</h3>
   <p><b>Ngoại lệ mạnh nhất nhưng khó dùng nhất.</b> Bên viện dẫn phải chứng minh (đây là “bảo vệ khẳng định”). Phân tích hai bước:</p>
   <ol class="steps">
     <li><b>Bước 1 – Biện pháp thuộc một khoản từ (a) đến (j)</b><span class="t">Cần có mối liên hệ hợp lý đến mục tiêu: “cần thiết” (b, d…) hoặc “liên quan đến” (g). Thử nghiệm “cần thiết” cân nhắc: tầm quan trọng của giá trị được bảo vệ, mức đóng góp của biện pháp, mức độ hạn chế thương mại, và có biện pháp thay thế hợp lý ít hạn chế hơn không.</span></li>
@@ -460,10 +445,10 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
   <div class="ex"><b>Vụ US – Shrimp (DS58): minh họa cả hai bước</b>Mỹ cấm nhập tôm đánh bắt bằng cách làm chết rùa biển (không dùng thiết bị thoát rùa). Biện pháp thuộc Điều XX(g) (rùa biển là tài nguyên có thể cạn kiệt) nên qua bước 1. Nhưng Mỹ <b>thất bại ở chapeau</b> vì áp dụng cứng nhắc (chỉ thấy chứng nhận khi nước kia áp dụng đúng chính sách Mỹ), không đàm phán nghiêm túc với nước bị ảnh hưởng, đối xử khác nhau giữa các nhóm nước (hỗ trợ kỹ thuật cho nước Caribe nhưng không cho châu Á). Sau khi Mỹ sửa cách áp dụng, vụ US – Shrimp (Điều 21.5 – Malaysia) công nhận biện pháp phù hợp. <b>Bài học:</b> mục tiêu chính đáng chưa đủ, cách áp dụng cũng phải công bằng.</div>
   <div class="trap"><b>Bẫy nhận định</b>“Để hưởng Điều XX chỉ cần chứng minh biện pháp thuộc một khoản (a)–(j)” → <span class="tag s">SAI</span>; còn phải qua <b>chapeau</b>. (Lưu ý: chapeau có hai vế “phân biệt đối xử tùy tiện/không biện minh được” và “hạn chế trá hình đối với thương mại quốc tế”; một số tài liệu tóm tắt rút gọn nên dễ lẫn.)</div>
 
-  <h3>6.3 An ninh quốc gia – Điều XXI GATT</h3>
-  <p>Cho phép biện pháp cần thiết để bảo vệ “lợi ích an ninh thiết yếu” (chiến tranh, vũ khí, tình trạng khẩn cấp trong quan hệ quốc tế…). Tranh luận trọng tâm: quốc gia tự xác định hay Ban Hội thẩm có thẩm quyền xem xét? Trong <b>Russia – Traffic in Transit (2019)</b>, Ban Hội thẩm cho rằng điều khoản này <b>có thể được xem xét</b> nhưng quốc gia có quyền đánh giá rộng, với yêu cầu thiện chí. Với biện pháp thuế đối ứng gần đây, Điều XXI là một hướng lập luận nổi lên (xem mục 10).</p>
+  <h3>I.4.3 An ninh quốc gia – Điều XXI GATT</h3>
+  <p>Cho phép biện pháp cần thiết để bảo vệ “lợi ích an ninh thiết yếu” (chiến tranh, vũ khí, tình trạng khẩn cấp trong quan hệ quốc tế…). Tranh luận trọng tâm: quốc gia tự xác định hay Ban Hội thẩm có thẩm quyền xem xét? Trong <b>Russia – Traffic in Transit (2019)</b>, Ban Hội thẩm cho rằng điều khoản này <b>có thể được xem xét</b> nhưng quốc gia có quyền đánh giá rộng, với yêu cầu thiện chí. Với biện pháp thuế đối ứng gần đây, Điều XXI là một hướng lập luận nổi lên (xem <a href="#i7">mục I.7</a>).</p>
 
-  <h3>6.4 Hội nhập khu vực – Điều XXIV GATT, Điều V GATS</h3>
+  <h3>I.4.4 Hội nhập khu vực – Điều XXIV GATT, Điều V GATS</h3>
   <p><b>Là ngoại lệ của MFN</b> (không phải ngoại lệ của “tự do hóa”). Cho phép các thành viên của khu vực mậu dịch tự do (FTA), liên minh thuế quan (CU) hoặc hiệp định tạm thời dành cho nhau ưu đãi mà không phải mở rộng cho thành viên WTO ngoài khối.</p>
   <div class="cols">
     <div class="card"><h4>Liên minh thuế quan</h4><p>Cùng áp một biểu thuế đối với nước ngoài khối. Ví dụ: EU.</p></div>
@@ -477,17 +462,17 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
   <div class="ex"><b>Vụ Turkey – Textiles (DS34)</b>Thổ Nhĩ Kỳ áp hạn ngạch hàng dệt may của Ấn Độ khi lập liên minh thuế quan với EU, viện dẫn Điều XXIV. Cơ quan Phúc thẩm: Điều XXIV chỉ biện minh nếu (i) liên minh đáp ứng đầy đủ XXIV:5 và 8, và (ii) việc lập liên minh <b>sẽ bị ngăn cản nếu không áp dụng biện pháp đó</b>. Thổ Nhĩ Kỳ thất bại ở điều kiện (ii). Rút ra: Điều XXIV là ngoại lệ <b>có điều kiện chặt</b> và chủ yếu đỡ cho vi phạm MFN, không phải cho mọi vi phạm.</div>
   <div class="trap"><b>Bẫy nhận định</b>“Điều XXIV là ngoại lệ của nguyên tắc tự do hóa thương mại” → <span class="tag s">SAI</span>: đây là ngoại lệ của <b>MFN</b> (nhóm “không phân biệt đối xử”). Mặt khác, “ASEAN dành thuế thấp hơn cho nhau thì vi phạm MFN” → <span class="tag s">SAI</span> (có Điều XXIV).</div>
 
-  <h3>6.5 Ưu đãi cho nước đang phát triển (Điều khoản Cho phép 1979, GSP)</h3>
+  <h3>I.4.5 Ưu đãi cho nước đang phát triển (Điều khoản Cho phép 1979, GSP)</h3>
   <ul>
     <li><b>GSP</b> (hệ thống ưu đãi thuế quan phổ cập): nước phát triển <b>đơn phương</b> giảm thuế cho hàng từ nước đang phát triển/kém phát triển, không đòi có đi có lại; cơ sở là Điều khoản Cho phép (quyết định ngày 28/11/1979). Phụ thuộc quan hệ ngoại giao, thường rà soát định kỳ.</li>
     <li>Nước <b>đang phát triển</b> tự tuyên bố tình trạng; nước <b>kém phát triển (LDC)</b> theo danh sách Liên hợp quốc.</li>
-    <li>Ưu đãi: nghĩa vụ nhẹ hơn, lộ trình dài hơn, hỗ trợ kỹ thuật; trong phòng vệ có ngưỡng riêng (xem phần 7).</li>
+    <li>Ưu đãi: nghĩa vụ nhẹ hơn, lộ trình dài hơn, hỗ trợ kỹ thuật; trong phòng vệ có ngưỡng riêng (xem <a href="#i5">mục I.5</a>).</li>
   </ul>
 
-  <h3>6.6 Waiver (miễn trừ nghĩa vụ)</h3>
+  <h3>I.4.6 Waiver (miễn trừ nghĩa vụ)</h3>
   <p>Hội nghị Bộ trưởng cho phép miễn nghĩa vụ trong hoàn cảnh đặc biệt, <b>3/4</b> thành viên, có thời hạn và rà soát (Điều IX:3).</p>
 
-  <h3>6.7 Quy trình “soi” một biện pháp bị khiếu nại có được miễn không</h3>
+  <h3>I.4.7 Quy trình “soi” một biện pháp bị khiếu nại có được miễn không</h3>
   <ol class="steps">
     <li><b>Xác định vi phạm</b><span class="t">Biện pháp vi phạm điều khoản nào (I, II, III, XI…)?</span></li>
     <li><b>Chọn ngoại lệ</b><span class="t">XX, XXI, XXIV, GSP, waiver…</span></li>
@@ -496,9 +481,10 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
   </ol>
 </section>
 
-<!-- ========== 7. PHÒNG VỆ ========== -->
-<section id="s7">
-  <h2>7. Các biện pháp phòng vệ thương mại</h2>
+<!-- I.5 PHÒNG VỆ -->
+
+<section id="i5">
+  <h2>I.5 Các biện pháp phòng vệ thương mại</h2>
   <p class="gist">Ba công cụ với ba “lý do” khác nhau: <b>chống bán phá giá</b> (doanh nghiệp bán phá giá), <b>chống trợ cấp</b> (chính phủ trợ cấp), <b>tự vệ</b> (hàng nhập khẩu tăng đột biến dù cạnh tranh hoàn toàn bình thường). Phòng vệ không phải trừng phạt mà để khắc phục. Đối tượng luôn là <b>hàng hóa nhập khẩu</b>.</p>
 
   <div class="tree"><ul>
@@ -510,7 +496,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
       </ul></li>
   </ul></div>
 
-  <h3>7.1 Chống bán phá giá (Điều VI GATT 1994; Hiệp định ADA)</h3>
+  <h3>I.5.1 Chống bán phá giá (Điều VI GATT 1994; Hiệp định ADA)</h3>
   <p><b>Bán phá giá</b> = bán hàng xuất khẩu với giá thấp hơn <b>giá trị thông thường</b> (thường là giá bán sản phẩm tương tự theo điều kiện thương mại thông thường tại thị trường nước xuất khẩu) (Điều 2.1 ADA). Hành vi do <b>doanh nghiệp</b> thực hiện.</p>
   <div class="law"><b>Ba điều kiện áp thuế chống bán phá giá</b>(1) Có bán phá giá (biên độ &gt; mức tối thiểu); (2) có thiệt hại đáng kể, đe dọa thiệt hại đáng kể, hoặc cản trở đáng kể việc hình thành ngành sản xuất (Điều 3); (3) có quan hệ nhân quả (Điều 3.5) và đã loại trừ nguyên nhân khác.</div>
   <h4>Xác định phá giá</h4>
@@ -537,7 +523,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
   </ul>
   <div class="tip"><b>Vì sao WTO không cấm hẳn bán phá giá mà chỉ cho phép “đánh thuế”?</b>Bán phá giá là hành vi doanh nghiệp, tác động ở cấp thương mại; còn trợ cấp là hành vi của chính phủ nên dễ gây xung đột giữa các quốc gia. Vì vậy WTO <b>cấm trợ cấp nhất định (đèn đỏ)</b> và cho phép đối phó bằng thuế với phá giá.</div>
 
-  <h3>7.2 Trợ cấp và thuế đối kháng (Hiệp định SCM)</h3>
+  <h3>I.5.2 Trợ cấp và thuế đối kháng (Hiệp định SCM)</h3>
   <p><b>Trợ cấp</b> (Điều 1 SCM) cần ba yếu tố: (1) <b>đóng góp tài chính</b> của chính phủ hoặc tổ chức công (cấp trực tiếp, cho vay, bảo lãnh, miễn giảm thu, cung cấp hàng hóa/dịch vụ ngoài hạ tầng chung, mua hàng…) hoặc hỗ trợ giá/thu nhập; (2) <b>mang lại lợi ích</b> cho người nhận; và để bị điều chỉnh bởi SCM còn phải (3) <b>mang tính cá biệt</b> (Điều 2): dành cho một doanh nghiệp, ngành hoặc khu vực nhất định.</p>
   <div class="tbl"><table>
     <tr><th>Loại</th><th>Nội dung</th><th>Hiệu lực</th></tr>
@@ -556,7 +542,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
   <div class="ex"><b>Ví dụ (giả định)</b>Chính phủ nước A cho riêng ngành thép vay lãi suất thấp hơn thị trường (đóng góp tài chính + lợi ích + cá biệt). Thép của A xuất sang B với giá rẻ khiến ngành thép B giảm thị phần, lợi nhuận. B có thể điều tra và áp thuế đối kháng lên thép A nếu chứng minh được thiệt hại đáng kể và nhân quả.</div>
   <div class="trap"><b>Bẫy nhận định</b>(1) “Trợ cấp chính phủ là hiện tượng bị cấm” → SAI (chỉ trợ cấp đèn đỏ bị cấm; nông nghiệp theo AoA có chế độ riêng). (2) “Miễn giảm thuế gián thu (VAT, TTĐB) cho hàng xuất khẩu là trợ cấp” → SAI nếu chỉ miễn đúng mức thuế đã đánh; chỉ khi miễn vượt mức mới là trợ cấp (Điều 1.1(a)(1)(ii), Phụ lục I(g)). (3) “SCM là hiệp định duy nhất về trợ cấp” → SAI (còn Điều XVI GATT, AoA, GATS, TRIPS ở mức nhất định).</div>
 
-  <h3>7.3 Tự vệ thương mại (Điều XIX GATT; Hiệp định SA)</h3>
+  <h3>I.5.3 Tự vệ thương mại (Điều XIX GATT; Hiệp định SA)</h3>
   <p>Là <b>miễn trừ tạm thời</b> nghĩa vụ để ứng phó với nhập khẩu tăng đột biến gây hoặc đe dọa gây <b>thiệt hại nghiêm trọng</b>, kể cả khi thương mại “hoàn toàn bình thường, không vi phạm”. Vì thế điều kiện chặt hơn và kèm <b>bồi thường</b>.</p>
   <div class="law"><b>Điều kiện (Điều 2 SA)</b>(1) Nhập khẩu tăng (tuyệt đối hoặc tương đối so với sản xuất trong nước) và có “diễn biến không lường trước” cùng ảnh hưởng của nghĩa vụ đã cam kết (Điều XIX:1(a); thực tiễn WTO vẫn đòi chứng minh yếu tố này); (2) <b>thiệt hại nghiêm trọng</b> hoặc đe dọa gây thiệt hại nghiêm trọng cho ngành sản xuất sản phẩm tương tự/cạnh tranh trực tiếp; (3) có quan hệ nhân quả; (4) điều tra, thông báo và tham vấn theo thủ tục.</div>
   <ul>
@@ -567,7 +553,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
   </ul>
   <div class="ex"><b>Ví dụ (minh họa thực tế)</b>Việt Nam từng áp dụng biện pháp tự vệ với phôi thép và thép dài nhập khẩu (từ 2016) khi lượng nhập khẩu tăng nhanh, ngành thép trong nước thiệt hại. Biện pháp này không nhắm vào nước nào cụ thể mà áp dụng với nhập khẩu từ mọi nguồn (trừ nước được miễn theo quy định). (Tra số quyết định của Bộ Công Thương khi cần trích dẫn.)</div>
 
-  <h3>7.4 So sánh ba biện pháp</h3>
+  <h3>I.5.4 So sánh ba biện pháp</h3>
   <div class="tbl"><table>
     <tr><th></th><th>Chống bán phá giá</th><th>Chống trợ cấp</th><th>Tự vệ</th></tr>
     <tr><td>Căn cứ</td><td>VI GATT; ADA</td><td>VI, XVI GATT; SCM</td><td>XIX GATT; SA</td></tr>
@@ -582,12 +568,13 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
   <div class="trap"><b>Bẫy nhận định</b>(1) “Thuế đối kháng áp được khi hàng nhập khẩu tăng đột biến” → <span class="tag s">SAI</span> (đó là điều kiện của tự vệ; thuế đối kháng cần trợ cấp + thiệt hại + nhân quả). (2) “Tự vệ chỉ bằng thuế” → <span class="tag s">SAI</span> (còn hạn ngạch, Điều 5 SA). (3) “Nước không phải thành viên WTO không bị áp thuế chống bán phá giá” → <span class="tag s">SAI</span> (quyền phòng vệ là quyền chủ quyền của nước nhập khẩu, WTO chỉ đặt ràng buộc cho nước thành viên). (4) “Ký nhiều FTA thì giảm các vụ phòng vệ” → SAI (FTA không đương nhiên loại bỏ quyền phòng vệ). (5) “Cùng lúc áp cả ba biện pháp cho cùng một hàng” → thường SAI: Điều VI:5 GATT cấm dùng đồng thời AD và CVD để bù cùng một tình huống phá giá/trợ cấp xuất khẩu; tự vệ thì khác bản chất.</div>
 </section>
 
-<!-- ========== 8. DSU ========== -->
-<section id="s8">
-  <h2>8. Giải quyết tranh chấp trong WTO (DSU)</h2>
+<!-- I.6 DSU -->
+
+<section id="i6">
+  <h2>I.6 Giải quyết tranh chấp trong WTO (DSU)</h2>
   <p class="gist">DSU là cơ chế <b>bắt buộc, có thời hạn, có tính bán tư pháp</b>: tranh chấp giữa các thành viên về hiệp định WTO phải giải quyết theo DSU (Điều 23), tham vấn là bắt buộc, và quyết định được thông qua gần như tự động nhờ <b>đồng thuận nghịch</b>.</p>
 
-  <h3>8.1 Phạm vi và chủ thể</h3>
+  <h3>I.6.1 Phạm vi và chủ thể</h3>
   <ul>
     <li><b>Chủ thể:</b> chỉ thành viên WTO (Điều 1 DSU). Doanh nghiệp không tự khởi kiện; chỉ có thể vận động chính phủ.</li>
     <li><b>Bên thứ ba:</b> thành viên có lợi ích thương mại đáng kể, phải thông báo cho DSB (Điều 4.11: tham vấn; 10.2: trước Ban Hội thẩm; 17.4: phúc thẩm). Quyền: trình bày ý kiến, nhận văn bản, dự họp. Mục đích: ngăn hai bên dàn xếp song phương phân biệt đối xử.</li>
@@ -595,7 +582,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
     <li><b>Đối tượng khiếu kiện</b> (Điều XXIII GATT, Điều 26 DSU): (1) khiếu kiện vi phạm; (2) khiếu kiện không vi phạm (biện pháp không trái quy định nhưng vô hiệu hóa hoặc làm tổn hại lợi ích); (3) khiếu kiện theo “tình huống khác”. (Sách HDHT ghi “Điều 13 GATT”; thực tế là <b>Điều XXIII</b>.)</li>
   </ul>
 
-  <h3>8.2 Cơ quan</h3>
+  <h3>I.6.2 Cơ quan</h3>
   <div class="tbl"><table>
     <tr><th>Cơ quan</th><th>Đặc điểm</th></tr>
     <tr><td>DSB</td><td>Chính là Đại Hội đồng khi họp giải quyết tranh chấp; mang tính chính trị; ra quyết định theo đồng thuận nghịch</td></tr>
@@ -604,7 +591,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
     <tr><td>Trọng tài (Điều 25 và 21.3(c), 22.6)</td><td>Giải quyết bằng trọng tài thay thế, xác định thời gian hợp lý, mức trả đũa</td></tr>
   </table></div>
 
-  <h3>8.3 Đồng thuận nghịch: bốn trường hợp áp dụng</h3>
+  <h3>I.6.3 Đồng thuận nghịch: bốn trường hợp áp dụng</h3>
   <p>Quyết định <b>được thông qua trừ khi toàn bộ thành viên (kể cả bên thắng) cùng bác bỏ</b>. Gần như không thể chặn.</p>
   <div class="tbl"><table>
     <tr><th>Trường hợp</th><th>Căn cứ</th><th>Ý nghĩa</th></tr>
@@ -615,7 +602,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
   </table></div>
   <div class="trap"><b>Bẫy nhận định</b>(1) “Mọi vấn đề trong DSU thông qua theo đồng thuận nghịch” → SAI (chỉ 4 trường hợp như trên). (2) “Phúc thẩm là giai đoạn bắt buộc” → SAI (chỉ khi có kháng cáo). (3) “Chỉ bên tham gia ở sơ thẩm mới có quyền kháng cáo” → ĐÚNG (Điều 17.4 DSU: bên thứ ba không kháng cáo được, nhưng có thể tham gia trình bày). (4) “Tham vấn là bắt buộc vì nguyên tắc hòa bình giải quyết tranh chấp” → ĐÚNG về mặt lý luận.</div>
 
-  <h3>8.4 Quy trình</h3>
+  <h3>I.6.4 Quy trình</h3>
   <ol class="steps">
     <li><b>Tham vấn</b> (Điều 4)<span class="t">Bị đơn trả lời trong 10 ngày, bắt đầu tham vấn trong 30 ngày; sau 60 ngày không giải quyết xong, nguyên đơn yêu cầu lập Ban Hội thẩm. Có thể dùng thêm trung gian, hòa giải (Điều 5).</span></li>
     <li><b>Lập Ban Hội thẩm</b> (Điều 6, 8)<span class="t">Đồng thuận nghịch; 3 thành viên (hoặc 5).</span></li>
@@ -627,7 +614,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
   <div class="law"><b>Đặc điểm biện pháp khắc phục</b>Ưu tiên số một là <b>rút bỏ biện pháp vi phạm</b> (Điều 3.7). Biện pháp khắc phục WTO mang tính <b>hướng tới tương lai</b>: không đòi hoàn lại thuế đã thu trong quá khứ như bồi thường thiệt hại.</div>
   <div class="ex"><b>Ví dụ trả đũa chéo (EC – Bananas III)</b>Sau khi EC không thực thi, Ecuador được DSB cho phép đình chỉ nghĩa vụ trong TRIPS (sở hữu trí tuệ) đối với EC, vì trả đũa trong hàng hóa không đủ sức ép với một nền kinh tế nhỏ. Đây là ví dụ kinh điển cho “khác hiệp định”.</div>
 
-  <h3>8.5 Khủng hoảng Cơ quan Phúc thẩm: cập nhật</h3>
+  <h3>I.6.5 Khủng hoảng Cơ quan Phúc thẩm: cập nhật</h3>
   <div class="warn"><b>Rủi ro/điểm cần cập nhật</b>
     <ul>
       <li>Từ <b>11/12/2019</b>, Cơ quan Phúc thẩm không đủ thành viên để xét xử vì bị chặn bổ nhiệm (chủ yếu do Mỹ). Hệ quả: bên thua có thể “<b>kháng cáo vào hư không</b>” để báo cáo của Ban Hội thẩm không được thông qua theo 16.4, chặn vòng thực thi.</li>
@@ -637,77 +624,10 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
   <p>Các câu hỏi bình luận thường gặp trong sách HDHT: tác động của chính sách bảo hộ/thuế cao của Mỹ (2018) đến hệ thống đa phương; Mỹ cản trở bổ nhiệm Phúc thẩm có làm suy yếu WTO không. Hướng trả lời: (1) mất nguyên tắc “có khả năng thực thi”; (2) khuyến khích đơn phương; (3) tăng vai trò FTA và cơ chế thay thế (MPIA); (4) nhưng WTO vẫn có nhiều chức năng khác (đàm phán, minh bạch, Ban Hội thẩm vẫn hoạt động).</p>
 </section>
 
-<!-- ========== 9. CISG ========== -->
-<section id="s9">
-  <h2>9. Hợp đồng mua bán hàng hóa quốc tế và CISG 1980</h2>
-  <p class="gist">CISG <b>nằm ngoài WTO</b> (Liên hợp quốc/UNCITRAL) và thuộc phần <b>luật tư</b>: điều chỉnh việc <b>giao kết hợp đồng</b> và <b>quyền, nghĩa vụ giữa người mua và người bán</b> khi trụ sở thương mại của họ ở các nước khác nhau. Việt Nam gia nhập năm 2015, có hiệu lực từ 01/01/2017.</p>
+<!-- I.7 VIỆT NAM -->
 
-  <h3>9.1 CISG có áp dụng không? (ba câu hỏi theo đề ôn tập)</h3>
-  <ol class="steps">
-    <li><b>Có phải hợp đồng mua bán hàng hóa?</b><span class="t">Chuyển giao hàng hóa để lấy tiền; loại trừ ở Điều 2 (hàng tiêu dùng cá nhân, bán đấu giá, tàu thủy, điện…); Điều 3 (hợp đồng chủ yếu là cung cấp dịch vụ/lao động).</span></li>
-    <li><b>Có tính quốc tế?</b><span class="t">Trụ sở thương mại ở các quốc gia khác nhau (quốc tịch, nơi ký hợp đồng không quan trọng).</span></li>
-    <li><b>Có căn cứ áp dụng và không bị loại trừ?</b><span class="t">Điều 1.1(a): các nước đều là thành viên; hoặc 1.1(b): quy phạm xung đột dẫn đến luật nước thành viên. Các bên có thể loại trừ hoặc sửa đổi (Điều 6).</span></li>
-  </ol>
-  <div class="trap"><b>Bẫy chọn luật</b>Chỉ ghi “áp dụng luật Thụy Điển” mà Thụy Điển là thành viên CISG → CISG vẫn áp dụng (nó là một phần luật Thụy Điển) trừ khi các bên loại trừ rõ. Muốn loại bỏ CISG phải ghi rõ (ví dụ “luật nội địa của Thụy Điển, không bao gồm CISG”).</div>
-  <p>CISG <b>không điều chỉnh</b> hiệu lực hợp đồng, quyền sở hữu hàng hóa, trách nhiệm do hàng gây thiệt hại về người (Điều 4, 5).</p>
-  <div class="warn"><b>Điểm cần đối chiếu: hình thức hợp đồng</b>CISG Điều 11 không đòi văn bản, nhưng tôi nhớ Việt Nam có tuyên bố theo Điều 96 CISG về yêu cầu hình thức (cùng với Điều 27 Luật Thương mại 2005 yêu cầu hợp đồng mua bán hàng hóa quốc tế phải bằng văn bản hoặc hình thức tương đương). Cần kiểm tra bản thông báo tuyên bố chính thức của Việt Nam khi tư vấn thực tế.</div>
-
-  <h3>9.2 Giao kết hợp đồng</h3>
-  <div class="tbl"><table>
-    <tr><th>Giai đoạn</th><th>Điều</th><th>Nội dung</th></tr>
-    <tr><td>Chào hàng</td><td>14</td><td>Gửi tới người xác định, đủ rõ ràng (nêu hàng hóa, số lượng, giá hoặc cách xác định), thể hiện ý chí chịu ràng buộc nếu được chấp nhận</td></tr>
-    <tr><td>Hiệu lực chào hàng</td><td>15–17</td><td>Có hiệu lực khi đến người nhận; rút (trước/cùng lúc), hủy (trước khi chấp nhận, trừ khi không thể hủy)</td></tr>
-    <tr><td>Chấp nhận</td><td>18</td><td>Tuyên bố hoặc hành vi biểu thị đồng ý; im lặng không phải chấp nhận</td></tr>
-    <tr><td>Chấp nhận kèm sửa đổi</td><td>19</td><td>Sửa đổi <b>trọng yếu</b> (giá, thanh toán, chất lượng, số lượng, địa điểm và thời gian giao hàng, mức trách nhiệm, giải quyết tranh chấp) → <b>phản chào hàng</b>, không phải chấp nhận (19.3)</td></tr>
-    <tr><td>Thời điểm hình thành</td><td>23</td><td>Khi chấp nhận có hiệu lực</td></tr>
-  </table></div>
-
-  <h3>9.3 Quyền và nghĩa vụ</h3>
-  <div class="cols">
-    <div class="card"><h4>Bên bán</h4><ul>
-      <li>Giao hàng đúng thời gian, địa điểm, số lượng, chất lượng (Điều 30–36)</li>
-      <li>Giao chứng từ liên quan hàng hóa</li>
-      <li>Bảo đảm quyền sở hữu, không bị bên thứ ba có quyền/khiếu nại, kể cả sở hữu trí tuệ (Điều 41–42)</li></ul></div>
-    <div class="card"><h4>Bên mua</h4><ul>
-      <li>Trả tiền và nhận hàng (Điều 53–60)</li>
-      <li>Kiểm tra hàng trong thời gian ngắn thực tế; thông báo sự không phù hợp trong thời gian hợp lý (Điều 38–39); thời hiệu tuyệt đối 2 năm (39.2)</li></ul></div>
-  </div>
-
-  <h3>9.4 Vi phạm, chế tài và miễn trách</h3>
-  <ul>
-    <li><b>Vi phạm cơ bản</b> (Điều 25): gây thiệt hại đến mức tước đi phần lớn lợi ích mà bên kia có quyền chờ đợi theo hợp đồng, và bên vi phạm đã thấy trước hoặc phải thấy trước.</li>
-    <li><b>Chế tài của bên mua</b> (Điều 45–52): buộc thực hiện, giao hàng thay thế (chỉ khi vi phạm cơ bản, 46.2), sửa chữa, <b>hủy hợp đồng</b> (49), giảm giá (50), bồi thường (74–77).</li>
-    <li><b>Bồi thường</b> (Điều 74): bằng tổn thất cộng lợi nhuận bị mất, giới hạn bởi khả năng dự đoán lúc ký hợp đồng; bên bị vi phạm phải hạn chế tổn thất (Điều 77).</li>
-    <li><b>Miễn trách – Điều 79:</b> khi (1) vi phạm do trở ngại <b>ngoài khả năng kiểm soát</b>, (2) <b>không thể lường trước một cách hợp lý</b> khi ký hợp đồng, (3) <b>không thể tránh hoặc khắc phục</b> hậu quả; và bên vi phạm phải <b>thông báo kịp thời</b> (79.4). Miễn trách chỉ đối với <b>bồi thường thiệt hại</b>; bên kia vẫn có thể hủy hợp đồng, giảm giá (79.5).</li>
-  </ul>
-
-  <h3>9.5 Tình huống mẫu: IKEU (Thụy Điển) – Nhà Đẹp (Việt Nam)</h3>
-  <p>Tóm tắt: IKEU gửi chào hàng bán đồ gỗ nội thất (22/02/2022, chờ trả lời 7 ngày). Nhà Đẹp đồng ý mua nhưng đòi FOB Cát Lái và giải quyết tranh chấp bằng VIAC. IKEU đồng ý điều khoản giao hàng, hẹn giao trong 15 ngày. Ngày 14/3/2022 tàu gặp bão ngoài khơi Nam Phi, hàng hư hại. IKEU xin miễn trách và hứa giao hàng mới sau 2 tháng; Nhà Đẹp khởi kiện ra trọng tài.</p>
-  <div class="ex"><b>Phân tích 1 – CISG có áp dụng?</b>Hợp đồng mua bán hàng hóa (đồ gỗ nội thất, không thuộc Điều 2). Có tính quốc tế (trụ sở ở Thụy Điển và Việt Nam). Cả hai là thành viên CISG, không thỏa thuận loại trừ (Điều 6) → CISG điều chỉnh theo Điều 1.1(a). Việc chỉ có điều khoản VIAC không phải loại trừ CISG; VIAC chỉ là cơ quan tài phán.</div>
-  <div class="ex"><b>Phân tích 2 – Hợp đồng hình thành khi nào?</b>Đề nghị của IKEU là chào hàng hợp lệ (Điều 14). Trả lời của Nhà Đẹp thêm điều kiện giao hàng và cơ quan giải quyết tranh chấp: sửa đổi trọng yếu theo 19.3 → <b>phản chào hàng</b>. IKEU “đồng ý với điều khoản giao hàng và cam kết giao trong 15 ngày”, Nhà Đẹp xác nhận bằng email → hợp đồng hình thành theo Điều 23. (Điểm cần chú ý: điều khoản VIAC IKEU không nói rõ chấp nhận; theo cách đọc của đề, coi là hai bên đã đồng thuận cả gói.)</div>
-  <div class="ex"><b>Phân tích 3 – Có được miễn trách (Điều 79)?</b>
-    <ul>
-      <li><b>Hướng 1 – được miễn:</b> bão lớn là sự kiện khách quan, khó lường, không thể khắc phục; IKEU thông báo ngay (79.4).</li>
-      <li><b>Hướng 2 – không được miễn (có lý hơn):</b> hàng là đồ nội thất <b>hàng đồng loại</b>, có thể mua hàng thay thế (tốn kém hơn nhưng không bất khả thi); IKEU còn đề xuất giao hàng mới sau 2 tháng nên chứng minh “không thể khắc phục” rất khó. Nhà Đẹp có quyền hủy hợp đồng (49), mua hàng thay thế và đòi chênh lệch giá (75), bồi thường (74).</li>
-      <li><b>Điểm đề cần chú ý:</b> “FOB Cát Lái” là điều kiện không hợp lý thông thường (FOB gắn với cảng <i>xếp hàng</i>; Cát Lái là cảng Việt Nam). Nếu hiểu giao tại cảng đi thì <b>rủi ro</b> chuyển sang người mua khi hàng qua lan can tàu (Incoterms 2020), khi đó bão sau khi xuống tàu thuộc rủi ro người mua; phải xác định rõ điều kiện giao hàng trước khi kết luận. Với CISG, nếu hợp đồng có vận chuyển, rủi ro chuyển khi giao cho người vận chuyển đầu tiên (Điều 67).</li>
-    </ul></div>
-
-  <h3>9.6 Giải quyết tranh chấp hợp đồng (luật tư)</h3>
-  <ul>
-    <li>CISG <b>không có quy định về thẩm quyền</b>: các bên chọn trọng tài (VIAC, ICC, SIAC…) hoặc tòa án.</li>
-    <li>Trọng tài tại Việt Nam: Luật Trọng tài thương mại 2010 (Luật số 54/2010/QH12). Phán quyết trọng tài nước ngoài được công nhận và thi hành theo Công ước New York 1958 (Việt Nam gia nhập 1995).</li>
-  </ul>
-  <div class="tbl"><table>
-    <tr><th></th><th>Luật WTO</th><th>CISG</th></tr>
-    <tr><td>Bản chất</td><td>Luật công (quốc gia với quốc gia)</td><td>Luật tư (thương nhân với thương nhân)</td></tr>
-    <tr><td>Ràng buộc ai</td><td>Quốc gia thành viên</td><td>Các bên hợp đồng (khi được áp dụng)</td></tr>
-    <tr><td>Tranh chấp</td><td>DSU (Ban Hội thẩm, Phúc thẩm)</td><td>Trọng tài/tòa án theo thỏa thuận</td></tr>
-  </table></div>
-</section>
-
-<!-- ========== 10. VN ========== -->
-<section id="s10">
-  <h2>10. Việt Nam và các vấn đề thời sự</h2>
+<section id="i7">
+  <h2>I.7 Việt Nam trong hệ thống thương mại quốc tế và các vấn đề thời sự</h2>
   <p class="gist">Việt Nam là thành viên WTO từ <b>11/01/2007</b>, vừa là bên hưởng lợi (thị trường rộng) vừa bị ràng buộc bởi cam kết WTO-plus; và vừa là nước thường <b>bị</b> kiện phòng vệ thương mại lẫn đã chủ động <b>dùng</b> công cụ này.</p>
   <ul>
     <li><b>Cam kết gia nhập:</b> Nghị định thư gia nhập, Báo cáo của Ban Công tác, Biểu cam kết hàng hóa và dịch vụ.</li>
@@ -720,15 +640,217 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
   <ul>
     <li><b>Thuế đối ứng của Mỹ từ 2025:</b> đặt câu hỏi về MFN (Điều I) và thuế ràng buộc (Điều II); Mỹ có thể viện dẫn Điều XXI, các thành viên có thể khiếu kiện hoặc đàm phán song phương. Diễn biến pháp lý còn thay đổi nên khi làm bài cần lấy thông tin mới nhất.</li>
     <li><b>Hàng “trung chuyển”/xuất xứ:</b> nguy cơ Việt Nam chịu tác động phụ; liên quan quy tắc xuất xứ và chống lẩn tránh thuế phòng vệ.</li>
-    <li><b>Khủng hoảng Cơ quan Phúc thẩm và cải cách WTO</b> (xem mục 8.5).</li>
+    <li><b>Khủng hoảng Cơ quan Phúc thẩm và cải cách WTO</b> (xem <a href="#i6">mục I.6.5</a>).</li>
     <li><b>Chế biến sâu</b> giúp nâng giá trị, giảm rủi ro bị phòng vệ và giữ ưu đãi FTA.</li>
     <li><b>Giải pháp hoàn thiện khả năng phòng vệ của Việt Nam:</b> hoàn thiện pháp luật; nâng cao năng lực cơ quan chuyên trách; đào tạo theo ngành hàng; tăng đối thoại với các đối tác thường dùng phòng vệ.</li>
   </ul>
 </section>
 
-<!-- ========== 11. BẪY ========== -->
-<section id="s11">
-  <h2>11. Bẫy nhận định đúng/sai (kèm căn cứ)</h2>
+<!-- ========== PHẦN II: LUẬT TMQT TƯ ========== -->
+
+<div class="part p2" id="part2">
+  <h2>Phần II. Luật thương mại quốc tế tư</h2>
+  <p>Private International Trade Law. Quan hệ thương mại giữa các thương nhân; hợp đồng mua bán hàng hóa quốc tế; luật áp dụng và tập quán; trọng tài và giải quyết tranh chấp hợp đồng.</p>
+</div>
+
+<!-- II.1 -->
+
+<section id="ii1">
+  <h2>II.1 Tổng quan về luật thương mại quốc tế tư</h2>
+  <p class="gist">Luật TMQT tư điều chỉnh <b>giao dịch thương mại xuyên biên giới giữa các thương nhân</b> nhằm lợi nhuận (mua bán, vận chuyển, bảo hiểm, thanh toán…). Nguồn chủ yếu là pháp luật quốc gia, CISG, tập quán (Incoterms) và thỏa thuận của các bên; tranh chấp do trọng tài hoặc tòa án giải quyết.</p>
+
+  <h3>II.1.1 Phân biệt quan hệ thương mại quốc tế và quan hệ hợp đồng thương mại quốc tế (hay ra đề)</h3>
+  <div class="tbl"><table>
+    <tr><th></th><th>Quan hệ thương mại quốc tế</th><th>Quan hệ hợp đồng thương mại quốc tế</th></tr>
+    <tr><td>Chủ thể</td><td>Quốc gia (ký, gia nhập, phê chuẩn điều ước)</td><td>Thương nhân với nhau hoặc quốc gia với thương nhân</td></tr>
+    <tr><td>Tầm mức</td><td>Vĩ mô: tác động chung đến kinh tế, chính trị, xã hội</td><td>Vi mô: vì lợi nhuận của các bên</td></tr>
+    <tr><td>Hiệu lực</td><td>Ràng buộc quốc gia thành viên</td><td>Chỉ ràng buộc các bên hợp đồng</td></tr>
+  </table></div>
+  <p>Bảng so sánh luật công – tư và ba lưu ý khi phân loại: xem <a href="#s0">sơ đồ tổng quan</a>. Giải quyết tranh chấp giữa các quốc gia: xem <a href="#i6">mục I.6</a>.</p>
+</section>
+
+<!-- II.2 -->
+
+<section id="ii2">
+  <h2>II.2 Chủ thể và hợp đồng thương mại quốc tế</h2>
+  <p class="gist">Chủ thể chính của luật tư là <b>thương nhân</b>; quốc gia chỉ thuộc mảng này khi tham gia như một bên hợp đồng. Hợp đồng đi qua các giai đoạn: giao kết, thực hiện, vi phạm và chế tài, giải quyết tranh chấp.</p>
+
+  <h3>II.2.1 Thương nhân</h3>
+  <div class="cols">
+    <div class="card"><h4>Thương nhân</h4><p>Điều 6.1 LTM 2005: tổ chức kinh tế thành lập hợp pháp, cá nhân hoạt động thương mại độc lập, thường xuyên, có đăng ký kinh doanh. Cá nhân cần năng lực hành vi và tài sản chịu trách nhiệm; pháp nhân gắn với quốc gia nơi thành lập.</p></div>
+  </div>
+
+  <h3>II.2.2 Các giai đoạn của hợp đồng và nơi tìm nội dung</h3>
+  <div class="tbl"><table>
+    <tr><th>Giai đoạn</th><th>Nội dung chính</th><th>Xem</th></tr>
+    <tr><td>Giao kết</td><td>Chào hàng, chấp nhận, phản chào hàng, thời điểm hình thành hợp đồng</td><td><a href="#ii4">II.4.2</a></td></tr>
+    <tr><td>Thực hiện</td><td>Quyền và nghĩa vụ của bên bán, bên mua</td><td><a href="#ii4">II.4.3</a></td></tr>
+    <tr><td>Vi phạm</td><td>Vi phạm cơ bản, chế tài, bồi thường, miễn trách</td><td><a href="#ii4">II.4.4</a></td></tr>
+    <tr><td>Tranh chấp</td><td>Trọng tài, tòa án, công nhận phán quyết</td><td><a href="#ii5">II.5</a></td></tr>
+  </table></div>
+</section>
+
+<!-- II.3 -->
+
+<section id="ii3">
+  <h2>II.3 Nguồn luật điều chỉnh hợp đồng thương mại quốc tế</h2>
+  <p class="gist">Luật TMQT tư dựa chủ yếu vào <b>luật quốc gia và hợp đồng</b>. Khi xác định luật áp dụng, cần xét điều ước (như CISG), luật quốc gia, tập quán và <b>thỏa thuận của các bên</b>: các bên có thể chọn luật, dẫn chiếu tập quán hoặc loại trừ CISG (Điều 6 CISG).</p>
+
+  <h3>II.3.1 Các nguồn</h3>
+  <div class="tbl"><table>
+    <tr><th>Nguồn</th><th>Nội dung & cách áp dụng</th><th>Ví dụ</th></tr>
+    <tr><td>Pháp luật thương mại quốc gia</td><td>Quy định bắt buộc chung (năng lực chủ thể, hàng hóa được lưu thông, thuế) và quy phạm thực chất (áp dụng khi có quy phạm xung đột dẫn chiếu hoặc các bên chọn luật).</td><td>Luật Thương mại 2005; Luật Quản lý ngoại thương 2017</td></tr>
+    <tr><td>Tập quán thương mại quốc tế</td><td>Thông lệ lặp lại lâu dài, các bên coi như có tính ràng buộc. Áp dụng khi: các bên thỏa thuận; điều ước quy định; luật quốc gia dẫn chiếu; cơ quan giải quyết tranh chấp áp dụng.</td><td>Incoterms 2020 (chỉ có hiệu lực khi hợp đồng dẫn chiếu); UCP 600</td></tr>
+  </table></div>
+  <p>Điều ước quốc tế điều chỉnh hợp đồng (đặc biệt CISG): xem <a href="#ii4">mục II.4</a>. Điều ước nói chung: xem <a href="#i1">mục I.1.3</a>.</p>
+
+  <h3>II.3.2 Chọn luật và loại trừ CISG</h3>
+  <div class="trap"><b>Bẫy chọn luật</b>Chỉ ghi “áp dụng luật Thụy Điển” mà Thụy Điển là thành viên CISG → CISG vẫn áp dụng (nó là một phần luật Thụy Điển) trừ khi các bên loại trừ rõ. Muốn loại bỏ CISG phải ghi rõ (ví dụ “luật nội địa của Thụy Điển, không bao gồm CISG”).</div>
+  <p>Điều kiện áp dụng CISG: xem <a href="#ii4">mục II.4.1</a>.</p>
+</section>
+
+<!-- II.4 CISG -->
+
+<section id="ii4">
+  <h2>II.4 Hợp đồng mua bán hàng hóa quốc tế theo CISG 1980</h2>
+  <p class="gist">CISG <b>nằm ngoài WTO</b> (Liên hợp quốc/UNCITRAL) và thuộc phần <b>luật tư</b>: điều chỉnh việc <b>giao kết hợp đồng</b> và <b>quyền, nghĩa vụ giữa người mua và người bán</b> khi trụ sở thương mại của họ ở các nước khác nhau. Việt Nam gia nhập năm 2015, có hiệu lực từ 01/01/2017.</p>
+
+  <h3>II.4.1 CISG có áp dụng không? (ba câu hỏi theo đề ôn tập)</h3>
+  <ol class="steps">
+    <li><b>Có phải hợp đồng mua bán hàng hóa?</b><span class="t">Chuyển giao hàng hóa để lấy tiền; loại trừ ở Điều 2 (hàng tiêu dùng cá nhân, bán đấu giá, tàu thủy, điện…); Điều 3 (hợp đồng chủ yếu là cung cấp dịch vụ/lao động).</span></li>
+    <li><b>Có tính quốc tế?</b><span class="t">Trụ sở thương mại ở các quốc gia khác nhau (quốc tịch, nơi ký hợp đồng không quan trọng).</span></li>
+    <li><b>Có căn cứ áp dụng và không bị loại trừ?</b><span class="t">Điều 1.1(a): các nước đều là thành viên; hoặc 1.1(b): quy phạm xung đột dẫn đến luật nước thành viên. Các bên có thể loại trừ hoặc sửa đổi (Điều 6).</span></li>
+  </ol>
+  <p>Về cách chọn luật và loại trừ CISG: xem “Bẫy chọn luật” ở <a href="#ii3">mục II.3.2</a>.</p>
+  <p>CISG <b>không điều chỉnh</b> hiệu lực hợp đồng, quyền sở hữu hàng hóa, trách nhiệm do hàng gây thiệt hại về người (Điều 4, 5).</p>
+  <div class="warn"><b>Điểm cần đối chiếu: hình thức hợp đồng</b>CISG Điều 11 không đòi văn bản, nhưng tôi nhớ Việt Nam có tuyên bố theo Điều 96 CISG về yêu cầu hình thức (cùng với Điều 27 Luật Thương mại 2005 yêu cầu hợp đồng mua bán hàng hóa quốc tế phải bằng văn bản hoặc hình thức tương đương). Cần kiểm tra bản thông báo tuyên bố chính thức của Việt Nam khi tư vấn thực tế.</div>
+
+  <h3>II.4.2 Giao kết hợp đồng</h3>
+  <div class="tbl"><table>
+    <tr><th>Giai đoạn</th><th>Điều</th><th>Nội dung</th></tr>
+    <tr><td>Chào hàng</td><td>14</td><td>Gửi tới người xác định, đủ rõ ràng (nêu hàng hóa, số lượng, giá hoặc cách xác định), thể hiện ý chí chịu ràng buộc nếu được chấp nhận</td></tr>
+    <tr><td>Hiệu lực chào hàng</td><td>15–17</td><td>Có hiệu lực khi đến người nhận; rút (trước/cùng lúc), hủy (trước khi chấp nhận, trừ khi không thể hủy)</td></tr>
+    <tr><td>Chấp nhận</td><td>18</td><td>Tuyên bố hoặc hành vi biểu thị đồng ý; im lặng không phải chấp nhận</td></tr>
+    <tr><td>Chấp nhận kèm sửa đổi</td><td>19</td><td>Sửa đổi <b>trọng yếu</b> (giá, thanh toán, chất lượng, số lượng, địa điểm và thời gian giao hàng, mức trách nhiệm, giải quyết tranh chấp) → <b>phản chào hàng</b>, không phải chấp nhận (19.3)</td></tr>
+    <tr><td>Thời điểm hình thành</td><td>23</td><td>Khi chấp nhận có hiệu lực</td></tr>
+  </table></div>
+
+  <h3>II.4.3 Quyền và nghĩa vụ</h3>
+  <div class="cols">
+    <div class="card"><h4>Bên bán</h4><ul>
+      <li>Giao hàng đúng thời gian, địa điểm, số lượng, chất lượng (Điều 30–36)</li>
+      <li>Giao chứng từ liên quan hàng hóa</li>
+      <li>Bảo đảm quyền sở hữu, không bị bên thứ ba có quyền/khiếu nại, kể cả sở hữu trí tuệ (Điều 41–42)</li></ul></div>
+    <div class="card"><h4>Bên mua</h4><ul>
+      <li>Trả tiền và nhận hàng (Điều 53–60)</li>
+      <li>Kiểm tra hàng trong thời gian ngắn thực tế; thông báo sự không phù hợp trong thời gian hợp lý (Điều 38–39); thời hiệu tuyệt đối 2 năm (39.2)</li></ul></div>
+  </div>
+
+  <h3>II.4.4 Vi phạm, chế tài và miễn trách</h3>
+  <ul>
+    <li><b>Vi phạm cơ bản</b> (Điều 25): gây thiệt hại đến mức tước đi phần lớn lợi ích mà bên kia có quyền chờ đợi theo hợp đồng, và bên vi phạm đã thấy trước hoặc phải thấy trước.</li>
+    <li><b>Chế tài của bên mua</b> (Điều 45–52): buộc thực hiện, giao hàng thay thế (chỉ khi vi phạm cơ bản, 46.2), sửa chữa, <b>hủy hợp đồng</b> (49), giảm giá (50), bồi thường (74–77).</li>
+    <li><b>Bồi thường</b> (Điều 74): bằng tổn thất cộng lợi nhuận bị mất, giới hạn bởi khả năng dự đoán lúc ký hợp đồng; bên bị vi phạm phải hạn chế tổn thất (Điều 77).</li>
+    <li><b>Miễn trách – Điều 79:</b> khi (1) vi phạm do trở ngại <b>ngoài khả năng kiểm soát</b>, (2) <b>không thể lường trước một cách hợp lý</b> khi ký hợp đồng, (3) <b>không thể tránh hoặc khắc phục</b> hậu quả; và bên vi phạm phải <b>thông báo kịp thời</b> (79.4). Miễn trách chỉ đối với <b>bồi thường thiệt hại</b>; bên kia vẫn có thể hủy hợp đồng, giảm giá (79.5).</li>
+  </ul>
+</section>
+
+<!-- II.5 -->
+
+<section id="ii5">
+  <h2>II.5 Giải quyết tranh chấp thương mại quốc tế tư</h2>
+  <p class="gist">Tranh chấp hợp đồng giữa thương nhân do <b>trọng tài hoặc tòa án</b> giải quyết theo thỏa thuận của các bên, khác với tranh chấp giữa các quốc gia theo DSU (xem <a href="#i6">mục I.6</a>).</p>
+
+  <h3>II.5.1 Cơ quan giải quyết và công nhận phán quyết</h3>
+  <ul>
+    <li>CISG <b>không có quy định về thẩm quyền</b>: các bên chọn trọng tài (VIAC, ICC, SIAC…) hoặc tòa án.</li>
+    <li>Trọng tài tại Việt Nam: Luật Trọng tài thương mại 2010 (Luật số 54/2010/QH12). Phán quyết trọng tài nước ngoài được công nhận và thi hành theo Công ước New York 1958 (Việt Nam gia nhập 1995).</li>
+  </ul>
+
+  <h3>II.5.2 So sánh luật WTO và CISG</h3>
+  <div class="tbl"><table>
+    <tr><th></th><th>Luật WTO</th><th>CISG</th></tr>
+    <tr><td>Bản chất</td><td>Luật công (quốc gia với quốc gia)</td><td>Luật tư (thương nhân với thương nhân)</td></tr>
+    <tr><td>Ràng buộc ai</td><td>Quốc gia thành viên</td><td>Các bên hợp đồng (khi được áp dụng)</td></tr>
+    <tr><td>Tranh chấp</td><td>DSU (Ban Hội thẩm, Phúc thẩm)</td><td>Trọng tài/tòa án theo thỏa thuận</td></tr>
+  </table></div>
+  <div class="warn"><b>Mục này còn ngắn</b>Hiện mới có thẩm quyền theo thỏa thuận, Luật Trọng tài thương mại 2010 và Công ước New York 1958. Cần bổ sung từ giáo trình: thương lượng, hòa giải, trọng tài quốc tế, thẩm quyền tòa án, công nhận bản án nước ngoài.</div>
+</section>
+
+<!-- II.6 IKEU -->
+
+<section id="ii6">
+  <h2>II.6 Tình huống thực tiễn: IKEU (Thụy Điển) – Nhà Đẹp (Việt Nam)</h2>
+  <p>Tình huống vận dụng <a href="#ii4">mục II.4.1</a> (phạm vi áp dụng), <a href="#ii4">II.4.2</a> (giao kết), <a href="#ii4">II.4.4</a> (miễn trách) và <a href="#ii3">mục II.3</a> (tập quán, Incoterms).</p>
+  <p>Tóm tắt: IKEU gửi chào hàng bán đồ gỗ nội thất (22/02/2022, chờ trả lời 7 ngày). Nhà Đẹp đồng ý mua nhưng đòi FOB Cát Lái và giải quyết tranh chấp bằng VIAC. IKEU đồng ý điều khoản giao hàng, hẹn giao trong 15 ngày. Ngày 14/3/2022 tàu gặp bão ngoài khơi Nam Phi, hàng hư hại. IKEU xin miễn trách và hứa giao hàng mới sau 2 tháng; Nhà Đẹp khởi kiện ra trọng tài.</p>
+  <div class="ex"><b>Phân tích 1 – CISG có áp dụng?</b>Hợp đồng mua bán hàng hóa (đồ gỗ nội thất, không thuộc Điều 2). Có tính quốc tế (trụ sở ở Thụy Điển và Việt Nam). Cả hai là thành viên CISG, không thỏa thuận loại trừ (Điều 6) → CISG điều chỉnh theo Điều 1.1(a). Việc chỉ có điều khoản VIAC không phải loại trừ CISG; VIAC chỉ là cơ quan tài phán.</div>
+  <div class="ex"><b>Phân tích 2 – Hợp đồng hình thành khi nào?</b>Đề nghị của IKEU là chào hàng hợp lệ (Điều 14). Trả lời của Nhà Đẹp thêm điều kiện giao hàng và cơ quan giải quyết tranh chấp: sửa đổi trọng yếu theo 19.3 → <b>phản chào hàng</b>. IKEU “đồng ý với điều khoản giao hàng và cam kết giao trong 15 ngày”, Nhà Đẹp xác nhận bằng email → hợp đồng hình thành theo Điều 23. (Điểm cần chú ý: điều khoản VIAC IKEU không nói rõ chấp nhận; theo cách đọc của đề, coi là hai bên đã đồng thuận cả gói.)</div>
+  <div class="ex"><b>Phân tích 3 – Có được miễn trách (Điều 79)?</b>
+    <ul>
+      <li><b>Hướng 1 – được miễn:</b> bão lớn là sự kiện khách quan, khó lường, không thể khắc phục; IKEU thông báo ngay (79.4).</li>
+      <li><b>Hướng 2 – không được miễn (có lý hơn):</b> hàng là đồ nội thất <b>hàng đồng loại</b>, có thể mua hàng thay thế (tốn kém hơn nhưng không bất khả thi); IKEU còn đề xuất giao hàng mới sau 2 tháng nên chứng minh “không thể khắc phục” rất khó. Nhà Đẹp có quyền hủy hợp đồng (49), mua hàng thay thế và đòi chênh lệch giá (75), bồi thường (74).</li>
+      <li><b>Điểm đề cần chú ý:</b> “FOB Cát Lái” là điều kiện không hợp lý thông thường (FOB gắn với cảng <i>xếp hàng</i>; Cát Lái là cảng Việt Nam). Nếu hiểu giao tại cảng đi thì <b>rủi ro</b> chuyển sang người mua khi hàng qua lan can tàu (Incoterms 2020), khi đó bão sau khi xuống tàu thuộc rủi ro người mua; phải xác định rõ điều kiện giao hàng trước khi kết luận. Với CISG, nếu hợp đồng có vận chuyển, rủi ro chuyển khi giao cho người vận chuyển đầu tiên (Điều 67).</li>
+    </ul></div>
+</section>
+
+<!-- ========== PHẦN III: NỀN VÀ ÔN THI ========== -->
+
+<div class="part p3" id="part3">
+  <h2>Phần III. Kiến thức nền và ôn thi</h2>
+  <p>Dùng chung cho cả hai mảng: khái niệm và xu hướng, bẫy nhận định, kỹ thuật làm bài, chỗ cần đối chiếu giáo trình, thuật ngữ Anh – Việt.</p>
+</div>
+
+<!-- III.1 -->
+
+<section id="iii1">
+  <h2>III.1 Khái niệm chung và xu hướng của thương mại quốc tế</h2>
+  <p class="gist">Luật thương mại quốc tế là tổng thể quy phạm điều chỉnh <b>toàn bộ quan hệ</b> (chủ thể, khách thể, quyền – nghĩa vụ) phát sinh trong hoạt động thương mại xuyên biên giới; gồm hai nửa: <b>công</b> (nhà nước với nhau) và <b>tư</b> (thương nhân với nhau).</p>
+
+  <h3>III.1.1 Khái niệm cần nắm</h3>
+  <ul>
+    <li><b>Hoạt động thương mại:</b> hoạt động nhằm mục đích sinh lợi, gồm mua bán hàng hóa, cung ứng dịch vụ, đầu tư, xúc tiến thương mại và hoạt động sinh lợi khác (Điều 3.1 Luật Thương mại 2005).</li>
+  </ul>
+  <p>WTO không định nghĩa “thương mại”: xem <a href="#i1">mục I.1.1</a>.</p>
+  <div class="trap"><b>Bẫy nhận định</b>“Luật TMQT là hệ thống quy định điều chỉnh quyền và nghĩa vụ của các bên trong giao dịch thương mại quốc tế” → <span class="tag s">SAI</span> vì chỉ nói đến <i>nội dung</i> quan hệ. Luật TMQT còn điều chỉnh chủ thể, khách thể và cả quan hệ giữa các chính phủ (không phải “giao dịch” của thương nhân).</div>
+
+  <h3>III.1.2 Hai xu hướng đối nghịch</h3>
+  <div class="cols">
+    <div class="card"><h4>Tự do hóa thương mại (WTO ủng hộ)</h4><ul>
+      <li>Giảm thuế nhập khẩu</li><li>Giảm đến loại bỏ hàng rào phi thuế quan</li><li>Giảm can thiệp của nhà nước</li><li>Lập tổ chức thương mại quốc tế, ký hiệp định thương mại</li></ul>
+      <p><b>Lợi:</b> mở thị trường, người tiêu dùng có nhiều lựa chọn. <b>Hại:</b> doanh nghiệp nội địa dễ lép vế nếu nhà nước quản lý kém.</p></div>
+    <div class="card"><h4>Bảo hộ thương mại</h4><ul>
+      <li>Thuế quan: thuế nhập khẩu cao hơn bình thường</li><li>Phi thuế quan: tiêu chuẩn kỹ thuật, kiểm dịch, hạn ngạch, giấy phép, quy tắc xuất xứ…</li></ul>
+      <p><b>Lợi:</b> bảo vệ an ninh kinh tế, ngành thiết yếu. <b>Hại:</b> người dân ít lựa chọn, kìm hãm phát triển; chỉ nên mang tính tạm thời.</p></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>So sánh</th><th>Biện pháp thuế quan</th><th>Biện pháp phi thuế quan</th></tr>
+    <tr><td>Ưu điểm</td><td>Minh bạch, dễ tính toán; điều tiết xuất nhập khẩu; tạo nguồn thu ngân sách</td><td>Linh hoạt; bảo vệ sức khỏe, môi trường, ngành sản xuất; có thể thiết kế sát tiêu chuẩn hàng của nước muốn nhập</td></tr>
+    <tr><td>Nhược điểm</td><td>Phải áp mức thuế như nhau cho mọi nước xuất khẩu (do MFN) nên kém linh hoạt; làm tăng giá hàng nhập</td><td>Thiếu minh bạch, dễ bị lạm dụng thành rào cản trá hình; tăng chi phí kiểm tra cho cả hai nước</td></tr>
+    <tr><td>Xu hướng</td><td>Bị ràng buộc và cắt giảm</td><td>Ngày càng nhiều → WTO có TBT, SPS, Cấp phép nhập khẩu để kiểm soát</td></tr>
+  </table></div>
+  <div class="ex"><b>Ví dụ (Việt Nam – ô tô nhập khẩu)</b>Thuế nhập khẩu ô tô từ ASEAN về 0% theo ATIGA (thuế quan giảm), nhưng Nghị định 116/2017/NĐ-CP (đã được sửa đổi) đặt điều kiện kiểm định chất lượng cho từng lô xe nhập khẩu: hàng rào phi thuế quan. Doanh nghiệp được lợi về thuế nhưng vẫn phải vượt hàng rào kỹ thuật. Bài học: tự do hóa về thuế không có nghĩa thị trường tự động mở.</div>
+  <div class="tip"><b>Mẹo lập luận “có nên tự do hóa triệt để?”</b>Trả lời <b>không nên triệt để</b> vì: (1) hàng nội địa có thể biến mất khỏi thị trường; (2) phụ thuộc nhập khẩu với mặt hàng thiết yếu (điện, xăng dầu, lương thực) gây rủi ro khủng hoảng; (3) quốc gia cần mức độ tự do hóa phù hợp trình độ kinh tế. Kết luận: bảo hộ và tự do hóa tồn tại song song, bảo hộ chỉ nên tạm thời.</div>
+
+  <h3>III.1.3 Các xu hướng khác (đủ nhớ ý)</h3>
+  <ul>
+    <li><b>Không phân biệt đối xử:</b> thể hiện qua MFN và NT; nhiều hiệp định song phương (BTA) mở rộng MFN.</li>
+    <li><b>“Death of distance”:</b> chi phí vận tải, truyền thông giảm.</li>
+    <li>Sản xuất hàng hóa chiếm khoảng 2/3 giá trị xuất khẩu toàn cầu (số liệu trong sách HDHT).</li>
+    <li>Thương mại tăng kéo theo rủi ro môi trường (Hội nghị Copenhagen 12/2009); nước đang phát triển trỗi dậy.</li>
+    <li><b>“Battle in Seattle” (1999):</b> biểu tình phản đối WTO. Ví dụ điển hình về xung đột giữa thương mại và các giá trị phi thương mại (môi trường, lao động), ở góc độ pháp lý nối với Điều XX GATT.</li>
+  </ul>
+
+  <h3>III.1.4 Vấn đề giao thoa công – tư</h3>
+  <details><summary>Luật TMQT có điều chỉnh đầu tư quốc tế không?</summary><div>
+    <p><b>Có ở một mức độ nhất định.</b> Đầu tư cũng là hoạt động sinh lợi giữa các chủ thể của luật TMQT; luật TMQT công điều chỉnh chính sách và cam kết, từ đó tác động lên luật tư (nguồn trực tiếp điều chỉnh đầu tư). Nhưng WTO chưa có hiệp định đầu tư toàn diện: chỉ có TRIMs (đầu tư liên quan hàng hóa) và GATS (hiện diện thương mại).</p>
+  </div></details>
+  <p>Ba lưu ý khi phân loại công – tư: xem <a href="#s0">sơ đồ tổng quan</a>.</p>
+</section>
+
+<!-- III.2 BẪY -->
+
+<section id="iii2">
+  <h2>III.2 Bẫy nhận định đúng/sai (kèm căn cứ)</h2>
   <p class="gist">Công thức làm nhận định: <b>Kết luận (Đúng/Sai) → Căn cứ pháp lý → Giải thích vì sao → (nếu có) ví dụ.</b> Bấm vào từng dòng để xem đáp án.</p>
 
   <details><summary><span class="tag s">SAI</span>Hội nghị Bộ trưởng họp 3 năm một lần.</summary><div>Ít nhất <b>2 năm</b> một lần (Điều IV.1 Marrakesh).</div></details>
@@ -754,12 +876,13 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
   <details><summary><span class="tag s">SAI</span>Việc ký nhiều FTA làm giảm các vụ áp dụng biện pháp phòng vệ.</summary><div>FTA không loại bỏ quyền phòng vệ; không bảo đảm các bên không vi phạm.</div></details>
 </section>
 
-<!-- ========== 12. ÔN THI ========== -->
-<section id="s12">
-  <h2>12. Kỹ thuật làm bài và tự kiểm tra</h2>
+<!-- III.3 KỸ THUẬT -->
+
+<section id="iii3">
+  <h2>III.3 Kỹ thuật làm bài và tự kiểm tra</h2>
   <p class="gist">Đề tự luận (75 phút) gồm <b>nhận định (5đ)</b> tập trung chương 3, 4 và có câu chương 1, 2, 5; và <b>tự luận (5đ)</b> kết hợp lý thuyết với vụ việc thực tế. Viết ngắn gọn, đúng từ khóa, đủ ý (“plain legal English”).</p>
 
-  <h3>12.1 Khung làm tình huống (mô hình 4 bước)</h3>
+  <h3>III.3.1 Khung làm tình huống (mô hình 4 bước)</h3>
   <ol class="steps">
     <li><b>Vấn đề</b><span class="t">Gạch chân: ai (nước/doanh nghiệp), làm gì (biện pháp), ảnh hưởng đến ai.</span></li>
     <li><b>Quy phạm</b><span class="t">Điều khoản và hiệp định cụ thể (ví dụ Điều III:4 GATT; Điều 79 CISG).</span></li>
@@ -773,7 +896,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
       <li><b>Khiếu kiện:</b> ai khởi kiện (thành viên) → tham vấn → Ban Hội thẩm → phúc thẩm → thực thi.</li>
     </ul></div>
 
-  <h3>12.2 Tự kiểm tra (bấm để xem gợi ý)</h3>
+  <h3>III.3.2 Tự kiểm tra (bấm để xem gợi ý)</h3>
   <details><summary>1. Phân biệt MFN và NT; cho ví dụ.</summary><div>MFN: không phân biệt giữa hàng nhập từ nước khác nhau (Điều I). NT: không phân biệt giữa hàng nhập khẩu và hàng nội địa tương tự (Điều III), sau biên giới. Ví dụ MFN: thuế 5% cho xe Nhật thì áp cho xe Thái. Ví dụ NT: thuế tiêu thụ nội địa cao hơn đối với rượu nhập khẩu (Japan – Alcoholic Beverages).</div></details>
   <details><summary>2. Điều kiện viện dẫn Điều XX GATT? Nêu một vụ minh họa.</summary><div>Hai bước: (a)–(j) và chapeau. US – Shrimp: thuộc XX(g) nhưng thất bại ở chapeau vì cách áp dụng thiếu công bằng; sau sửa mới đạt.</div></details>
   <details><summary>3. Ba điều kiện áp thuế chống bán phá giá? Bài test 50/25 là gì?</summary><div>Phá giá, thiệt hại đáng kể (hoặc đe dọa), nhân quả. 50/25: ủng hộ đơn chiếm hơn 50% sản lượng của những người bày tỏ ý kiến và ít nhất 25% tổng sản lượng ngành (ADA 5.4).</div></details>
@@ -786,9 +909,10 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
   <details><summary>10. Công ty bên mua không nhận được hàng đúng hạn do bão. Bên bán có được miễn trách theo CISG?</summary><div>Phân tích ba điều kiện Điều 79.1 + thông báo 79.4; lưu ý hàng đồng loại, rủi ro theo Incoterms, và miễn trách chỉ với bồi thường, không loại trừ quyền hủy hợp đồng.</div></details>
 </section>
 
-<!-- ========== 13. ERRATA ========== -->
-<section id="s13">
-  <h2>13. Chỗ cần đối chiếu trong sách hướng dẫn học tập</h2>
+<!-- III.4 ĐỐI CHIẾU -->
+
+<section id="iii4">
+  <h2>III.4 Chỗ cần đối chiếu trong sách hướng dẫn học tập</h2>
   <p class="gist">Khi dùng sách HDHT/đề ôn tập làm nguồn (bản scan, ghi chú tay), có một số chỗ nên đối chiếu lại văn bản gốc trước khi dùng làm căn cứ thi hoặc trích dẫn.</p>
   <div class="tbl"><table>
     <tr><th>Nội dung trong tài liệu</th><th>Nên hiểu/đối chiếu</th></tr>
@@ -801,15 +925,16 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
     <tr><td>“Việt Nam tham gia CISG năm 2017”</td><td>Gia nhập 2015, có hiệu lực 01/01/2017.</td></tr>
     <tr><td>Nhận định 5 (chương 2): lý giải về “hiệp định nhiều bên”</td><td>Lập luận đúng hơn: Điều II.2 (đa biên bắt buộc), II.3 (nhiều bên tự nguyện), cộng cam kết riêng trong hồ sơ gia nhập (XII).</td></tr>
     <tr><td>Hội nghị Bretton Woods “thành lập ITO gồm 3 tổ chức”</td><td>Bretton Woods lập IMF và WB; ITO là tổ chức dự kiến thứ ba nhưng không ra đời; GATT thay thế tạm thời.</td></tr>
-    <tr><td>Nhận định 3 đề ôn tập 02, nhận định 2 đề 01: số điều khoản</td><td>Một số chỗ dẫn Điều SG/SA, SCM, AoA lẫn lộn; dùng bảng so sánh ở mục 7.4 để đối chiếu nhanh.</td></tr>
+    <tr><td>Nhận định 3 đề ôn tập 02, nhận định 2 đề 01: số điều khoản</td><td>Một số chỗ dẫn Điều SG/SA, SCM, AoA lẫn lộn; dùng bảng so sánh ở <a href="#i5">mục I.5.4</a> để đối chiếu nhanh.</td></tr>
     <tr><td>Ngân sách WTO “quá bán”</td><td>Điều VII.3 yêu cầu đa số 2/3 gồm hơn nửa số thành viên (đối chiếu văn bản).</td></tr>
     <tr><td>Điều XX và giải thích trong ghi chú tay: “không phải nước lớn thì…”</td><td>Là diễn đạt học tập; trong bài thi dùng ngôn ngữ pháp lý: “áp dụng không phân biệt đối xử tùy tiện hoặc không biện minh được”.</td></tr>
   </table></div>
 </section>
 
-<!-- ========== 14. THUẬT NGỮ ========== -->
-<section id="s14">
-  <h2>14. Thuật ngữ Anh – Việt</h2>
+<!-- III.5 THUẬT NGỮ -->
+
+<section id="iii5">
+  <h2>III.5 Thuật ngữ Anh – Việt</h2>
   <div class="tbl"><table>
     <tr><th>English</th><th>Tiếng Việt</th><th>Ghi chú</th></tr>
     <tr><td>Most-Favoured-Nation (MFN)</td><td>Đối xử tối huệ quốc</td><td>Điều I GATT</td></tr>
@@ -854,23 +979,31 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px}
   var data={
     root:"Luật Thương mại quốc tế",
     branches:[
-      {id:"s1",t:"1. Khái quát",c:"#0e5a78",l:["Công và tư: ai điều chỉnh ai","Tự do hóa ↔ bảo hộ","Thuế quan và phi thuế quan","Xu hướng khác, Seattle 1999"]},
-      {id:"s2",t:"2. Nguồn luật",c:"#2f8f5b",l:["Điều ước quốc tế (WTO, FTA, CISG)","Luật thương mại quốc gia","Tập quán (Incoterms)","Nguyên tắc chung, án lệ, học giả"]},
-      {id:"s3",t:"3. Chủ thể",c:"#7a4fb5",l:["Quốc gia (ký điều ước, chính sách)","Thương nhân (Điều 6 LTM 2005)","Tổ chức quốc tế; vùng hải quan riêng"]},
-      {id:"s4",t:"4. WTO",c:"#c47a08",l:["GATT 1947 → WTO 1995","Cơ cấu: MC, GC, DSB, Hội đồng","Ra quyết định: đồng thuận, 2/3, 3/4","Hệ thống hiệp định (Phụ lục 1–4)","Gia nhập 4 bước; rút sau 6 tháng"]},
-      {id:"s5",t:"5. Nguyên tắc",c:"#3d5bc4",l:["MFN – Điều I: ngay lập tức, vô điều kiện","NT – Điều III: sau biên giới","Thuế ràng buộc (Điều II, XXVIII)","Cấm hạn chế định lượng (Điều XI)"]},
-      {id:"s6",t:"6. Ngoại lệ",c:"#c0392b",l:["Điều XX: (a)–(j) + chapeau","Điều XXI: an ninh quốc gia","Điều XXIV: FTA/CU (ngoại lệ MFN)","GSP / Điều khoản Cho phép; waiver"]},
-      {id:"s7",t:"7. Phòng vệ thương mại",c:"#0b7a75",l:["Chống bán phá giá (ADA)","Chống trợ cấp – thuế đối kháng (SCM)","Tự vệ (SA): thiệt hại nghiêm trọng","So sánh: thiệt hại, thời hạn, bồi thường"]},
-      {id:"s8",t:"8. Giải quyết tranh chấp",c:"#a03a74",l:["Tham vấn bắt buộc","Ban Hội thẩm → Phúc thẩm","Đồng thuận nghịch (4 trường hợp)","Thực thi, bồi thường, trả đũa","Khủng hoảng Phúc thẩm, MPIA"]},
-      {id:"s9",t:"9. Hợp đồng & CISG",c:"#5f7a1f",l:["Điều kiện áp dụng (Điều 1, 2, 6)","Chào hàng – phản chào hàng – chấp nhận","Quyền, nghĩa vụ người bán, người mua","Vi phạm, chế tài, miễn trách Điều 79"]},
-      {id:"s10",t:"10. Việt Nam & thời sự",c:"#5b6b7b",l:["Gia nhập WTO 11/01/2007","Nội luật hóa, phòng vệ thương mại","FTA thế hệ mới (WTO-plus)","Thuế đối ứng, cải cách WTO"]}
+      {id:"i1",t:"I.1 Tổng quan (công)",c:"#0e5a78",l:["Quan hệ giữa quốc gia, tổ chức quốc tế","Nguồn: điều ước, nguyên tắc chung, án lệ","Chủ thể: quốc gia, tổ chức, EU"]},
+      {id:"i2",t:"I.2 Hệ thống WTO",c:"#1f6fa8",l:["GATT 1947 → WTO 1995","Cơ cấu: MC, GC, DSB, Hội đồng","Ra quyết định: đồng thuận, 2/3, 3/4","Hệ thống hiệp định (Phụ lục 1–4)","Gia nhập 4 bước; rút sau 6 tháng"]},
+      {id:"i3",t:"I.3 Nguyên tắc",c:"#3d5bc4",l:["MFN – Điều I: ngay lập tức, vô điều kiện","NT – Điều III: sau biên giới","Thuế ràng buộc (Điều II, XXVIII)","Cấm hạn chế định lượng (Điều XI)"]},
+      {id:"i4",t:"I.4 Ngoại lệ",c:"#5a4fc4",l:["Điều XX: (a)–(j) + chapeau","Điều XXI: an ninh quốc gia","Điều XXIV: FTA/CU (ngoại lệ MFN)","GSP / Điều khoản Cho phép; waiver"]},
+      {id:"i5",t:"I.5 Phòng vệ thương mại",c:"#0b7a75",l:["Chống bán phá giá (ADA)","Chống trợ cấp – thuế đối kháng (SCM)","Tự vệ (SA): thiệt hại nghiêm trọng","So sánh: thiệt hại, thời hạn, bồi thường"]},
+      {id:"i6",t:"I.6 Giải quyết tranh chấp",c:"#2a7f9e",l:["Tham vấn bắt buộc","Ban Hội thẩm → Phúc thẩm","Đồng thuận nghịch (4 trường hợp)","Thực thi, bồi thường, trả đũa","Khủng hoảng Phúc thẩm, MPIA"]},
+      {id:"i7",t:"I.7 Việt Nam & thời sự",c:"#4a6c8c",l:["Gia nhập WTO 11/01/2007","Nội luật hóa, phòng vệ thương mại","FTA thế hệ mới (WTO-plus)","Thuế đối ứng, cải cách WTO"]},
+      {id:"ii1",gap:1,t:"II.1 Tổng quan (tư)",c:"#2f8f5b",l:["Giao dịch giữa các thương nhân","Phân biệt quan hệ công và quan hệ hợp đồng"]},
+      {id:"ii2",t:"II.2 Chủ thể & hợp đồng",c:"#3a7d44",l:["Thương nhân (Điều 6 LTM 2005)","Giao kết → thực hiện → vi phạm → tranh chấp"]},
+      {id:"ii3",t:"II.3 Nguồn luật hợp đồng",c:"#4d7a2a",l:["Luật quốc gia và chọn luật","Tập quán: Incoterms, UCP 600","CISG áp dụng hay bị loại trừ (Điều 6)"]},
+      {id:"ii4",t:"II.4 Hợp đồng & CISG",c:"#5f7a1f",l:["Điều kiện áp dụng (Điều 1, 2, 6)","Chào hàng – phản chào hàng – chấp nhận","Quyền, nghĩa vụ người bán, người mua","Vi phạm, chế tài, miễn trách Điều 79"]},
+      {id:"ii5",t:"II.5 Tranh chấp tư",c:"#1f7a5a",l:["CISG không quy định thẩm quyền","Trọng tài (VIAC, ICC, SIAC) hoặc tòa án","Công nhận phán quyết: New York 1958"]},
+      {id:"ii6",t:"II.6 Tình huống IKEU",c:"#33803f",l:["CISG có áp dụng?","Hợp đồng hình thành khi nào?","Miễn trách Điều 79 và rủi ro FOB"]},
+      {id:"iii1",gap:1,t:"III.1 Khái niệm & xu hướng",c:"#b4690e",l:["Hoạt động thương mại là gì","Tự do hóa ↔ bảo hộ","Thuế quan và phi thuế quan","Xu hướng khác, Seattle 1999"]},
+      {id:"iii2",t:"III.2 Bẫy nhận định",c:"#9c5a14",l:["Nhận định đúng/sai kèm căn cứ"]},
+      {id:"iii3",t:"III.3 Kỹ thuật làm bài",c:"#8a4f1d",l:["Khung làm tình huống 4 bước","Câu hỏi tự kiểm tra"]},
+      {id:"iii4",t:"III.4 Đối chiếu sách HDHT",c:"#7a4a2b",l:["Các chỗ sách cần đối chiếu"]},
+      {id:"iii5",t:"III.5 Thuật ngữ Anh – Việt",c:"#6e4a2e",l:["Thuật ngữ kèm điều khoản liên quan"]}
     ]
   };
   var NS="http://www.w3.org/2000/svg";
-  var leafH=34, gapB=16, rootX=14, rootW=150, brX=236, brW=210, leX=520, leW=440, W=1000;
+  var leafH=34, gapB=16, rootX=14, rootW=150, brX=230, brW=250, leX=520, leW=440, W=1000;
   var y=14, items=[];
   data.branches.forEach(function(b){
-    var top=y;
+    if(b.gap)y+=18;var top=y;
     b.leaves=b.l.map(function(txt,i){var o={t:txt,y:y+leafH/2};y+=leafH;return o;});
     b.cy=(top+y)/2;
     y+=gapB;
