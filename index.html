@@ -2650,6 +2650,7 @@ G.forEach(function(c,i){
       if(b[0]==="p"){var t=b[2],bl=/^[●○■§✓•\-\+]\s/.test(t)||/^[●○■§✓•]/.test(t);var ml=Math.max(0,Math.min(40,Math.round((b[1]-72)*.3)));body+='<p class="gp'+(bl?' b':'')+'"'+(ml?' style="margin-left:'+ml+'px"':'')+'>'+E(t)+'</p>'}
       else if(b[0]==="q"){body+='<div class="gq">'+E(b[2])+'</div>'}
       else if(b[0]==="i"){body+='<figure class="gf" style="margin:12px 0"><img loading="lazy" width="'+b[3]+'" height="'+b[4]+'" src="lb-img/'+b[1]+'" alt="Hình trong bài giảng, tr. '+b[2]+'"><small>Hình bài giảng, tr. '+b[2]+'</small></figure>'}
+      else if(b[0]==="f"){body+='<figure class="gf" style="margin:12px 0"><img loading="lazy" width="'+b[2]+'" height="'+b[3]+'" src="qt-img/'+b[1]+'" alt="'+E(b[4])+'"><small>'+E(b[4])+'</small></figure>'}
       else if(b[0]==="t"){body+='<p class="gp"><b>'+E(b[1])+'</b></p><div class="gtw"><table class="gt">'+b[2].map(function(r,ri){return '<tr>'+r.map(function(x){return (ri===0?'<th>':'<td>')+E(x)+(ri===0?'</th>':'</td>')}).join("")+'</tr>'}).join("")+'</table></div>'}
     });
     var tag=g.lv===2?'h3':'h4';
