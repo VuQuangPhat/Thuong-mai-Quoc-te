@@ -184,21 +184,22 @@ details.trap .ans .cs{margin-left:0}
 .legend{font-size:14.5px;color:var(--ink2)}
 footer{max-width:860px;margin:30px auto 0;padding:0 20px;color:var(--ink3);font-size:14px}
 .hide{display:none!important}
-@media print{.bar,#toc,#lb-toc{display:none}main{margin:0}.card{break-inside:avoid;box-shadow:none;border:1px solid #ccc}}
+@media print{.bar,#toc,.lbtoc{display:none}main{margin:0}.card{break-inside:avoid;box-shadow:none;border:1px solid #ccc}}
 
 /* ===== Tab Luật Biển ===== */
 .tabs{display:flex;gap:3px;background:var(--soft);border-radius:12px;padding:3px;flex:none}
 .tabbtn{font:inherit;font-size:13.5px;font-weight:600;border:0;border-radius:9px;padding:6px 10px;background:transparent;color:var(--ink2);cursor:pointer;white-space:nowrap}
+@media (max-width:700px){.bar-in{flex-wrap:wrap;gap:8px;padding:8px 14px}.bar .menu{order:1}.bar input{order:2}#count{order:2}.tabs{order:3;flex:1 1 100%;overflow-x:auto;-webkit-overflow-scrolling:touch}.lbs,section[id]{scroll-margin-top:104px}.lbtoc,#toc{top:98px}}
 .tabbtn.on{background:var(--surface);color:var(--ink);box-shadow:0 0 0 1px var(--hair)}
-#lb-toc{position:fixed;z-index:55;top:58px;left:0;bottom:0;width:min(86vw,320px);background:var(--surface);border-right:1px solid var(--hair);
+.lbtoc{position:fixed;z-index:55;top:58px;left:0;bottom:0;width:min(86vw,320px);background:var(--surface);border-right:1px solid var(--hair);
   padding:18px 14px 30px;overflow:auto;transform:translateX(-102%);transition:transform .25s ease}
-#lb-toc.open{transform:none;box-shadow:0 20px 60px rgba(0,0,0,.25)}
-#lb-toc h4{font-size:13px;color:var(--ink3);font-weight:600;margin:6px 10px 8px}
-#lb-toc a{display:flex;gap:10px;align-items:center;padding:9px 10px;border-radius:10px;color:var(--ink);font-size:15px;line-height:1.3}
-#lb-toc a:hover,#lb-toc a.on{background:var(--soft)}
-#lb-toc .dot{width:9px;height:9px;border-radius:50%;background:var(--pub);flex:none}
-@media (min-width:1180px){#lb-toc{transform:none;top:58px;box-shadow:none;width:260px;background:transparent;border-right:0}}
-#lb-main{--ac:var(--pub);--acbg:var(--pubbg);padding-bottom:80px}
+.lbtoc.open{transform:none;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.lbtoc h4{font-size:13px;color:var(--ink3);font-weight:600;margin:6px 10px 8px}
+.lbtoc a{display:flex;gap:10px;align-items:center;padding:9px 10px;border-radius:10px;color:var(--ink);font-size:15px;line-height:1.3}
+.lbtoc a:hover,.lbtoc a.on{background:var(--soft)}
+.lbtoc .dot{width:9px;height:9px;border-radius:50%;background:var(--pub);flex:none}
+@media (min-width:1180px){.lbtoc{transform:none;top:58px;box-shadow:none;width:260px;background:transparent;border-right:0}}
+.lbmain{--ac:var(--pub);--acbg:var(--pubbg);padding-bottom:80px}
 .lbs{padding:60px 0 6px;scroll-margin-top:62px}
 .lbs .lbl{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .lbs .lbl li{background:var(--soft);border-radius:12px;padding:10px 12px;font-size:15.5px;overflow-wrap:anywhere}
@@ -208,7 +209,7 @@ footer{max-width:860px;margin:30px auto 0;padding:0 20px;color:var(--ink3);font-
 .lbscale{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .lbscale li{display:grid;grid-template-columns:minmax(0,1fr);gap:2px;background:var(--soft);border-radius:12px;padding:10px 12px;font-size:15.5px}
 .lbscale li b{color:var(--ac)}
-@media print{#lb-toc{display:none}}
+@media print{.lbtoc{display:none}}
 
 /* Luật Biển · giáo trình 5 chương */
 #lbDT .dtq{margin:0 0 6px;font-size:16px;overflow-wrap:anywhere}
@@ -243,7 +244,7 @@ footer{max-width:860px;margin:30px auto 0;padding:0 20px;color:var(--ink3);font-
 
 <header class="bar"><div class="bar-in">
   <button class="ibtn menu" id="menuBtn" aria-label="Mục lục">☰</button>
-  <div class="tabs" role="group" aria-label="Chọn môn"><button class="tabbtn on" data-tab="tm" aria-pressed="true">TMQT</button><button class="tabbtn" data-tab="lb" aria-pressed="false">Luật Biển</button></div>
+  <div class="tabs" role="group" aria-label="Chọn môn"><button class="tabbtn on" data-tab="tm" aria-pressed="true">TMQT</button><button class="tabbtn" data-tab="lb" aria-pressed="false">Luật Biển</button><button class="tabbtn" data-tab="cp" aria-pressed="false">Công pháp QT</button><button class="tabbtn" data-tab="tp" aria-pressed="false">Tư pháp QT</button></div>
   <input id="q" type="search" placeholder="Tìm: MFN, Điều 79, zeroing, đồng thuận…" aria-label="Tìm trong tài liệu" autocomplete="off">
   <span id="count"></span>
 </div></header>
@@ -2069,7 +2070,7 @@ details.srcn summary{cursor:pointer;font-weight:600}details.srcn p{margin:8px 0 
 </div>
 </main>
 
-<nav id="lb-toc" class="hide" aria-label="Mục lục Luật Biển">
+<nav id="lb-toc" class="lbtoc hide" aria-label="Mục lục Luật Biển">
   <h4>Luật Biển</h4>
   <a href="#lb0"><span class="dot"></span>Tổng quan và lưu ý</a>
   <h4 style="margin-top:12px">Giáo trình 25-26 · 5 chương</h4>
@@ -2083,7 +2084,7 @@ details.srcn summary{cursor:pointer;font-weight:600}details.srcn p{margin:8px 0 
   <a href="#lbdt2"><span class="dot"></span>Nhận định và bài tập có đáp án</a>
 </nav>
 
-<main id="lb-main" class="hide">
+<main id="lb-main" class="lbmain hide">
 <div class="wrap">
 <section class="hero base" id="lb0">
   <h1>Luật Biển</h1>
@@ -2111,6 +2112,11 @@ details.srcn summary{cursor:pointer;font-weight:600}details.srcn p{margin:8px 0 
 <div class="card hide" id="lbEmpty" style="margin:30px 0"><h3>Không có kết quả</h3><p>Thử từ khóa ngắn hơn, ví dụ “lãnh hải”, “Điều 287”, “truy đuổi”.</p></div>
 </div>
 </main>
+<nav id="cp-toc" class="lbtoc hide" aria-label="Mục lục Công pháp quốc tế"></nav>
+<main id="cp-main" class="lbmain hide"><div class="wrap" id="cpRoot"></div></main>
+<nav id="tp-toc" class="lbtoc hide" aria-label="Mục lục Tư pháp quốc tế"></nav>
+<main id="tp-main" class="lbmain hide"><div class="wrap" id="tpRoot"></div></main>
+
 
 
 <footer>
@@ -2609,6 +2615,7 @@ var LR=L("r","quy định rõ"),LQ=L("q","quan điểm"),LX=L("x","chưa xác mi
 
 <script src="lb-giaotrinh.js"></script>
 <script src="lb-dethi.js"></script>
+<script src="lb-qt.js"></script>
 <script>
 /* ===== Tab Luật Biển: dữ liệu từ Google Sheet giáo trình TMQT (LB_NOI_DUNG, LB_DIEU_LUAT, LB_BAI_TAP), 13/11/2026 ===== */
 (function(){
@@ -2671,34 +2678,65 @@ D.forEach(function(d,i){
         (a.length?'<details><summary>Xem đáp án</summary><div class="dta">'+v+a.map(function(x){return '<p>'+E(x)+'</p>'}).join("")+'</div></details>':'')+'</div>'})});
   h+='</section>'});
 root.innerHTML=h})();
+(function(){var D=window.QT_DATA;if(!D)return;
+var CFG={
+cp:{root:"cpRoot",toc:"cp-toc",h:"Công pháp quốc tế",sub:"Ghi chép bài giảng thầy Lê Minh Nhựt (chương 1 đến 4) và tổng hợp của nhóm 2 (chương 2 đến 6), xếp theo chương. Chương 5 và 6 chỉ có trong bản tổng hợp nhóm 2.",chips:["Ghi chép bài giảng","Tổng hợp CPQT nhóm 2"],
+ parts:[{k:"cpa",lab:"Ghi chép bài giảng",d:D.cp},{k:"cpb",lab:"Tổng hợp nhóm 2",d:D.cp2}]},
+tp:{root:"tpRoot",toc:"tp-toc",h:"Tư pháp quốc tế",sub:"Bài ghi lý thuyết Tư pháp quốc tế 2026 theo từng chương. File gốc chỉ có chương 1, 2, 4 và 5.",chips:["Bài ghi lý thuyết 2026"],
+ parts:[{k:"tpa",lab:"Bài ghi lý thuyết 2026",d:D.tp}]}};
+function blk(b){
+ if(b[0]==="p"){var t=b[1],bl=/^[●○■§✓•\-\+\*–→]\s?/.test(t);return '<p class="gp'+(bl?' b':'')+'">'+E(t)+'</p>'}
+ if(b[0]==="h")return '<p class="gp"><b>'+E(b[1])+'</b></p>';
+ if(b[0]==="i")return '<figure class="gf" style="margin:12px 0"><img loading="lazy" width="'+b[2]+'" height="'+b[3]+'" src="qt-img/'+b[1]+'" alt="Hình trong tài liệu"><small>Hình trong tài liệu</small></figure>';
+ if(b[0]==="t")return '<div class="gtw"><table class="gt">'+b[1].map(function(r,ri){return '<tr>'+r.map(function(x){return (ri===0?'<th>':'<td>')+E(x)+(ri===0?'</th>':'</td>')}).join("")+'</tr>'}).join("")+'</table></div>';
+ return ''}
+Object.keys(CFG).forEach(function(key){var c=CFG[key],root=document.getElementById(c.root),toc=document.getElementById(c.toc);if(!root)return;
+ var h='<section class="hero base" id="'+key+'0"><h1>'+E(c.h)+'</h1><p class="sub">'+E(c.sub)+'</p><div class="src-row">'+c.chips.map(function(x){return '<span class="chip">'+E(x)+'</span>'}).join("")+'</div><div class="card warn" style="margin-top:18px"><h3>Đọc trước</h3><p>Đây là ghi chép của sinh viên, giữ nguyên lời, chưa đối chiếu với văn bản luật. <span class="lb x">chưa xác minh</span> Số điều khoản và viết tắt cần kiểm tra lại trước khi dùng trong bài thi.</p></div></section>';
+ var t='<h4>'+E(c.h)+'</h4><a href="#'+key+'0"><span class="dot"></span>Tổng quan và lưu ý</a>';
+ c.parts.forEach(function(pt){
+  if(c.parts.length>1)t+='<h4 style="margin-top:12px">'+E(pt.lab)+'</h4>';
+  pt.d.forEach(function(ch){
+   var id=pt.k+ch.n,isOpen=ch.n===0;
+   h+='<section class="lbs pub" id="'+id+'"><div class="sec-h"><div class="k">'+E(pt.lab)+(isOpen?'':' · chương '+ch.n)+'</div><h2>'+(isOpen?'Mở đầu và lưu ý của giảng viên':E(ch.t))+'</h2></div>';
+   ch.g.forEach(function(g){h+='<div class="card lbx gtc">'+(g.h?'<h3>'+E(g.h)+'</h3>':'')+g.b.map(blk).join("")+'</div>'});
+   h+='</section>';
+   t+='<a href="#'+id+'"><span class="dot"></span>'+(isOpen?'Mở đầu':'Chương '+ch.n+' · '+E(ch.t.length>46?ch.t.slice(0,44)+'…':ch.t))+'</a>'});
+ });
+ root.innerHTML=h;toc.innerHTML=t});
+var z=document.getElementById("gtZoom"),zi=z&&z.querySelector("img");
+["cpRoot","tpRoot"].forEach(function(id){var r=document.getElementById(id);if(r&&z)r.addEventListener("click",function(e){var im=e.target.closest(".gf img");if(im){zi.src=im.src;z.classList.add("on")}})})
+})();
 /* hạng mục chung: Hiệu lực */
-var cnt=document.getElementById("count"),q=document.getElementById("q"),tm=document.getElementById("tm-main"),tocT=document.getElementById("toc"),tocL=document.getElementById("lb-toc"),mainL=document.getElementById("lb-main"),btn=document.getElementById("menuBtn"),tabs=document.querySelectorAll(".tabbtn"),emp=document.getElementById("lbEmpty");
+var cnt=document.getElementById("count"),q=document.getElementById("q"),tm=document.getElementById("tm-main"),tocT=document.getElementById("toc"),btn=document.getElementById("menuBtn"),tabs=document.querySelectorAll(".tabbtn"),emp=document.getElementById("lbEmpty");
+var P={lb:{m:document.getElementById("lb-main"),t:document.getElementById("lb-toc"),ph:"Tìm: lãnh hải, Điều 287…",ti:"Luật Biển – Tổng hợp ôn thi",h:"lb0"},cp:{m:document.getElementById("cp-main"),t:document.getElementById("cp-toc"),ph:"Tìm: điều ước, quốc tịch, biên giới…",ti:"Công pháp quốc tế – Tổng hợp ôn thi",h:"cp0"},tp:{m:document.getElementById("tp-main"),t:document.getElementById("tp-toc"),ph:"Tìm: xung đột pháp luật, Điều 663…",ti:"Tư pháp quốc tế – Tổng hợp ôn thi",h:"tp0"}};
 var cur="tm",ph=q.getAttribute("placeholder");
-function norm(s){return String(s).normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/đ/g,"d").replace(/Đ/g,"d").toLowerCase()}
+function norm(s){return String(s).normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/đ/g,"d").replace(/Đ/g,"d").toLowerCase()}
 var cache=new Map();function tx(el){var t=cache.get(el);if(!t){t=norm(el.textContent);cache.set(el,t)}return t}
 function lbSearch(){
-  var items=document.querySelectorAll("#lb-main .lbx"),secs=document.querySelectorAll("#lb-main .lbs"),hero=document.getElementById("lb0");
+  var pp=P[cur];if(!pp)return;var items=pp.m.querySelectorAll(".lbx"),secs=pp.m.querySelectorAll(".lbs"),hero=document.getElementById(pp.h);
   var toks=norm(q.value.trim()).split(/\s+/).filter(Boolean);
   if(!toks.length){items.forEach(function(c){c.classList.remove("hide")});secs.forEach(function(s){s.classList.remove("hide")});hero.classList.remove("hide");emp.classList.add("hide");cnt.textContent="";return}
   var n=0;items.forEach(function(c){var ok=toks.every(function(k){return tx(c).indexOf(k)>-1});c.classList.toggle("hide",!ok);if(ok)n++});
   secs.forEach(function(s){var any=false;s.querySelectorAll(".lbx").forEach(function(c){if(!c.classList.contains("hide"))any=true});s.classList.toggle("hide",!any)});
   hero.classList.add("hide");cnt.textContent=n+" kết quả";emp.classList.toggle("hide",n>0)}
 function setTab(t,keepHash){
-  cur=t;var lb=t==="lb";
-  tm.classList.toggle("hide",lb);tocT.classList.toggle("hide",lb);mainL.classList.toggle("hide",!lb);tocL.classList.toggle("hide",!lb);
+  cur=t;var other=!!P[t];
+  tm.classList.toggle("hide",other);tocT.classList.toggle("hide",other);
+  Object.keys(P).forEach(function(k){P[k].m.classList.toggle("hide",k!==t);P[k].t.classList.toggle("hide",k!==t);P[k].t.classList.remove("open")});
   tabs.forEach(function(b){var on=b.getAttribute("data-tab")===t;b.classList.toggle("on",on);b.setAttribute("aria-pressed",on?"true":"false")});
-  q.setAttribute("placeholder",lb?"Tìm: lãnh hải, Điều 287…":ph);
-  document.title=lb?"Luật Biển – Tổng hợp ôn thi":"Luật Thương mại quốc tế – Tổng hợp ôn thi";
-  if(lb){lbSearch()}else{emp.classList.add("hide");if(window.__runSearch)window.__runSearch()}
-  if(!keepHash){try{history.replaceState(null,"",lb?"#lb0":"#s0")}catch(e){}window.scrollTo(0,0)}}
+  q.setAttribute("placeholder",other?P[t].ph:ph);
+  document.title=other?P[t].ti:"Luật Thương mại quốc tế – Tổng hợp ôn thi";
+  if(other){lbSearch()}else{emp.classList.add("hide");if(window.__runSearch)window.__runSearch()}
+  if(!keepHash){try{history.replaceState(null,"",other?"#"+P[t].h:"#s0")}catch(e){}window.scrollTo(0,0)}}
 tabs.forEach(function(b){b.addEventListener("click",function(){setTab(b.getAttribute("data-tab"))})});
-q.addEventListener("input",function(){if(cur==="lb"){clearTimeout(window.__lbT);window.__lbT=setTimeout(lbSearch,170)}});
-btn.addEventListener("click",function(e){if(cur==="lb"){e.stopPropagation();tocL.classList.toggle("open")}});
-tocL.addEventListener("click",function(e){if(e.target.closest("a"))tocL.classList.remove("open")});
-document.addEventListener("click",function(e){if(!tocL.contains(e.target)&&e.target!==btn)tocL.classList.remove("open")});
-window.addEventListener("hashchange",function(){if(/^#lb/.test(location.hash)&&cur!=="lb")setTab("lb",true)});
-if(/^#lb/.test(location.hash)){setTab("lb",true);var el=document.querySelector(location.hash);if(el)el.scrollIntoView({behavior:"instant"})}
-window.addEventListener("load",function(){if(/^#lbg/.test(location.hash)&&cur==="lb"){var e2=document.querySelector(location.hash);if(e2)e2.scrollIntoView({behavior:"instant"})}});
+q.addEventListener("input",function(){if(P[cur]){clearTimeout(window.__lbT);window.__lbT=setTimeout(lbSearch,170)}});
+btn.addEventListener("click",function(e){if(P[cur]){e.stopPropagation();P[cur].t.classList.toggle("open")}});
+Object.keys(P).forEach(function(k){P[k].t.addEventListener("click",function(e){if(e.target.closest("a"))P[k].t.classList.remove("open")})});
+document.addEventListener("click",function(e){Object.keys(P).forEach(function(k){if(!P[k].t.contains(e.target)&&e.target!==btn)P[k].t.classList.remove("open")})});
+function hashTab(){var m=/^#(lb|cp|tp)/.exec(location.hash);return m?m[1]:null}
+window.addEventListener("hashchange",function(){var k=hashTab();if(k&&cur!==k)setTab(k,true)});
+(function(){var k=hashTab();if(k){setTab(k,true);var el=document.querySelector(location.hash);if(el)el.scrollIntoView({behavior:"instant"})}})();
+window.addEventListener("load",function(){var k=hashTab();if(k&&cur===k&&location.hash.length>4){var e2=document.querySelector(location.hash);if(e2)e2.scrollIntoView({behavior:"instant"})}});
 })();
 </script>
 </body>
