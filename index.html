@@ -2687,7 +2687,7 @@ tp:{root:"tpRoot",toc:"tp-toc",h:"Tư pháp quốc tế",sub:"Bài ghi lý thuy�
 function blk(b){
  if(b[0]==="p"){var t=b[1],bl=/^[●○■§✓•\-\+\*–→]\s?/.test(t);return '<p class="gp'+(bl?' b':'')+'">'+E(t)+'</p>'}
  if(b[0]==="h")return '<p class="gp"><b>'+E(b[1])+'</b></p>';
- if(b[0]==="i")return '<figure class="gf" style="margin:12px 0"><img loading="lazy" width="'+b[2]+'" height="'+b[3]+'" src="qt-img/'+b[1]+'" alt="Hình trong tài liệu"><small>Hình trong tài liệu</small></figure>';
+ if(b[0]==="i")return '<figure class="gf" style="margin:12px 0"><img loading="lazy" width="'+b[2]+'" height="'+b[3]+'" src="qt-img/'+b[1]+'" alt="'+E(b[4]||"Hình trong tài liệu")+'"><small>'+E(b[4]||"Hình trong tài liệu")+'</small></figure>';
  if(b[0]==="t")return '<div class="gtw"><table class="gt">'+b[1].map(function(r,ri){return '<tr>'+r.map(function(x){return (ri===0?'<th>':'<td>')+E(x)+(ri===0?'</th>':'</td>')}).join("")+'</tr>'}).join("")+'</table></div>';
  return ''}
 Object.keys(CFG).forEach(function(key){var c=CFG[key],root=document.getElementById(c.root),toc=document.getElementById(c.toc);if(!root)return;
