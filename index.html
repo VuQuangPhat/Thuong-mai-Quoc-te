@@ -211,6 +211,13 @@ footer{max-width:860px;margin:30px auto 0;padding:0 20px;color:var(--ink3);font-
 @media print{#lb-toc{display:none}}
 
 /* Luật Biển · giáo trình 5 chương */
+#lbDT .dtq{margin:0 0 6px;font-size:16px;overflow-wrap:anywhere}
+#lbDT .dtq .dtn{color:var(--ac);font-weight:700;margin-right:6px}
+#lbDT details{margin-top:8px}
+#lbDT summary{cursor:pointer;font-weight:600;padding:8px 0;color:var(--ac)}
+#lbDT .dta p{margin:6px 0;overflow-wrap:anywhere}
+#lbDT .dtv{display:inline-block;font-size:12.5px;font-weight:700;border-radius:999px;padding:2px 10px;margin-right:6px}
+#lbDT .dtv.d{background:#dff3e4;color:#17622d}#lbDT .dtv.s{background:#fde4e1;color:#9a2a1f}
 #lbGT .gtintro{margin:0 0 6px}
 #lbGT .gtnav{display:grid;gap:8px;margin-top:12px}
 #lbGT .gtnav a{display:block;padding:11px 14px;border:1px solid var(--hair);border-radius:12px;background:var(--surface);color:var(--ink)}
@@ -2071,6 +2078,9 @@ details.srcn summary{cursor:pointer;font-weight:600}details.srcn p{margin:8px 0 
   <a href="#lbg3"><span class="dot"></span>Chương 3 · Quyền chủ quyền</a>
   <a href="#lbg4"><span class="dot"></span>Chương 4 · Khu vực sử dụng chung</a>
   <a href="#lbg5"><span class="dot"></span>Chương 5 · Phân định và giải quyết tranh chấp</a>
+  <h4 style="margin-top:12px">Đề thi và bài tập</h4>
+  <a href="#lbdt1"><span class="dot"></span>Đề thi 2022-23 (6 mã đề)</a>
+  <a href="#lbdt2"><span class="dot"></span>Nhận định và bài tập có đáp án</a>
 </nav>
 
 <main id="lb-main" class="hide">
@@ -2096,6 +2106,7 @@ details.srcn summary{cursor:pointer;font-weight:600}details.srcn p{margin:8px 0 
   <p class="legend" style="margin-top:14px">Nhãn: <span class="lb r">quy định rõ</span> điều luật nêu đúng nội dung · <span class="lb q">quan điểm</span> đáp án mẫu hoặc quan điểm giảng viên · <span class="lb x">chưa xác minh</span>. Dữ liệu lấy từ Google Sheet giáo trình TMQT (tab LB_NOI_DUNG, LB_DIEU_LUAT, LB_BAI_TAP), cập nhật 13/11/2026.</p>
 </section>
 <div id="lbGT"></div>
+<div id="lbDT"></div>
 <div id="gtZoom" role="dialog" aria-label="Xem ảnh lớn"><img alt=""></div>
 <div class="card hide" id="lbEmpty" style="margin:30px 0"><h3>Không có kết quả</h3><p>Thử từ khóa ngắn hơn, ví dụ “lãnh hải”, “Điều 287”, “truy đuổi”.</p></div>
 </div>
@@ -2597,6 +2608,7 @@ var LR=L("r","quy định rõ"),LQ=L("q","quan điểm"),LX=L("x","chưa xác mi
 </script>
 
 <script src="lb-giaotrinh.js"></script>
+<script src="lb-dethi.js"></script>
 <script>
 /* ===== Tab Luật Biển: dữ liệu từ Google Sheet giáo trình TMQT (LB_NOI_DUNG, LB_DIEU_LUAT, LB_BAI_TAP), 13/11/2026 ===== */
 (function(){
@@ -2643,6 +2655,22 @@ root.addEventListener("click",function(e){var im=e.target.closest(".gf img");if(
 z.addEventListener("click",function(){z.classList.remove("on")});
 document.addEventListener("keydown",function(e){if(e.key==="Escape")z.classList.remove("on")});
 })();
+(function(){var D=window.LB_DT,root=document.getElementById("lbDT");if(!D||!root)return;
+var h='';
+D.forEach(function(d,i){
+  h+='<section class="lbs pub" id="lbdt'+(i+1)+'"><div class="sec-h"><div class="k">Đề thi · '+(i+1)+'/'+D.length+'</div><h2>'+E(d.t)+'</h2></div><p class="gsub">'+E(d.s)+'</p>';
+  if(i===0)h+='<div class="card warn"><h3>Đọc trước khi dùng</h3><p>Đáp án là bản sinh viên tự tổng hợp, không phải đáp án chính thức của giảng viên. Số điều khoản có chỗ viết tắt hoặc có thể nhầm (ví dụ “Điều 11” khi ý là Điều 111). <span class="lb x">chưa xác minh</span> Hãy đối chiếu UNCLOS 1982 và Luật Biển Việt Nam 2012 trước khi chép vào bài thi.</p></div>';
+  d.g.forEach(function(g){
+    h+='<h3 class="lbh">'+E(g.h)+'</h3>';
+    g.items.forEach(function(it,k){
+      var a=it.a||[],v='',first=a[0]||'';
+      var m=/^(nhận định\s+)?(đúng|sai)\b/i.exec(first);
+      if(m)v='<span class="dtv '+(m[2].toLowerCase()==="đúng"?'d':'s')+'">'+(m[2].toLowerCase()==="đúng"?'Đúng':'Sai')+'</span>';
+      var qs=it.qs||[it.q];
+      h+='<div class="card lbx"><div class="dtq"><span class="dtn">'+(it.n!==undefined?(it.n||'•'):(k+1))+'.</span>'+E(qs[0])+'</div>'+(qs.length>1?qs.slice(1).map(function(x){return '<p>'+E(x)+'</p>'}).join(""):'')+
+        (a.length?'<details><summary>Xem đáp án</summary><div class="dta">'+v+a.map(function(x){return '<p>'+E(x)+'</p>'}).join("")+'</div></details>':'')+'</div>'})});
+  h+='</section>'});
+root.innerHTML=h})();
 /* hạng mục chung: Hiệu lực */
 var cnt=document.getElementById("count"),q=document.getElementById("q"),tm=document.getElementById("tm-main"),tocT=document.getElementById("toc"),tocL=document.getElementById("lb-toc"),mainL=document.getElementById("lb-main"),btn=document.getElementById("menuBtn"),tabs=document.querySelectorAll(".tabbtn"),emp=document.getElementById("lbEmpty");
 var cur="tm",ph=q.getAttribute("placeholder");
