@@ -184,14 +184,59 @@ details.trap .ans .cs{margin-left:0}
 .legend{font-size:14.5px;color:var(--ink2)}
 footer{max-width:860px;margin:30px auto 0;padding:0 20px;color:var(--ink3);font-size:14px}
 .hide{display:none!important}
-@media print{.bar,#toc{display:none}main{margin:0}.card{break-inside:avoid;box-shadow:none;border:1px solid #ccc}}
+@media print{.bar,#toc,#lb-toc{display:none}main{margin:0}.card{break-inside:avoid;box-shadow:none;border:1px solid #ccc}}
+
+/* ===== Tab Luật Biển ===== */
+.tabs{display:flex;gap:3px;background:var(--soft);border-radius:12px;padding:3px;flex:none}
+.tabbtn{font:inherit;font-size:13.5px;font-weight:600;border:0;border-radius:9px;padding:6px 10px;background:transparent;color:var(--ink2);cursor:pointer;white-space:nowrap}
+.tabbtn.on{background:var(--surface);color:var(--ink);box-shadow:0 0 0 1px var(--hair)}
+#lb-toc{position:fixed;z-index:55;top:58px;left:0;bottom:0;width:min(86vw,320px);background:var(--surface);border-right:1px solid var(--hair);
+  padding:18px 14px 30px;overflow:auto;transform:translateX(-102%);transition:transform .25s ease}
+#lb-toc.open{transform:none;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+#lb-toc h4{font-size:13px;color:var(--ink3);font-weight:600;margin:6px 10px 8px}
+#lb-toc a{display:flex;gap:10px;align-items:center;padding:9px 10px;border-radius:10px;color:var(--ink);font-size:15px;line-height:1.3}
+#lb-toc a:hover,#lb-toc a.on{background:var(--soft)}
+#lb-toc .dot{width:9px;height:9px;border-radius:50%;background:var(--pub);flex:none}
+@media (min-width:1180px){#lb-toc{transform:none;top:58px;box-shadow:none;width:260px;background:transparent;border-right:0}}
+#lb-main{--ac:var(--pub);--acbg:var(--pubbg);padding-bottom:80px}
+.lbs{padding:60px 0 6px;scroll-margin-top:62px}
+.lbs .lbl{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.lbs .lbl li{background:var(--soft);border-radius:12px;padding:10px 12px;font-size:15.5px;overflow-wrap:anywhere}
+.lbs .lbl li b{display:block;font-size:14.5px;color:var(--ac);margin-bottom:2px}
+.lbs h3.lbh{font-size:19px;margin:22px 2px 10px}
+.lbwarn li{margin:6px 0}
+.lbscale{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.lbscale li{display:grid;grid-template-columns:minmax(0,1fr);gap:2px;background:var(--soft);border-radius:12px;padding:10px 12px;font-size:15.5px}
+.lbscale li b{color:var(--ac)}
+@media print{#lb-toc{display:none}}
+
+/* Luật Biển · giáo trình 5 chương */
+#lbGT .gtintro{margin:0 0 6px}
+#lbGT .gtnav{display:grid;gap:8px;margin-top:12px}
+#lbGT .gtnav a{display:block;padding:11px 14px;border:1px solid var(--hair);border-radius:12px;background:var(--surface);color:var(--ink)}
+#lbGT .gtnav a b{display:block;font-size:16px}#lbGT .gtnav a small{color:var(--ink3);font-size:13px}
+@media(min-width:760px){#lbGT .gtnav{grid-template-columns:1fr 1fr}}
+.lbs .gsub{color:var(--ink2,var(--ink3));margin:-8px 2px 14px;font-size:15px}
+.lbs .gpg{font-size:12px;color:var(--ink3);font-weight:500;margin-left:8px;white-space:nowrap}
+.lbs .gtc h3,.lbs .gtc h4{margin:0 0 8px;overflow-wrap:anywhere}.lbs .gtc h4{font-size:17px}
+.lbs .gp{margin:.5em 0;line-height:1.6;overflow-wrap:anywhere}
+.lbs .gp.b{text-indent:-1.1em;padding-left:1.1em}
+.lbs .gq{border-left:3px solid var(--pub);background:var(--soft);padding:8px 12px;border-radius:8px;margin:10px 0;line-height:1.6;overflow-wrap:anywhere}
+.lbs .gf{margin:12px 0;text-align:center}.lbs .gf img{max-width:100%;height:auto;border-radius:10px;border:1px solid var(--hair);cursor:zoom-in;background:#fff}
+.lbs .gf small{display:block;color:var(--ink3);font-size:12px;margin-top:4px}
+.lbs .gtw{overflow-x:auto;margin:12px 0}.lbs table.gt{border-collapse:collapse;width:100%;min-width:0;table-layout:fixed}
+.lbs table.gt th,.lbs table.gt td{border:1px solid var(--hair);padding:8px 10px;text-align:left;vertical-align:top;line-height:1.45}
+.lbs table.gt th{background:var(--soft)}
+#gtZoom{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.86);display:none;align-items:center;justify-content:center;padding:12px;cursor:zoom-out}
+#gtZoom.on{display:flex}#gtZoom img{max-width:100%;max-height:100%;object-fit:contain;background:#fff;border-radius:6px}
+@media print{#gtZoom{display:none!important}}
 </style>
 </head>
 <body>
 
 <header class="bar"><div class="bar-in">
   <button class="ibtn menu" id="menuBtn" aria-label="Mục lục">☰</button>
-  <strong>Luật TMQT</strong>
+  <div class="tabs" role="group" aria-label="Chọn môn"><button class="tabbtn on" data-tab="tm" aria-pressed="true">TMQT</button><button class="tabbtn" data-tab="lb" aria-pressed="false">Luật Biển</button></div>
   <input id="q" type="search" placeholder="Tìm: MFN, Điều 79, zeroing, đồng thuận…" aria-label="Tìm trong tài liệu" autocomplete="off">
   <span id="count"></span>
 </div></header>
@@ -218,7 +263,7 @@ footer{max-width:860px;margin:30px auto 0;padding:0 20px;color:var(--ink3);font-
   <div id="prog"><span id="progTxt">0/8 phần đã nắm</span><i><b id="progBar"></b></i></div>
 </nav>
 
-<main>
+<main id="tm-main">
 <div class="wrap">
 
 <section class="hero base" id="s0" data-nosearch>
@@ -2017,6 +2062,58 @@ details.srcn summary{cursor:pointer;font-weight:600}details.srcn p{margin:8px 0 
 </div>
 </main>
 
+<nav id="lb-toc" class="hide" aria-label="Mục lục Luật Biển">
+  <h4>Luật Biển</h4>
+  <a href="#lb0"><span class="dot"></span>Tổng quan và lưu ý</a>
+  <h4 style="margin-top:12px">Giáo trình 25-26 · 5 chương</h4>
+  <a href="#lbg1"><span class="dot"></span>Chương 1 · Khái quát</a>
+  <a href="#lbg2"><span class="dot"></span>Chương 2 · Chủ quyền</a>
+  <a href="#lbg3"><span class="dot"></span>Chương 3 · Quyền chủ quyền</a>
+  <a href="#lbg4"><span class="dot"></span>Chương 4 · Khu vực sử dụng chung</a>
+  <a href="#lbg5"><span class="dot"></span>Chương 5 · Phân định và giải quyết tranh chấp</a>
+  <h4 style="margin-top:12px">Soạn riêng · 8 chuyên đề</h4>
+  <a href="#lb1"><span class="dot"></span>1 · Khái quát và 5 nguyên tắc cơ bản</a>
+  <a href="#lb2"><span class="dot"></span>2 · Đường cơ sở và nội thủy</a>
+  <a href="#lb3"><span class="dot"></span>3 · Lãnh hải và vùng tiếp giáp</a>
+  <a href="#lb4"><span class="dot"></span>4 · Vùng đặc quyền kinh tế và thềm lục địa</a>
+  <a href="#lb5"><span class="dot"></span>5 · Đảo, đá, quần đảo</a>
+  <a href="#lb6"><span class="dot"></span>6 · Biển quốc tế, truy đuổi, cướp biển</a>
+  <a href="#lb7"><span class="dot"></span>7 · Vùng (đáy đại dương), môi trường, nghiên cứu khoa học</a>
+  <a href="#lb8"><span class="dot"></span>8 · Phân định biển và giải quyết tranh chấp</a>
+</nav>
+
+<main id="lb-main" class="hide">
+<div class="wrap">
+<section class="hero base" id="lb0">
+  <h1>Luật Biển</h1>
+  <p class="sub">Ôn môn Luật Biển (UNCLOS 1982, Luật Biển Việt Nam 2012) theo 8 chuyên đề của bài giảng. Mỗi chuyên đề có phần hiểu nhanh, điều luật kèm nhãn xác minh, và bài tập nhận định, tình huống. Gõ từ khóa vào ô tìm kiếm để lọc.</p>
+  <div class="src-row">
+    <span class="chip">Bài giảng Luật Biển 25-26</span>
+    <span class="chip">Đề thi Luật Biển 2022-23</span>
+    <span class="chip">Luật Biển Việt Nam 2012</span>
+    <span class="chip">Sách Văn bản pháp luật về biển</span>
+  </div>
+  <div class="card" style="margin-top:22px">
+    <h3>Một hình để nhớ: từ bờ ra khơi</h3>
+    <ul class="lbscale" id="lbScale"></ul>
+    <p class="legend" style="margin-top:10px">Phần UNCLOS của bảng này theo bài giảng, chưa đối chiếu toàn văn; phần Luật Biển VN theo Điều 9 đến 18.</p>
+  </div>
+  <div class="card warn lbwarn" style="margin-top:14px">
+    <h3>Đọc trước: 4 lưu ý</h3>
+    <ol id="lbWarn"></ol>
+  </div>
+  <div class="map" style="margin-top:22px"><div class="map-cols" id="lbMap" style="grid-template-columns:1fr"></div></div>
+  <p class="legend" style="margin-top:14px">Nhãn: <span class="lb r">quy định rõ</span> điều luật nêu đúng nội dung · <span class="lb q">quan điểm</span> đáp án mẫu hoặc quan điểm giảng viên · <span class="lb x">chưa xác minh</span>. Dữ liệu lấy từ Google Sheet giáo trình TMQT (tab LB_NOI_DUNG, LB_DIEU_LUAT, LB_BAI_TAP), cập nhật 13/11/2026.</p>
+</section>
+<div id="lbGT"></div>
+<section class="lbs pub" id="lbOld"><div class="sec-h"><div class="k">Phần soạn riêng</div><h2>Tóm tắt, điều luật và bài tập</h2></div><p class="gsub">Tám chuyên đề theo đề cương giảng viên, có đối chiếu điều luật và luyện tập. Dùng song song với giáo trình năm chương ở trên.</p></section>
+<div id="gtZoom" role="dialog" aria-label="Xem ảnh lớn"><img alt=""></div>
+<div id="lbSections"></div>
+<div class="card hide" id="lbEmpty" style="margin:30px 0"><h3>Không có kết quả</h3><p>Thử từ khóa ngắn hơn, ví dụ “lãnh hải”, “Điều 287”, “truy đuổi”.</p></div>
+</div>
+</main>
+
+
 <footer>
   <p>Tổng hợp từ bốn tài liệu trong thư mục Drive (Bài ghi 2024, Bài giảng WTO 24-25, Ôn thi nhận định, Đề thi 2023). Dùng để ôn thi, không phải tư vấn pháp lý. Khi có xung đột, theo đáp án và hướng dẫn của giảng viên.</p>
   <p>Tiến độ “đã nắm” lưu trên trình duyệt của bạn. Dữ liệu bộ bẫy, con số và án lệ nằm trong khối <code>TRAPS</code>, <code>NUMS</code>, <code>CASES</code> ở cuối file.</p>
@@ -2509,6 +2606,84 @@ var LR=L("r","quy định rõ"),LQ=L("q","quan điểm"),LX=L("x","chưa xác mi
     $("#deStat").textContent="Đang hiển thị "+n+" câu.";if(window.__runSearch)window.__runSearch();}
   ch.addEventListener("click",function(e){var b=e.target.closest("button[data-de]");if(!b)return;cur=b.getAttribute("data-de");$$(".chipbtn",ch).forEach(function(x){x.classList.toggle("on",x===b)});apply();});
   apply();})();
+</script>
+
+<script src="lb-giaotrinh.js"></script>
+<script>
+/* ===== Tab Luật Biển: dữ liệu từ Google Sheet giáo trình TMQT (LB_NOI_DUNG, LB_DIEU_LUAT, LB_BAI_TAP), 13/11/2026 ===== */
+(function(){
+var LB_CD=[["LB01", "Khái quát và 5 nguyên tắc cơ bản", "Luật Biển là bộ quy tắc chia biển thành các vùng và nói rõ nước ven biển, tàu nước ngoài được làm gì ở mỗi vùng. Gốc là UNCLOS 1982. Năm nguyên tắc: đất thống trị biển; tự do biển cả; bảo vệ môi trường biển; công bằng; Vùng là di sản chung của nhân loại.", "Càng xa bờ, quyền của nước ven biển càng yếu.", "UNCLOS tr.10; Luật Biển VN tr.126", "Bài giảng 25-26 (Drive)"], ["LB02", "Đường cơ sở và nội thủy", "Đường cơ sở là đường xuất phát để đo mọi vùng biển. Địa hình bờ biển quyết định phương pháp vạch (thông thường hoặc thẳng), quốc gia không tự do chọn. Nội thủy nằm phía trong đường cơ sở, chủ quyền như đất liền; tàu nước ngoài vào phải xin phép.", "Không có đường cơ sở thì không đo được vùng biển nào.", "UNCLOS tr.10; Tuyên bố 1982 tr.145; Tuyên bố Vịnh Bắc Bộ 21/2/2025 tr.148", "Bài giảng 25-26; Luật Biển VN Điều 8-10"], ["LB03", "Lãnh hải và vùng tiếp giáp", "Lãnh hải rộng 12 hải lý: chủ quyền đầy đủ, nhưng tàu nước ngoài được đi qua không gây hại (tàu quân sự nước ngoài vào VN phải thông báo trước). Tiếp giáp rộng thêm 12 hải lý (tối đa 24 từ đường cơ sở): chỉ kiểm soát hải quan, thuế, y tế, nhập cư. Tàu quân sự chỉ bị yêu cầu rời đi, không bị xử lý.", "Đi qua không gây hại chỉ ở lãnh hải và vùng nước quần đảo.", "UNCLOS tr.10; Luật Biển VN tr.126; NĐ 104/2012 tr.251", "Luật Biển VN Điều 11-14, 23, 27-31"], ["LB04", "Vùng đặc quyền kinh tế và thềm lục địa", "ĐQKT rộng tối đa 200 hải lý từ đường cơ sở: nước ven biển có quyền chủ quyền về tài nguyên, nước khác vẫn tự do hàng hải, hàng không. Thềm lục địa là đáy biển và lòng đất: quyền có sẵn, không cần tuyên bố; rộng từ 200 đến tối đa 350 hải lý nếu rìa lục địa kéo dài.", "ĐQKT phải tuyên bố, thềm thì tự có.", "UNCLOS tr.10; Luật Biển VN tr.126; Tuyên bố 18/7/2024 tr.311", "Luật Biển VN Điều 15-18; Bài giảng 25-26"], ["LB05", "Đảo, đá, quần đảo", "Đảo là vùng đất tự nhiên, triều lên vẫn nổi. Đảo có người ở hoặc có đời sống kinh tế riêng thì có đủ các vùng biển như đất liền. Đá không đủ điều kiện đó thì không có ĐQKT và thềm. Đảo nhân tạo không có lãnh hải riêng, chỉ có vùng an toàn tối đa 500 m.", "Không phải đảo nào cũng có ĐQKT.", "UNCLOS tr.10; Luật Biển VN tr.126", "Luật Biển VN Điều 19-21; Bài giảng 25-26"], ["LB06", "Biển quốc tế, truy đuổi, cướp biển", "Biển quốc tế là biển ngoài ĐQKT: không ai có chủ quyền, sáu tự do cho mọi nước. Tàu chỉ chịu tài phán của nước treo cờ. Tàu quân sự chỉ được khám xét tàu dân sự khi có lý do (cướp biển, buôn nô lệ, phát sóng trái phép, không quốc tịch). Truy đuổi phải liên tục và chấm dứt khi tàu vào lãnh hải nước khác.", "Truy đuổi: liên tục, và dừng khi tàu vào lãnh hải nước khác.", "UNCLOS tr.10; Luật Biển VN tr.126", "Luật Biển VN Điều 41; Bài giảng 25-26"], ["LB07", "Vùng (đáy đại dương), môi trường, nghiên cứu khoa học", "Vùng là đáy biển ngoài giới hạn tài phán quốc gia, là di sản chung của nhân loại: không nước nào được chiếm, chỉ khai thác vì lợi ích chung và mục đích hòa bình qua một cơ quan quốc tế. Mọi nước có nghĩa vụ bảo vệ môi trường biển; nghiên cứu ở ĐQKT và thềm phải được nước ven biển đồng ý.", "Vùng: của chung nhân loại, không ai chiếm được.", "UNCLOS tr.10; Luật TN, MT biển và hải đảo tr.152; NĐ 41/2016 tr.219", "Bài giảng 25-26"], ["LB08", "Phân định biển và giải quyết tranh chấp", "Phân định là thỏa thuận giữa các nước có biển kề hoặc đối diện để vạch ranh giới, không thể làm đơn phương (hoạch định mới là đơn phương). Tranh chấp phải thương lượng trước; chưa được thì đến cơ quan tài phán: ICJ, ITLOS, Trọng tài Phụ lục VII, Trọng tài đặc biệt Phụ lục VIII; không chọn thì mặc định Phụ lục VII.", "Thương lượng trước, tài phán sau; không chọn thì Phụ lục VII.", "UNCLOS và Phụ lục tr.10, tr.85; hiệp định phân định tr.110-122; Phụ lục III tr.298-311", "Bài giảng 25-26; Đề thi 2022-23"]], LB_DL=[["LB02", "Luật Biển VN 2012", "Điều 8", "Đường cơ sở dùng tính lãnh hải là đường cơ sở thẳng do Chính phủ công bố; nơi chưa có thì Chính phủ xác định, công bố sau khi UBTVQH phê chuẩn", "quy định rõ"], ["LB02", "Luật Biển VN 2012", "Điều 9, 10", "Nội thủy nằm phía trong đường cơ sở, là một phần lãnh thổ; chủ quyền toàn diện, tuyệt đối, như đất liền", "quy định rõ"], ["LB03", "Luật Biển VN 2012", "Điều 11", "Lãnh hải rộng 12 hải lý tính từ đường cơ sở; ranh giới ngoài là biên giới quốc gia trên biển", "quy định rõ"], ["LB03", "Luật Biển VN 2012", "Điều 12 khoản 2", "Tàu mọi quốc gia được đi qua không gây hại; tàu quân sự nước ngoài phải thông báo trước", "quy định rõ"], ["LB03", "Luật Biển VN 2012", "Điều 13, 14", "Tiếp giáp rộng 12 hải lý tính từ ranh giới ngoài lãnh hải; Nhà nước kiểm soát để ngăn ngừa, xử lý vi phạm về hải quan, thuế, y tế, xuất nhập cảnh", "quy định rõ"], ["LB03", "Luật Biển VN 2012", "Điều 23 khoản 3", "Đi qua bị coi là gây hại khi có một trong 14 hành vi liệt kê (đe dọa vũ lực, thu thập tin tình báo, đánh bắt hoặc nghiên cứu trái phép, ô nhiễm nghiêm trọng, hoạt động không liên quan việc đi qua…). Số điểm chi tiết chưa xác minh", "quy định rõ (khoản); chưa xác minh (điểm)"], ["LB03", "Luật Biển VN 2012", "Điều 27, 28", "Tàu quân sự, tàu công vụ nước ngoài chỉ vào nội thủy theo lời mời hoặc thỏa thuận; vi phạm thì bị yêu cầu chấm dứt và rời lãnh hải ngay; nước treo cờ chịu trách nhiệm về thiệt hại", "quy định rõ"], ["LB03", "Luật Biển VN 2012", "Điều 30", "Tài phán hình sự với tàu nước ngoài đi qua lãnh hải: xử lý ngay nếu tội xảy ra ngay sau khi tàu rời nội thủy; còn lại chỉ trong 4 trường hợp (hậu quả ảnh hưởng VN; phá hoại hòa bình hoặc trật tự; thuyền trưởng hoặc viên chức ngoại giao yêu cầu; ngăn buôn người, ma túy)", "quy định rõ"], ["LB03", "Luật Biển VN 2012", "Điều 31", "Không buộc tàu đi qua dừng hoặc đổi hành trình chỉ vì tranh chấp dân sự; chỉ bắt giữ tàu vì mục đích dân sự trong các trường hợp luật định", "quy định rõ"], ["LB04", "Luật Biển VN 2012", "Điều 15, 16", "ĐQKT liền kề lãnh hải, cùng lãnh hải rộng 200 hải lý từ đường cơ sở; Nhà nước có quyền chủ quyền về tài nguyên, quyền tài phán về đảo nhân tạo, nghiên cứu khoa học, môi trường; tôn trọng tự do hàng hải, hàng không; đặt cáp, ống ngầm cần chấp thuận bằng văn bản", "quy định rõ"], ["LB04", "Luật Biển VN 2012", "Điều 17, 18", "Thềm lục địa kéo dài tự nhiên đến mép ngoài rìa lục địa; dưới 200 hải lý thì kéo đến 200; vượt thì tối đa 350 hải lý hoặc 100 hải lý từ đường đẳng sâu 2.500 m; quyền mang tính đặc quyền", "quy định rõ"], ["LB04", "Luật Biển VN 2012", "Điều 37", "Khi thực hiện tự do hàng hải, hàng không trong ĐQKT và thềm lục địa, không được đe dọa chủ quyền, khai thác hoặc nghiên cứu trái phép, gây ô nhiễm, cướp biển…; tổng cộng 9 nhóm hành vi", "quy định rõ"], ["LB05", "Luật Biển VN 2012", "Điều 19, 20", "Đảo là vùng đất tự nhiên có nước bao quanh, triều lên vẫn nổi; đảo đủ điều kiện cho người ở hoặc có đời sống kinh tế riêng thì có đủ các vùng biển; đảo đá không đủ điều kiện thì không có ĐQKT và thềm", "quy định rõ"], ["LB06", "Luật Biển VN 2012", "Điều 41", "Lực lượng tuần tra được truy đuổi tàu vi phạm ở nội thủy, lãnh hải, tiếp giáp; có thể tiếp tục ra ngoài nếu liên tục; chấm dứt khi tàu bị truy đuổi vào lãnh hải nước khác", "quy định rõ"], ["LB02", "UNCLOS 1982", "Điều 5, 7, 14", "Đường cơ sở thông thường là ngấn nước triều thấp nhất; đường cơ sở thẳng khi bờ khoét sâu lồi lõm hoặc có chuỗi đảo sát bờ; địa hình quyết định phương pháp", "chưa xác minh toàn văn (theo bài giảng và đáp án đề)"], ["LB03", "UNCLOS 1982", "Điều 3, 17-19, 33", "Lãnh hải không quá 12 hải lý; quyền đi qua không gây hại; tiếp giáp tối đa 24 hải lý từ đường cơ sở", "chưa xác minh toàn văn (theo bài giảng và đáp án đề)"], ["LB03", "UNCLOS 1982", "Điều 27, 28, 32", "Tài phán hình sự, dân sự với tàu nước ngoài; tàu quân sự và tàu nhà nước phi thương mại được miễn trừ", "chưa xác minh toàn văn (theo bài giảng và đáp án đề)"], ["LB04", "UNCLOS 1982", "Điều 55-58, 76-78", "ĐQKT tối đa 200 hải lý; tự do hàng hải, hàng không ở ĐQKT; thềm tối đa 350 hải lý; quyền chủ quyền với thềm là đương nhiên", "chưa xác minh toàn văn (theo bài giảng và đáp án đề)"], ["LB05", "UNCLOS 1982", "Điều 60, 121", "Đảo nhân tạo không có quy chế đảo, vùng an toàn tối đa 500 m; đá không đủ điều kiện thì không có ĐQKT và thềm", "chưa xác minh toàn văn (theo bài giảng và đáp án đề)"], ["LB06", "UNCLOS 1982", "Điều 86-92, 100-111", "Biển cả: sáu tự do, không ai đòi chủ quyền; tàu chịu tài phán nước treo cờ; cướp biển; quyền khám xét; quyền truy đuổi", "chưa xác minh toàn văn (theo bài giảng)"], ["LB07", "UNCLOS 1982", "Điều 136-141, 192-193", "Vùng là di sản chung của nhân loại, không ai chiếm hữu; khai thác vì lợi ích chung và mục đích hòa bình; nghĩa vụ bảo vệ môi trường biển", "chưa xác minh toàn văn (theo bài giảng)"], ["LB08", "UNCLOS 1982", "Điều 15, 74, 83", "Phân định lãnh hải, ĐQKT, thềm lục địa giữa các nước kề hoặc đối diện", "chưa xác minh toàn văn (theo bài giảng và đáp án đề)"], ["LB08", "UNCLOS 1982", "Điều 279-299 (nổi bật 283, 286, 287, 297, 298)", "Thương lượng trước; đủ điều kiện mới áp dụng thủ tục tài phán; bốn cơ quan: ICJ, ITLOS, Trọng tài Phụ lục VII, Trọng tài đặc biệt Phụ lục VIII; không chọn thì mặc định Phụ lục VII; có giới hạn (Đ297) và ngoại lệ tùy chọn (Đ298)", "chưa xác minh toàn văn (theo bài giảng và đáp án đề)"], ["LB08", "NĐ 162/2013/NĐ-CP", "Toàn văn", "Xử phạt vi phạm hành chính trên các vùng biển, đảo và thềm lục địa; hiệu lực từ 01/01/2014; đã được sửa bởi NĐ 23/2017/NĐ-CP (hiệu lực 01/05/2017); lần sửa sau (NĐ 37/2022) chưa đối chiếu nguồn chính thức", "quy định rõ (NĐ 23/2017); chưa xác minh (NĐ 37/2022)"]], LB_BT=[["LB03", "Nhận định", "Quyền đi qua không gây hại áp dụng ở mọi vùng biển.", "Sai. Chỉ áp dụng ở lãnh hải và vùng nước quần đảo; ở ĐQKT là tự do hàng hải.", "Điều 17, 52, 58 UNCLOS; Điều 12, 23 Luật Biển VN", "UNCLOS: chưa xác minh toàn văn; Luật Biển VN: quy định rõ"], ["LB03", "Nhận định", "Quy chế lãnh hải trong UNCLOS và Luật Biển VN là giống nhau.", "Sai. UNCLOS cho phép tối đa 12 hải lý; Luật Biển VN quy định rộng 12 hải lý và yêu cầu tàu quân sự nước ngoài thông báo trước khi đi qua.", "Điều 3 UNCLOS; Điều 11, khoản 2 Điều 12 Luật Biển VN", "UNCLOS: chưa xác minh toàn văn; Luật Biển VN: quy định rõ"], ["LB03", "Nhận định", "Tiếp giáp lãnh hải là một bộ phận của ĐQKT.", "Đúng theo đáp án đề và bài giảng: khoản 1 Điều 14 Luật Biển VN dẫn tới các quyền theo Điều 16 (chế độ ĐQKT). Đây là quan điểm của giảng viên, nên nêu căn cứ khi viết.", "Điều 33, 55 UNCLOS; Điều 14, 16 Luật Biển VN", "quan điểm hoặc thực tiễn áp dụng"], ["LB04", "Nhận định", "Thềm lục địa của mọi quốc gia rộng tối đa 350 hải lý.", "Sai. Mốc 200 hải lý là mặc định; chỉ khi rìa lục địa vượt 200 hải lý mới được tối đa 350 hải lý hoặc 100 hải lý từ đường đẳng sâu 2.500 m.", "Điều 76 UNCLOS; Điều 17 Luật Biển VN", "UNCLOS: chưa xác minh toàn văn; Luật Biển VN: quy định rõ"], ["LB04", "Nhận định", "Nước phía trên thềm lục địa luôn có chế độ ĐQKT.", "Sai. Chỉ trong 200 hải lý; phần thềm ngoài 200 hải lý có nước phía trên là biển quốc tế.", "Điều 76, 78 UNCLOS", "chưa xác minh toàn văn"], ["LB05", "Nhận định", "Mọi đảo thuộc chủ quyền đều có các vùng biển như đất liền.", "Sai. Đá không đủ điều kiện cho người ở hoặc đời sống kinh tế riêng thì không có ĐQKT và thềm; đảo nhân tạo không có lãnh hải riêng.", "Điều 60, 121 UNCLOS; Điều 20 Luật Biển VN", "UNCLOS: chưa xác minh toàn văn; Luật Biển VN: quy định rõ"], ["LB02", "Nhận định", "Quốc gia tự do chọn phương pháp xác định đường cơ sở.", "Sai. Địa hình bờ biển quyết định dùng đường cơ sở thông thường hay thẳng.", "Điều 5, 7, 14 UNCLOS", "chưa xác minh toàn văn"], ["LB06", "Nhận định", "Quyền truy đuổi chấm dứt khi tàu bị đuổi ra khỏi lãnh hải nước truy đuổi.", "Sai. Truy đuổi có thể tiếp tục ra ngoài nếu liên tục, chỉ chấm dứt khi tàu vào lãnh hải của nước mình hoặc nước khác.", "Điều 111 UNCLOS; Điều 41 Luật Biển VN", "UNCLOS: chưa xác minh toàn văn; Luật Biển VN: quy định rõ"], ["LB08", "Nhận định", "Trọng tài Phụ lục VII có thẩm quyền ưu tiên hơn các cơ quan khác.", "Sai. Ưu tiên theo lựa chọn của các bên; Phụ lục VII chỉ là mặc định khi không chọn hoặc lựa chọn không trùng.", "Điều 287 UNCLOS", "chưa xác minh toàn văn"], ["LB08", "Nhận định", "Thủ tục tài phán tại Điều 287 được áp dụng mặc nhiên cho mọi tranh chấp.", "Sai. Phải thương lượng trước, không có cơ chế khác thay thế, và nội dung không bị loại trừ hoặc hạn chế.", "Điều 279, 282, 283, 286, 297, 298 UNCLOS", "chưa xác minh toàn văn"], ["LB03", "Tình huống", "Tàu hàng cờ Ấn Độ đi qua lãnh hải VN, dừng lại bốc dỡ hàng sang tàu khác. Hành vi có phù hợp không?", "Không phù hợp. Bốc dỡ hàng làm việc đi qua trở thành gây hại.", "Điều 19 khoản 2 UNCLOS; khoản 3 Điều 23 Luật Biển VN (số điểm chưa xác minh)", "Luật Biển VN: quy định rõ (khoản); UNCLOS: chưa xác minh toàn văn"], ["LB03", "Tình huống", "Tàu khách cờ Panama đi qua lãnh hải VN, không vào nội thủy, trên tàu xảy ra vụ đâm chém chết người. VN có thẩm quyền không?", "Mặc định thuộc Panama (nước cờ). VN chỉ có thẩm quyền nếu rơi vào một trong 4 trường hợp: hậu quả ảnh hưởng VN; phá hoại hòa bình hoặc trật tự; thuyền trưởng hoặc viên chức ngoại giao yêu cầu; ngăn buôn người, ma túy.", "Khoản 1 Điều 27 UNCLOS; khoản 2 Điều 30 Luật Biển VN", "Luật Biển VN: quy định rõ; UNCLOS: chưa xác minh toàn văn"], ["LB03", "Tình huống", "Tàu quân sự cờ Trung Quốc phóng và tiếp nhận phương tiện bay trong lãnh hải VN. VN xử lý thế nào?", "VN không xử lý được tàu quân sự (miễn trừ) nhưng được yêu cầu chấm dứt và rời lãnh hải ngay, và đòi nước cờ chịu trách nhiệm về thiệt hại.", "Điều 30, 31, 32 UNCLOS; khoản 1, 2 Điều 28 Luật Biển VN", "Luật Biển VN: quy định rõ; UNCLOS: chưa xác minh toàn văn"], ["LB04", "Tình huống", "Tàu cá Indonesia không thu cất lưới, ngư cụ khi đi qua ĐQKT của VN. VN có thẩm quyền không?", "Theo đáp án đề: có. Đây là một trong các hành vi bị cấm ở ĐQKT; cần kiểm lại điều cụ thể của NĐ 162/2013 (đã sửa).", "Điều 37 Luật Biển VN; NĐ 162/2013/NĐ-CP, NĐ 23/2017/NĐ-CP", "quan điểm hoặc thực tiễn áp dụng (khớp điều của NĐ chưa xác minh)"], ["LB04", "Tình huống", "Tàu nước ngoài chỉ treo cờ quốc tịch, không treo cờ VN, khi đi qua ĐQKT của VN. VN có thẩm quyền không?", "Theo đáp án đề: có (điểm a khoản 2 Điều 7 NĐ 162/2013). Chưa xác minh điều này có áp dụng cho ĐQKT và còn nguyên trong bản đã sửa hay không.", "NĐ 162/2013/NĐ-CP, NĐ 23/2017/NĐ-CP", "chưa xác minh"]], LB_WARN=["Số trang trong file đề cũ trên Drive khác sách của bạn (ví dụ NĐ 162/2013 ghi tr.356, sách bạn là tr.273). Chỉ dùng số trang ở đây.", "Bài giảng 2022-23 nói đường cơ sở Vịnh Bắc Bộ “chưa xác định” là đã lỗi thời. Tuyên bố ngày 21/2/2025 (sách tr.148) đã được lưu chiểu tại LHQ; xem lại tọa độ ở sách (đối chiếu từ báo chí, chưa đối chiếu văn bản gốc).", "Luật Biển VN 2012 được bổ sung Điều 7 bởi Luật 65/2025/QH15, hiệu lực 01/03/2025 (nguồn caselaw.vn, chưa đối chiếu bản gốc). Số điều Luật Biển ở đây đã đối chiếu với bản PDF của luật.", "Số điều UNCLOS chỉ lấy từ bài giảng và đáp án đề, chưa đối chiếu toàn văn; các đáp án đề là đáp án sinh viên nên cần đối chiếu điều luật trước khi viết bài thi."], LB_SCALE=[["Nội thủy", "trong đường cơ sở", "Chủ quyền như đất liền", "Phải xin phép"], ["Lãnh hải", "đến 12 hải lý", "Chủ quyền đầy đủ", "Được đi qua không gây hại; tàu quân sự VN yêu cầu thông báo trước"], ["Tiếp giáp", "đến 24 hải lý", "Chỉ kiểm soát hải quan, thuế, y tế, nhập cư", "Đi lại tự do"], ["ĐQKT", "đến 200 hải lý", "Quyền chủ quyền về tài nguyên", "Tự do hàng hải, hàng không, đặt cáp"], ["Thềm lục địa", "đáy biển, 200 đến 350 hải lý", "Quyền đương nhiên về tài nguyên dưới đáy", "Nước phía trên là ĐQKT hoặc biển quốc tế"], ["Biển quốc tế", "ngoài ĐQKT", "Không ai có chủ quyền", "Sáu tự do cho mọi nước"]];
+function E(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+function labels(n){var h="";
+  if(/quy định rõ/.test(n))h+='<span class="lb r">quy định rõ</span>';
+  if(/quan điểm/.test(n))h+='<span class="lb q">quan điểm</span>';
+  if(/chưa xác minh/.test(n))h+='<span class="lb x">chưa xác minh</span>';
+  return h+(/\(/.test(n)?' <span class="legend">'+E(n)+'</span>':'')}
+var map=document.getElementById("lbMap"),sc=document.getElementById("lbScale"),wr=document.getElementById("lbWarn"),box=document.getElementById("lbSections");
+sc.innerHTML=LB_SCALE.map(function(r){return '<li><b>'+E(r[0])+' · '+E(r[1])+'</b><span>'+E(r[2])+'. Tàu nước ngoài: '+E(r[3])+'.</span></li>'}).join("");
+wr.innerHTML=LB_WARN.map(function(w){return '<li>'+E(w)+'</li>'}).join("");
+map.innerHTML='<div class="map-col pub">'+LB_CD.map(function(c,i){return '<a href="#lb'+(i+1)+'"><b>'+(i+1)+' · '+E(c[1])+'</b><small>'+E(c[3])+'</small></a>'}).join("")+'</div>';
+box.innerHTML=LB_CD.map(function(c,i){
+  var dl=LB_DL.filter(function(r){return r[0]===c[0]}),bt=LB_BT.filter(function(r){return r[0]===c[0]});
+  var h='<section class="lbs pub" id="lb'+(i+1)+'"><div class="sec-h"><div class="k">Chuyên đề '+(i+1)+'</div><h2>'+E(c[1])+'</h2></div>';
+  h+='<div class="card lbx"><h3>Hiểu nhanh</h3><p>'+E(c[2])+'</p><div class="key">'+E(c[3])+'</div><p class="legend">Trong sách: '+E(c[4])+'. Nguồn: '+E(c[5])+'.</p></div>';
+  if(dl.length){h+='<h3 class="lbh">Điều luật</h3><ul class="lbl">'+dl.map(function(r){return '<li class="lbx"><b>'+E(r[2])+' · '+E(r[1])+'</b>'+E(r[3])+'<div>'+labels(r[4])+'</div></li>'}).join("")+'</ul>'}
+  if(bt.length){h+='<h3 class="lbh">Luyện tập</h3>'+bt.map(function(r){return '<details class="trap lbx"><summary><span class="g">'+E(r[1])+'</span><span>'+E(r[2])+'</span></summary><div class="ans">'+E(r[3])+'<p><span class="cs">'+E(r[4])+'</span> '+labels(r[5])+'</p></div></details>'}).join("")}
+  return h+'</section>'}).join("");
+
+/* giáo trình 5 chương */
+(function(){var G=window.LB_GT,root=document.getElementById("lbGT");if(!G||!root)return;
+var pg=function(a){return a?'<span class="gpg">tr. '+(a[0]===a[1]?a[0]:a[0]+'–'+a[1])+'</span>':''};
+var h='<div class="card gtintro"><h3>Giáo trình Luật Biển quốc tế 25-26 · năm chương</h3><p>Toàn bộ nội dung bài giảng, kèm hình, xếp theo năm chương. Số “tr.” là trang trong file bài giảng. <span class="lb x">ghi chép, chưa xác minh</span></p><p class="legend">Đây là ghi chép bài giảng, giữ nguyên lời; số điều UNCLOS và Luật Biển chỉ đáng tin sau khi đối chiếu văn bản. Đối chiếu đã làm xem phần soạn riêng bên dưới.</p><div class="gtnav">'+G.map(function(c,i){return '<a href="#lbg'+(i+1)+'"><b>Chương '+(i+1)+' · '+E(c.t)+'</b><small>'+E(c.s)+' · '+E(c.pg)+'</small></a>'}).join("")+'</div></div>';
+G.forEach(function(c,i){
+  h+='<section class="lbs pub" id="lbg'+(i+1)+'"><div class="sec-h"><div class="k">Chương '+(i+1)+' · bài giảng '+E(c.pg)+'</div><h2>'+E(c.t)+'</h2></div><p class="gsub">'+E(c.s)+'</p>';
+  c.g.forEach(function(g){
+    var body='';
+    g.b.forEach(function(b){
+      if(b[0]==="p"){var t=b[2],bl=/^[●○■§✓•\-\+]\s/.test(t)||/^[●○■§✓•]/.test(t);var ml=Math.max(0,Math.min(40,Math.round((b[1]-72)*.3)));body+='<p class="gp'+(bl?' b':'')+'"'+(ml?' style="margin-left:'+ml+'px"':'')+'>'+E(t)+'</p>'}
+      else if(b[0]==="q"){body+='<div class="gq">'+E(b[2])+'</div>'}
+      else if(b[0]==="i"){body+='<figure class="gf" style="margin:12px 0"><img loading="lazy" width="'+b[3]+'" height="'+b[4]+'" src="lb-img/'+b[1]+'" alt="Hình trong bài giảng, tr. '+b[2]+'"><small>Hình bài giảng, tr. '+b[2]+'</small></figure>'}
+      else if(b[0]==="t"){body+='<p class="gp"><b>'+E(b[1])+'</b></p><div class="gtw"><table class="gt">'+b[2].map(function(r,ri){return '<tr>'+r.map(function(x){return (ri===0?'<th>':'<td>')+E(x)+(ri===0?'</th>':'</td>')}).join("")+'</tr>'}).join("")+'</table></div>'}
+    });
+    var tag=g.lv===2?'h3':'h4';
+    if(!g.b.length){h+='<h3 class="lbh">'+E(g.h)+'</h3>';return}
+    h+='<div class="card lbx gtc">'+(g.h?'<'+tag+'>'+E(g.h)+pg(g.pg)+'</'+tag+'>':'')+body+'</div>'});
+  h+='</section>'});
+root.innerHTML=h;
+var z=document.getElementById("gtZoom"),zi=z.querySelector("img");
+root.addEventListener("click",function(e){var im=e.target.closest(".gf img");if(im){zi.src=im.src;z.classList.add("on")}});
+z.addEventListener("click",function(){z.classList.remove("on")});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")z.classList.remove("on")});
+})();
+/* hạng mục chung: Hiệu lực */
+var cnt=document.getElementById("count"),q=document.getElementById("q"),tm=document.getElementById("tm-main"),tocT=document.getElementById("toc"),tocL=document.getElementById("lb-toc"),mainL=document.getElementById("lb-main"),btn=document.getElementById("menuBtn"),tabs=document.querySelectorAll(".tabbtn"),emp=document.getElementById("lbEmpty");
+var cur="tm",ph=q.getAttribute("placeholder");
+function norm(s){return String(s).normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/đ/g,"d").replace(/Đ/g,"d").toLowerCase()}
+var cache=new Map();function tx(el){var t=cache.get(el);if(!t){t=norm(el.textContent);cache.set(el,t)}return t}
+function lbSearch(){
+  var items=document.querySelectorAll("#lb-main .lbx"),secs=document.querySelectorAll("#lb-main .lbs"),hero=document.getElementById("lb0");
+  var toks=norm(q.value.trim()).split(/\s+/).filter(Boolean);
+  if(!toks.length){items.forEach(function(c){c.classList.remove("hide")});secs.forEach(function(s){s.classList.remove("hide")});hero.classList.remove("hide");emp.classList.add("hide");cnt.textContent="";return}
+  var n=0;items.forEach(function(c){var ok=toks.every(function(k){return tx(c).indexOf(k)>-1});c.classList.toggle("hide",!ok);if(ok)n++});
+  secs.forEach(function(s){var any=false;s.querySelectorAll(".lbx").forEach(function(c){if(!c.classList.contains("hide"))any=true});s.classList.toggle("hide",!any)});
+  hero.classList.add("hide");cnt.textContent=n+" kết quả";emp.classList.toggle("hide",n>0)}
+function setTab(t,keepHash){
+  cur=t;var lb=t==="lb";
+  tm.classList.toggle("hide",lb);tocT.classList.toggle("hide",lb);mainL.classList.toggle("hide",!lb);tocL.classList.toggle("hide",!lb);
+  tabs.forEach(function(b){var on=b.getAttribute("data-tab")===t;b.classList.toggle("on",on);b.setAttribute("aria-pressed",on?"true":"false")});
+  q.setAttribute("placeholder",lb?"Tìm: lãnh hải, Điều 287…":ph);
+  document.title=lb?"Luật Biển – Tổng hợp ôn thi":"Luật Thương mại quốc tế – Tổng hợp ôn thi";
+  if(lb){lbSearch()}else{emp.classList.add("hide");if(window.__runSearch)window.__runSearch()}
+  if(!keepHash){try{history.replaceState(null,"",lb?"#lb0":"#s0")}catch(e){}window.scrollTo(0,0)}}
+tabs.forEach(function(b){b.addEventListener("click",function(){setTab(b.getAttribute("data-tab"))})});
+q.addEventListener("input",function(){if(cur==="lb"){clearTimeout(window.__lbT);window.__lbT=setTimeout(lbSearch,170)}});
+btn.addEventListener("click",function(e){if(cur==="lb"){e.stopPropagation();tocL.classList.toggle("open")}});
+tocL.addEventListener("click",function(e){if(e.target.closest("a"))tocL.classList.remove("open")});
+document.addEventListener("click",function(e){if(!tocL.contains(e.target)&&e.target!==btn)tocL.classList.remove("open")});
+window.addEventListener("hashchange",function(){if(/^#lb/.test(location.hash)&&cur!=="lb")setTab("lb",true)});
+if(/^#lb/.test(location.hash)){setTab("lb",true);var el=document.querySelector(location.hash);if(el)el.scrollIntoView({behavior:"instant"})}
+window.addEventListener("load",function(){if(/^#lbg/.test(location.hash)&&cur==="lb"){var e2=document.querySelector(location.hash);if(e2)e2.scrollIntoView({behavior:"instant"})}});
+})();
 </script>
 </body>
 </html>
