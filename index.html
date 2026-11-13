@@ -2071,22 +2071,13 @@ details.srcn summary{cursor:pointer;font-weight:600}details.srcn p{margin:8px 0 
   <a href="#lbg3"><span class="dot"></span>Chương 3 · Quyền chủ quyền</a>
   <a href="#lbg4"><span class="dot"></span>Chương 4 · Khu vực sử dụng chung</a>
   <a href="#lbg5"><span class="dot"></span>Chương 5 · Phân định và giải quyết tranh chấp</a>
-  <h4 style="margin-top:12px">Soạn riêng · 8 chuyên đề</h4>
-  <a href="#lb1"><span class="dot"></span>1 · Khái quát và 5 nguyên tắc cơ bản</a>
-  <a href="#lb2"><span class="dot"></span>2 · Đường cơ sở và nội thủy</a>
-  <a href="#lb3"><span class="dot"></span>3 · Lãnh hải và vùng tiếp giáp</a>
-  <a href="#lb4"><span class="dot"></span>4 · Vùng đặc quyền kinh tế và thềm lục địa</a>
-  <a href="#lb5"><span class="dot"></span>5 · Đảo, đá, quần đảo</a>
-  <a href="#lb6"><span class="dot"></span>6 · Biển quốc tế, truy đuổi, cướp biển</a>
-  <a href="#lb7"><span class="dot"></span>7 · Vùng (đáy đại dương), môi trường, nghiên cứu khoa học</a>
-  <a href="#lb8"><span class="dot"></span>8 · Phân định biển và giải quyết tranh chấp</a>
 </nav>
 
 <main id="lb-main" class="hide">
 <div class="wrap">
 <section class="hero base" id="lb0">
   <h1>Luật Biển</h1>
-  <p class="sub">Ôn môn Luật Biển (UNCLOS 1982, Luật Biển Việt Nam 2012) theo 8 chuyên đề của bài giảng. Mỗi chuyên đề có phần hiểu nhanh, điều luật kèm nhãn xác minh, và bài tập nhận định, tình huống. Gõ từ khóa vào ô tìm kiếm để lọc.</p>
+  <p class="sub">Giáo trình Luật Biển quốc tế 25-26 (UNCLOS 1982, Luật Biển Việt Nam 2012) theo 5 chương: khái quát, chủ quyền, quyền chủ quyền, khu vực sử dụng chung, phân định và giải quyết tranh chấp. Gõ từ khóa ở ô tìm kiếm để lọc.</p>
   <div class="src-row">
     <span class="chip">Bài giảng Luật Biển 25-26</span>
     <span class="chip">Đề thi Luật Biển 2022-23</span>
@@ -2102,13 +2093,10 @@ details.srcn summary{cursor:pointer;font-weight:600}details.srcn p{margin:8px 0 
     <h3>Đọc trước: 4 lưu ý</h3>
     <ol id="lbWarn"></ol>
   </div>
-  <div class="map" style="margin-top:22px"><div class="map-cols" id="lbMap" style="grid-template-columns:1fr"></div></div>
   <p class="legend" style="margin-top:14px">Nhãn: <span class="lb r">quy định rõ</span> điều luật nêu đúng nội dung · <span class="lb q">quan điểm</span> đáp án mẫu hoặc quan điểm giảng viên · <span class="lb x">chưa xác minh</span>. Dữ liệu lấy từ Google Sheet giáo trình TMQT (tab LB_NOI_DUNG, LB_DIEU_LUAT, LB_BAI_TAP), cập nhật 13/11/2026.</p>
 </section>
 <div id="lbGT"></div>
-<section class="lbs pub" id="lbOld"><div class="sec-h"><div class="k">Phần soạn riêng</div><h2>Tóm tắt, điều luật và bài tập</h2></div><p class="gsub">Tám chuyên đề theo đề cương giảng viên, có đối chiếu điều luật và luyện tập. Dùng song song với giáo trình năm chương ở trên.</p></section>
 <div id="gtZoom" role="dialog" aria-label="Xem ảnh lớn"><img alt=""></div>
-<div id="lbSections"></div>
 <div class="card hide" id="lbEmpty" style="margin:30px 0"><h3>Không có kết quả</h3><p>Thử từ khóa ngắn hơn, ví dụ “lãnh hải”, “Điều 287”, “truy đuổi”.</p></div>
 </div>
 </main>
@@ -2622,8 +2610,8 @@ function labels(n){var h="";
 var map=document.getElementById("lbMap"),sc=document.getElementById("lbScale"),wr=document.getElementById("lbWarn"),box=document.getElementById("lbSections");
 sc.innerHTML=LB_SCALE.map(function(r){return '<li><b>'+E(r[0])+' · '+E(r[1])+'</b><span>'+E(r[2])+'. Tàu nước ngoài: '+E(r[3])+'.</span></li>'}).join("");
 wr.innerHTML=LB_WARN.map(function(w){return '<li>'+E(w)+'</li>'}).join("");
-map.innerHTML='<div class="map-col pub">'+LB_CD.map(function(c,i){return '<a href="#lb'+(i+1)+'"><b>'+(i+1)+' · '+E(c[1])+'</b><small>'+E(c[3])+'</small></a>'}).join("")+'</div>';
-box.innerHTML=LB_CD.map(function(c,i){
+if(map)map.innerHTML='<div class="map-col pub">'+LB_CD.map(function(c,i){return '<a href="#lb'+(i+1)+'"><b>'+(i+1)+' · '+E(c[1])+'</b><small>'+E(c[3])+'</small></a>'}).join("")+'</div>';
+if(box)box.innerHTML=LB_CD.map(function(c,i){
   var dl=LB_DL.filter(function(r){return r[0]===c[0]}),bt=LB_BT.filter(function(r){return r[0]===c[0]});
   var h='<section class="lbs pub" id="lb'+(i+1)+'"><div class="sec-h"><div class="k">Chuyên đề '+(i+1)+'</div><h2>'+E(c[1])+'</h2></div>';
   h+='<div class="card lbx"><h3>Hiểu nhanh</h3><p>'+E(c[2])+'</p><div class="key">'+E(c[3])+'</div><p class="legend">Trong sách: '+E(c[4])+'. Nguồn: '+E(c[5])+'.</p></div>';
@@ -2634,7 +2622,7 @@ box.innerHTML=LB_CD.map(function(c,i){
 /* giáo trình 5 chương */
 (function(){var G=window.LB_GT,root=document.getElementById("lbGT");if(!G||!root)return;
 var pg=function(a){return a?'<span class="gpg">tr. '+(a[0]===a[1]?a[0]:a[0]+'–'+a[1])+'</span>':''};
-var h='<div class="card gtintro"><h3>Giáo trình Luật Biển quốc tế 25-26 · năm chương</h3><p>Toàn bộ nội dung bài giảng, kèm hình, xếp theo năm chương. Số “tr.” là trang trong file bài giảng. <span class="lb x">ghi chép, chưa xác minh</span></p><p class="legend">Đây là ghi chép bài giảng, giữ nguyên lời; số điều UNCLOS và Luật Biển chỉ đáng tin sau khi đối chiếu văn bản. Đối chiếu đã làm xem phần soạn riêng bên dưới.</p><div class="gtnav">'+G.map(function(c,i){return '<a href="#lbg'+(i+1)+'"><b>Chương '+(i+1)+' · '+E(c.t)+'</b><small>'+E(c.s)+' · '+E(c.pg)+'</small></a>'}).join("")+'</div></div>';
+var h='<div class="card gtintro"><h3>Giáo trình Luật Biển quốc tế 25-26 · năm chương</h3><p>Toàn bộ nội dung bài giảng, kèm hình, xếp theo năm chương. Số “tr.” là trang trong file bài giảng. <span class="lb x">ghi chép, chưa xác minh</span></p><p class="legend">Đây là ghi chép bài giảng, giữ nguyên lời; số điều UNCLOS và Luật Biển chỉ đáng tin sau khi đối chiếu văn bản.</p><div class="gtnav">'+G.map(function(c,i){return '<a href="#lbg'+(i+1)+'"><b>Chương '+(i+1)+' · '+E(c.t)+'</b><small>'+E(c.s)+' · '+E(c.pg)+'</small></a>'}).join("")+'</div></div>';
 G.forEach(function(c,i){
   h+='<section class="lbs pub" id="lbg'+(i+1)+'"><div class="sec-h"><div class="k">Chương '+(i+1)+' · bài giảng '+E(c.pg)+'</div><h2>'+E(c.t)+'</h2></div><p class="gsub">'+E(c.s)+'</p>';
   c.g.forEach(function(g){
