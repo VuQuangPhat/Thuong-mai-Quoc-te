@@ -2073,6 +2073,7 @@ details.srcn summary{cursor:pointer;font-weight:600}details.srcn p{margin:8px 0 
 <nav id="lb-toc" class="lbtoc hide" aria-label="Mục lục Luật Biển">
   <h4>Luật Biển</h4>
   <a href="#lb0"><span class="dot"></span>Tổng quan và lưu ý</a>
+  <a href="#lbsd"><span class="dot"></span>Sơ đồ tổng hợp 5 chương</a>
   <h4 style="margin-top:12px">Giáo trình 25-26 · 5 chương</h4>
   <a href="#lbg1"><span class="dot"></span>Chương 1 · Khái quát</a>
   <a href="#lbg2"><span class="dot"></span>Chương 2 · Chủ quyền</a>
@@ -2095,11 +2096,8 @@ details.srcn summary{cursor:pointer;font-weight:600}details.srcn p{margin:8px 0 
     <span class="chip">Luật Biển Việt Nam 2012</span>
     <span class="chip">Sách Văn bản pháp luật về biển</span>
   </div>
-  <div class="card" style="margin-top:22px">
-    <h3>Một hình để nhớ: từ bờ ra khơi</h3>
-    <ul class="lbscale" id="lbScale"></ul>
-    <p class="legend" style="margin-top:10px">Phần UNCLOS của bảng này theo bài giảng, chưa đối chiếu toàn văn; phần Luật Biển VN theo Điều 9 đến 18.</p>
-  </div>
+  <div id="lbsd" style="margin-top:22px"><iframe id="lbSodoFrame" src="lb-sodo.html?v=20261115" title="Luật Biển – Sơ đồ tổng hợp 5 chương" style="width:100%;height:900px;border:1px solid #e5e7eb;border-radius:12px;background:#f8fafc" loading="lazy"></iframe></div>
+  <script>addEventListener("message",function(e){var d=e.data;if(d&&d.lbsd){var f=document.getElementById("lbSodoFrame");if(f&&e.source===f.contentWindow)f.style.height=(d.lbsd+4)+"px"}})</script>
   <div class="card warn lbwarn" style="margin-top:14px">
     <h3>Đọc trước: 4 lưu ý</h3>
     <ol id="lbWarn"></ol>
@@ -2627,8 +2625,8 @@ function labels(n){var h="";
   if(/chưa xác minh/.test(n))h+='<span class="lb x">chưa xác minh</span>';
   return h+(/\(/.test(n)?' <span class="legend">'+E(n)+'</span>':'')}
 var map=document.getElementById("lbMap"),sc=document.getElementById("lbScale"),wr=document.getElementById("lbWarn"),box=document.getElementById("lbSections");
-sc.innerHTML=LB_SCALE.map(function(r){return '<li><b>'+E(r[0])+' · '+E(r[1])+'</b><span>'+E(r[2])+'. Tàu nước ngoài: '+E(r[3])+'.</span></li>'}).join("");
-wr.innerHTML=LB_WARN.map(function(w){return '<li>'+E(w)+'</li>'}).join("");
+if(sc)sc.innerHTML=LB_SCALE.map(function(r){return '<li><b>'+E(r[0])+' · '+E(r[1])+'</b><span>'+E(r[2])+'. Tàu nước ngoài: '+E(r[3])+'.</span></li>'}).join("");
+if(wr)wr.innerHTML=LB_WARN.map(function(w){return '<li>'+E(w)+'</li>'}).join("");
 if(map)map.innerHTML='<div class="map-col pub">'+LB_CD.map(function(c,i){return '<a href="#lb'+(i+1)+'"><b>'+(i+1)+' · '+E(c[1])+'</b><small>'+E(c[3])+'</small></a>'}).join("")+'</div>';
 if(box)box.innerHTML=LB_CD.map(function(c,i){
   var dl=LB_DL.filter(function(r){return r[0]===c[0]}),bt=LB_BT.filter(function(r){return r[0]===c[0]});
